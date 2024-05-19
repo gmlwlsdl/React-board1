@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { FaEye } from 'react-icons/fa';
 import '../../../css/globalCss.css';
 import './index.css';
 
@@ -55,44 +56,65 @@ const Login = () => {
 
   return (
     <div>
-      <div>
-        <form onSubmit={loginSubmit}>
-          <div className="parent">
-            <div className="login">로그인</div>
-            <div>
-              <div>
-                <textarea
-                  name="email"
-                  id="email"
-                  placeholder="이메일 주소"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                ></textarea>
+      <div className="parent_l">
+        <div className="F1000004037_l">
+          <div className="F1000004036_l">
+            <div className="F1000003250_l">
+              <div className="F1000003769_l">
+                <div className="login_l">로그인</div>
+                <div className="Frame37314_l">
+                  <div className="F1000003648_l">
+                    <div className="F1000003641_l">
+                      <div className="input_l">
+                        <div className="autoField_l">
+                          <div className="autoIcon_l">
+                            <input
+                              type="text"
+                              value={email}
+                              onChange={(e) => setEmail(e.target.value)}
+                              placeholder="이메일 주소"
+                              className="placeholder_l"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="input2_l">
+                        <div className="autoField2_l">
+                          <div className="autoIcon2_l">
+                            <input
+                              type="password"
+                              value={pw}
+                              onChange={(e) => setPw(e.target.value)}
+                              placeholder="비밀번호 입력"
+                              className="placeholder2_l"
+                            />
+                            <div className="eye_l">
+                              <FaEye className="vector_1" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <button className="button_l" onClick={loginSubmit}>
+                      <div className="content_l">
+                        <p className="buttonText_l">로그인</p>
+                      </div>
+                    </button>
+                  </div>
+                  <div className="Frame195_l">
+                    <p className="findID_l">아이디 찾기</p>
+                    <div className="Line3_l"></div>
+                    <p className="findPW_l">비밀번호 찾기</p>
+                    <div className="Line4_l"></div>
+                    <p className="Signin_l" onClick={moveSignin}>
+                      회원가입
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div>
-                <textarea
-                  name="pw"
-                  id="pw"
-                  placeholder="비밀번호 입력"
-                  value={pw}
-                  onChange={(e) => setPw(e.target.value)}
-                ></textarea>
-              </div>
-            </div>
-            <div>
-              <button className="logbtn" type="submit">
-                로그인
-              </button>
-            </div>
-            <div className="bottom">
-              <p>아이디 찾기 </p>
-              <p> | </p>
-              <p>비밀번호 찾기 </p>
-              <p> | </p>
-              <p onClick={moveSignin}>회원가입</p>
             </div>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   );

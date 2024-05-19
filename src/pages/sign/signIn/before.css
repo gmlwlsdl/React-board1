@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+}
+
+.parent {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.signin {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: -0.30000001192092896px;
+  color: 040404;
+}
+
+.sigbtn {
+  width: Hug (142px) px;
+  height: Hug (48px) px;
+  padding: 12px 40px 12px 40px;
+  gap: 10px;
+  border-radius: 4px 4px 4px 4px;
+  opacity: 0px;
+  color: white;
+  background-color: #000000;
+  font-family: Pretendard;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.10000000149011612px;
+  text-align: center;
+}
+
+.logbtn {
+  width: Fill (384px) px;
+  height: Fixed (52px) px;
+  padding: 14px 24px 14px 24px;
+  gap: 10px;
+  border-radius: 4px 4px 4px 4px;
+  opacity: 0px;
+  color: white;
+  background-color: #000000;
+  font-family: Pretendard;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.10000000149011612px;
+  text-align: center;
+}
+
+.circle {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  left: 552px;
+  top: 0px;
+}
+
+.doneMsg {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: -0.30000001192092896px;
+}
+
+.congrMsg {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: -0.003em;
+  color: #808080;
+}
+
+.contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
+}
+
+.gologbtn {
+  width: Hug (127px) px;
+  height: Hug (48px) px;
+  gap: 12px;
+  opacity: 0px;
+}

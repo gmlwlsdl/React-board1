@@ -34,34 +34,55 @@ const BoardList = () => {
 
   return (
     <div>
-      <div className="parent">
-        <div className="F1000004037">
-          <div className="F1000004356">
-            <div className="F1000004327">
-              <p className="Login">board</p>
-              <p className="Login2">자유게시판</p>
+      <div className="parent_f">
+        <div className="F1000004037_f">
+          <div className="F1000004356_f">
+            <div className="F1000004327_f">
+              <p className="Login_f">board</p>
+              <p className="Login2_f">자유게시판</p>
             </div>
-            <div className="F1000004355">
-              <div className="F1000004353">
-                <div className="F1000004324">
-                  <p className="ButtonText0" onClick={handleBoard}>
+            <div className="F1000004355_f">
+              <div className="F1000004353_f">
+                <div className="F10000043242_f">
+                  <p className="ButtonText0_f" onClick={handleBoard}>
                     자유 게시판
                   </p>
                 </div>
-                <div className="F10000043532">
-                  <p className="ButtonText1" onClick={handleQuest}>
+                <div className="F10000043532_f">
+                  <p className="ButtonText1_f" onClick={handleQuest}>
                     질문 게시판
                   </p>
                 </div>
-                <div className="F1000004354">
-                  <p className="ButtonText2" onClick={handleQuest}>
+                <div className="F1000004354_f">
+                  <p className="ButtonText2_f" onClick={handleQuest}>
                     질문 게시판
                   </p>
                 </div>
               </div>
-              <div className="F1000004351">
-                <div className="F1000004340">
-                  <div className="F1000004338">게시물 속성 행</div>
+              <div className="F1000004351_f">
+                <div className="F1000004340_f">
+                  <div className="F1000004338_f">
+                    <div className="F1000004333_f">
+                      <div className="No_f">No</div>
+                    </div>
+                    <div className="F1000004337_f">
+                      <div className="Title_f">제목</div>
+                    </div>
+                    <div className="F1000004334_f">
+                      <div className="Writer_f">글쓴이</div>
+                    </div>
+                    <div className="F1000004335_f">
+                      <div className="Tiem_f">작성시간</div>
+                    </div>
+                    <div className="F1000004336_f">
+                      <div className="Views_f">조회수</div>
+                    </div>
+                  </div>
+                  {/* <div className="F1000004339_f"> */}
+                  {posts.map((post) => (
+                    <TableRow post={post} />
+                  ))}
+                  {/* </div> */}
                 </div>
               </div>
             </div>

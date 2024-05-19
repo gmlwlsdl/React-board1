@@ -3,7 +3,8 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Nav from './pages/board/header/nav';
+import Nav from './pages/header/nav';
+import Footer from './pages/footer/index';
 import BoardList from './pages/board/list/freeList';
 import QuestList from './pages/board/list/questList';
 import BoardDetail from './pages/board/detail';
@@ -18,6 +19,7 @@ function App() {
       <BrowserRouter>
         <Nav />
         <Routes>
+          <Route path="/" element={<BoardList />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/Done" element={<SigninDone />} />
@@ -26,6 +28,7 @@ function App() {
           <Route path="/api/post/:num" element={<BoardDetail />} />
           <Route path="/quest/:num" element={<BoardQuestDetail />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );

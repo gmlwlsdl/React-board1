@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router-dom';
 import './nav.css';
 
 function Nav() {
@@ -41,36 +40,36 @@ function Nav() {
 
   return (
     <div>
-      <div className="gnb">
-        <div className="F1000004324">
-          <div className="Content3">
+      <div className="gnb_n">
+        <div className="F1000004324_n">
+          <div className="Content3_n">
             {sessionName ? (
-              <div className="logout">
+              <div className="logout_n">
                 {sessionName} 님
-                <p className="ButtonText3" onClick={handleLogout}>
+                <p className="ButtonText3_n" onClick={handleLogout}>
                   로그아웃
                 </p>
               </div>
             ) : (
-              <p className="ButtonText3" onClick={handleLogin}>
+              <p className="ButtonText3_n" onClick={handleLogin}>
                 로그인
               </p>
             )}
           </div>
         </div>
-        <div className="F1000003051">
-          <p className="Testsite">Testsite</p>
-          <div className="F1000003053">
-            <div className="GNB_Button">
-              <div className="Content">
-                <p className="ButtonText" onClick={handleBoard}>
+        <div className="F1000003051_n">
+          <p className="Testsite_n">Testsite</p>
+          <div className="F1000003053_n">
+            <div className="GNB_Button_n">
+              <div className="Content_n">
+                <p className="ButtonText_n" onClick={handleBoard}>
                   게시판
                 </p>
               </div>
             </div>
-            <div className="GNB_Button2">
-              <div className="Content2">
-                <p className="ButtonText2" onClick={handleDash}>
+            <div className="GNB_Button2_n">
+              <div className="Content2_n">
+                <p className="ButtonText2_n" onClick={handleDash}>
                   대시보드
                 </p>
               </div>

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { FaEye } from 'react-icons/fa';
+import { FaCheck } from 'react-icons/fa';
 import Checkbox from './Checkbox';
 import '../../../css/globalCss.css';
 import './index.css';
@@ -60,51 +62,113 @@ const Signin = () => {
   };
 
   return (
-    <div className="parent">
-      <form onSubmit={SigninSubmit}>
-        <div className="signin">회원가입</div>
-        <div>
-          <p className="left">이메일</p>
-          <input
-            type="text"
-            className="left"
-            id="email"
-            value={email}
-            autoComplete="email"
-            onChange={(e) => setEmail(e.target.value)}
-          ></input>
-          <p>비밀번호</p>
-          <input
-            type="password"
-            id="pw"
-            value={pw}
-            placeholder="8자 이상, 영문자, 숫자, 특수기호 중 2가지 조합"
-            onChange={(e) => setPw(e.target.value)}
-          ></input>
-          <input
-            type="password"
-            id="re_pw"
-            value={re_pw}
-            placeholder="비밀번호를 다시 입력해주세요"
-            onChange={(e) => setRePw(e.target.value)}
-          ></input>
-          <p>닉네임</p>
-          <input
-            type="text"
-            id="nickname"
-            value={nickname}
-            onChange={(e) => setName(e.target.value)}
-          ></input>
-          <div>
-            <Checkbox checked={agree} onChange={setAgree}>
-              체크박스 개인정보 처리방침 / 데이터 활용 동의 (필수)
-            </Checkbox>
+    <div>
+      <div className="siginin_s" style={{ height: '1129px' }}>
+        <div className="F1000004037_s">
+          <div className="F1000004036_s">
+            <div className="F1000003413_s">
+              <div className="login_s">회원가입</div>
+              <div className="F1000004257_s">
+                <div className="F1000003410_s">
+                  <div className="F1000004256_s">
+                    <p className="id_s">아이디</p>
+                  </div>
+                  <div className="input_l">
+                    <div className="autoField_l">
+                      <div className="autoIcon_l">
+                        <input
+                          type="text"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          className="placeholder_l"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="F1000004267_s">
+                  <div className="F1000004255_s">
+                    <p className="pw_s">비밀번호</p>
+                  </div>
+                  <div className="input1_s">
+                    <div className="autoField1_s">
+                      <div className="autoIcon1_s">
+                        <input
+                          type="text"
+                          value={pw}
+                          onChange={(e) => setPw(e.target.value)}
+                          placeholder="8자 이상, 영문자, 숫자, 특수기호 중 2가지 조합"
+                          className="placeholder1_s"
+                        />
+                        <div className="eye_s">
+                          <FaEye className="vector_s" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="input2_s">
+                    <div className="autoField2_s">
+                      <div className="autoIcon2_s">
+                        <input
+                          type="text"
+                          value={re_pw}
+                          onChange={(e) => setRePw(e.target.value)}
+                          placeholder="비밀번호를 다시 입력해주세요"
+                          className="placeholder2_s"
+                        />
+                        <div className="eye2_s">
+                          <FaEye className="vector2_s" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="F1000004268_s">
+                  <div className="F1000004255_s">
+                    <p className="nickname_s">닉네임</p>
+                  </div>
+                  <div className="input3_l">
+                    <div className="autoField3_l">
+                      <div className="autoIcon3_l">
+                        <input
+                          type="text"
+                          value={nickname}
+                          onChange={(e) => setName(e.target.value)}
+                          className="placeholder3_l"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="F1000004266_s">
+                  <div className="Frame816884_s">
+                    <div className="Component5_s">
+                      <FaCheck className="Vector2_s" />
+                      <div className="Group193_s">
+                        <div className="Rectangle197_s"></div>
+                      </div>
+                    </div>
+                    <p className="agree_s">
+                      개인정보 처리방침 동의 / 데이터 활용 동의
+                    </p>
+                    <div className="agree1_s">
+                      <p className="agree2_s">(필수)</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button className="F1000004325_s" onClick={SigninSubmit}>
+                <div className="Content_s">
+                  <p className="ButtonText_s">회원가입</p>
+                </div>
+              </button>
+            </div>
           </div>
-          <button className="sigbtn" type="submit">
-            회원가입
-          </button>
         </div>
-      </form>
+      </div>
     </div>
   );
 };
