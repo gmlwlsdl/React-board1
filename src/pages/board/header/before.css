@@ -1,0 +1,78 @@
+.NavBar {
+  display: flex;
+  justify-content: center; /* 플랙스 박스 정렬 */
+  align-items: center;
+
+  max-width: 1920px;
+  height: 88px;
+  padding: 18px 400px 18px 400px;
+  gap: 10px;
+  border-bottom: 1px solid #e1e1e1;
+  text-decoration: none;
+}
+
+.loginMenu {
+  width: 47px;
+  height: 24px;
+  gap: 8px;
+  opacity: 0px;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.Munu0 {
+  width: 314px;
+  height: 52px;
+  top: 18px;
+  left: 400px;
+  gap: 20px;
+  opacity: 0px;
+}
+
+.Menu1 {
+  width: 205px;
+  height: 52px;
+  gap: 0px;
+  opacity: 0px;
+  font-weight: 500;
+  font-size: 18;
+  display: flex;
+}
+
+.Menu2 {
+  display: flex;
+}
+
+.Menu3 {
+  width: 205px;
+  height: 52px;
+  gap: 0px;
+  opacity: 0px;
+  display: flex;
+}
+
+.child1 {
+  width: 95px;
+  height: Fixed (52px) px;
+  padding: 14px 24px 14px 24px;
+  gap: 10px;
+  border-radius: 8px 0px 0px 0px;
+  opacity: 0px;
+}
+
+.child2 {
+  width: 110px;
+  height: Fixed (52px) px;
+  padding: 14px 24px 14px 24px;
+  gap: 10px;
+  border-radius: 8px 0px 0px 0px;
+  opacity: 0px;
+}
+
+.logout {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: -0.003em;
+  text-align: center;
+}

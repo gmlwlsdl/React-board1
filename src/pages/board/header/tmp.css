@@ -1,0 +1,259 @@
+/* GNB */
+.gnb {
+  box-sizing: border-box;
+
+  width: 1920px;
+  height: 88px;
+
+  /* #White/white */
+  background: #ffffff;
+  /* #Grey/grey-200 */
+  border-bottom: 1px solid #e1e1e1;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+/* Frame 1000003051 */
+.F1000003051 {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 20px;
+
+  position: absolute;
+  width: 314px;
+  height: 52px;
+  left: 400px;
+  top: 18px;
+
+  /* Testsite */
+  .Testsite {
+    width: 89px;
+    height: 36px;
+
+    /* KOR/Bold 24px */
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+    /* identical to box height, or 36px */
+    letter-spacing: -0.3px;
+
+    /* 1 */
+    color: #ee3918;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+}
+
+/* Frame 1000003053 */
+.F1000003053 {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+
+  width: 205px;
+  height: 52px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+
+  /* GNB_Button */
+  .GNB_Button {
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 24px;
+    gap: 10px;
+
+    width: 95px;
+    height: 52px;
+
+    border-radius: 8px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+    /* Content */
+    .Content {
+      /* Auto layout */
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 0px;
+      gap: 8px;
+
+      width: 47px;
+      height: 24px;
+
+      /* Inside auto layout */
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+
+      /* ButtonText */
+      .ButtonText {
+        width: 47px;
+        height: 24px;
+
+        font-family: 'Pretendard';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 24px;
+        /* identical to box height, or 133% */
+        text-align: center;
+        letter-spacing: -0.1px;
+
+        /* #Grey/grey-800 */
+        color: #272727;
+
+        /* Inside auto layout */
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+      }
+    }
+  }
+  /* GNB_Button */
+  .GNB_Button2 {
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 24px;
+    gap: 10px;
+
+    width: 110px;
+    height: 52px;
+
+    border-radius: 8px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+
+    /* Content */
+    .Content2 {
+      /* Auto layout */
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 0px;
+      gap: 8px;
+
+      width: 62px;
+      height: 24px;
+
+      /* Inside auto layout */
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+
+      /* ButtonText */
+      .ButtonText2 {
+        width: 62px;
+        height: 24px;
+
+        font-family: 'Pretendard';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 24px;
+        /* identical to box height, or 133% */
+        text-align: center;
+        letter-spacing: -0.1px;
+
+        /* #Grey/grey-800 */
+        color: #272727;
+
+        /* Inside auto layout */
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+      }
+    }
+  }
+}
+
+/* Frame 1000004324 */
+.F1000004324 {
+  box-sizing: border-box;
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 12px 40px;
+  gap: 10px;
+
+  position: absolute;
+  width: 127px;
+  height: 48px;
+  left: 1393px;
+  top: 20px;
+
+  /* #Grey/grey-200 */
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+
+  /* Content */
+  .Content {
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+
+    width: 47px;
+    height: 24px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+    /* ButtonText */
+    .ButtonText {
+      width: 47px;
+      height: 24px;
+
+      font-family: 'Pretendard';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 24px;
+      /* identical to box height, or 133% */
+      text-align: center;
+      letter-spacing: -0.1px;
+
+      /* #Grey/grey-800 */
+      color: #272727;
+
+      /* Inside auto layout */
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+    }
+  }
+}

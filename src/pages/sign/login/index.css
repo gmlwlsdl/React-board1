@@ -1,0 +1,55 @@
+.parent {
+  text-align: center;
+}
+
+.login {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: -0.30000001192092896px;
+  color: 040404;
+}
+
+textarea {
+  resize: none;
+  text-align: center;
+  width: Fill (384px) px;
+  height: Fill (55px) px;
+  padding: 14px 14px 14px 14px;
+  gap: 10px;
+  border-radius: 4px 4px 4px 4px;
+  border: 1px 1px 1px 1px;
+  opacity: 0px;
+}
+
+.logbtn {
+  width: Fill (384px) px;
+  height: Fixed (52px) px;
+  padding: 14px 24px 14px 24px;
+  gap: 10px;
+  border-radius: 4px 4px 4px 4px;
+  opacity: 0px;
+  color: white;
+  background-color: #000000;
+  font-family: Pretendard;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.10000000149011612px;
+  text-align: center;
+}
+
+.bottom {
+  display: flex;
+  justify-content: center; /* 플랙스 박스 정렬 */
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: -0.30000001192092896px;
+  color: #808080;
+}
+
+p:hover {
+  color: #000000;
+}

@@ -1,0 +1,60 @@
+.boardButton {
+  display: flex;
+  justify-content: center; /* 플랙스 박스 정렬 */
+  align-items: center;
+
+  width: Hug (405px) px;
+  height: Hug (37px) px;
+  gap: 12px;
+  opacity: 0px;
+}
+
+.boardbtn {
+  width: Hug (127px) px;
+  height: Hug (37px) px;
+  padding: 8px 32px 8px 32px;
+  gap: 10px;
+  border-radius: 4px 4px 4px 4px;
+  opacity: 0px;
+  background: #eeeeee;
+}
+
+.btn:hover,
+.btn:active {
+  color: #ffffff;
+  background: #ee3918;
+}
+
+.btn:visited {
+  color: #ffffff;
+  background: #ee3918;
+}
+
+.tableContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh; /* 부모 요소의 높이를 전체 화면 높이로 설정 */
+}
+
+.tableCss {
+  width: 80%; /* 테이블 컨테이너의 너비를 설정 */
+  margin: auto; /* 자동 여백을 추가하여 가운데 정렬 */
+}
+
+table {
+  width: 100%; /* 테이블의 너비를 부모 요소에 맞추어 설정 */
+  border-collapse: collapse; /* 테이블 경계선 겹치기 */
+}
+
+thead {
+  border-bottom: 1px solid #ddd;
+}
+th,
+td {
+  padding: 8px; /* 셀 내부 여백 */
+}
+
+th {
+  text-align: center; /* 헤더 텍스트 왼쪽 정렬 */
+}

@@ -1,0 +1,887 @@
+.parent {
+  position: relative;
+  width: 1920px;
+  height: 1967px;
+  left: 2281px;
+  top: 3094px;
+
+  /* #White/white */
+  background: #ffffff;
+}
+
+.F1000004037 {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+
+  position: absolute;
+  width: 1920px;
+  height: 1958px;
+  left: 0px;
+  top: 0px;
+}
+
+.F1000004369 {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 100px 388px;
+  gap: 10px;
+
+  width: 1920px;
+  height: 1540px;
+
+  /* #White/white */
+  background: #ffffff;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.F1000004361 {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 40px;
+
+  width: 1144px;
+  height: 1340px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.F1000004368 {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 20px;
+
+  width: 262px;
+  height: 95px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.F1000004357 {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 16px;
+
+  width: 202px;
+  height: 48px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+
+  /* chevron */
+  .chevron {
+    width: 20px;
+    height: 20px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+    /* Vector */
+    .Vector {
+      position: absolute;
+      left: 33.33%;
+      right: 37.5%;
+      top: 20.83%;
+      bottom: 20.83%;
+
+      /* #Black/black */
+      border: 2px solid #000000;
+    }
+  }
+
+  /* 로그인 */
+  .Posttitle {
+    width: 166px;
+    height: 48px;
+
+    /* KOR/Bold_32px */
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 150%;
+    /* identical to box height, or 48px */
+    letter-spacing: -0.3px;
+
+    /* #Black/black */
+    color: #000000;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+  }
+}
+
+.F816639 {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 10px;
+
+  width: 262px;
+  height: 27px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+
+  /* 나는 호빵맨 */
+
+  width: 73px;
+  height: 27px;
+
+  /* KOR/Regular_16px */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 170%;
+  /* or 27px */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.003em;
+
+  /* #Black/black */
+  color: #000000;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+
+  /* Vector 119 */
+
+  width: 0px;
+  height: 18px;
+
+  /* #Grey/grey-200 */
+  border: 1px solid #e1e1e1;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+
+  /* 1분전 */
+
+  width: 35px;
+  height: 27px;
+
+  /* KOR/Regular_16px */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 170%;
+  /* or 27px */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.003em;
+
+  /* #Black/black */
+  color: #000000;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+
+  /* Vector 120 */
+
+  width: 0px;
+  height: 18px;
+
+  /* #Grey/grey-200 */
+  border: 1px solid #e1e1e1;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 3;
+  flex-grow: 0;
+
+  /* 조회수 145,3223 */
+
+  width: 114px;
+  height: 27px;
+
+  /* KOR/Regular_16px */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 170%;
+  /* or 27px */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.003em;
+
+  /* #Black/black */
+  color: #000000;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 4;
+  flex-grow: 0;
+}
+
+.contents {
+  width: 1144px;
+  height: 510px;
+
+  /* KOR/Regular 20px */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  /* or 30px */
+  letter-spacing: -0.003em;
+
+  /* #Black/black */
+  color: #000000;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+/* Frame 1000004372 */
+.F1000004372 {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 20px;
+
+  width: 219px;
+  height: 30px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+
+  /* 로그인 */
+
+  width: 92px;
+  height: 30px;
+
+  /* KOR/Regular 20px */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  /* identical to box height, or 30px */
+  letter-spacing: -0.003em;
+
+  /* 1 */
+  color: #ee3918;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+
+  /* 로그인 */
+
+  width: 107px;
+  height: 30px;
+
+  /* KOR/Bold_20px */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+  /* identical to box height, or 30px */
+  letter-spacing: -0.003em;
+
+  /* #Black/black */
+  color: #000000;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+/* Frame 1000004359 */
+.F1000004359 {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+
+  width: 373px;
+  height: 32px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 3;
+  flex-grow: 0;
+}
+
+/* Frame 1000004353 */
+.F1000004353 {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 4px 20px;
+  gap: 10px;
+
+  width: 77px;
+  height: 32px;
+
+  /* #Grey/grey-100 */
+  background: #eeeeee;
+  border-radius: 50px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+
+  /* ButtonText */
+
+  width: 37px;
+  height: 24px;
+
+  /* KOR/Medium 16px */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  /* identical to box height, or 24px */
+  text-align: center;
+  letter-spacing: -0.3px;
+
+  /* #Black/black */
+  color: #000000;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+/* Frame 1000004358 */
+.F1000004358 {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 4px 20px;
+  gap: 10px;
+
+  width: 91px;
+  height: 32px;
+
+  /* #Grey/grey-100 */
+  background: #eeeeee;
+  border-radius: 50px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+
+  /* ButtonText */
+
+  width: 51px;
+  height: 24px;
+
+  /* KOR/Medium 16px */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  /* identical to box height, or 24px */
+  text-align: center;
+  letter-spacing: -0.3px;
+
+  /* #Black/black */
+  color: #000000;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+/* Frame 1000004359 */
+.F1000004359 {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 4px 20px;
+  gap: 10px;
+
+  width: 104px;
+  height: 32px;
+
+  /* #Grey/grey-100 */
+  background: #eeeeee;
+  border-radius: 50px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+
+  /* ButtonText */
+
+  width: 64px;
+  height: 24px;
+
+  /* KOR/Medium 16px */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  /* identical to box height, or 24px */
+  text-align: center;
+  letter-spacing: -0.3px;
+
+  /* #Black/black */
+  color: #000000;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+/* Frame 1000004360 */
+.F1000004360 {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 4px 20px;
+  gap: 10px;
+
+  width: 77px;
+  height: 32px;
+
+  /* #Grey/grey-100 */
+  background: #eeeeee;
+  border-radius: 50px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 3;
+  flex-grow: 0;
+
+  /* ButtonText */
+
+  width: 37px;
+  height: 24px;
+
+  /* KOR/Medium 16px */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  /* identical to box height, or 24px */
+  text-align: center;
+  letter-spacing: -0.3px;
+
+  /* #Black/black */
+  color: #000000;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+/* Frame 1000004363 */
+.F1000004363 {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 20px;
+
+  width: 1139px;
+  height: 55px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 4;
+  flex-grow: 0;
+
+  /* Rectangle 474 */
+
+  box-sizing: border-box;
+
+  width: 977px;
+  height: 55px;
+
+  /* #White/white */
+  background: #ffffff;
+  /* #Grey/grey-200 */
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+/* Frame 1000004325 */
+.F1000004325 {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 40px;
+  gap: 10px;
+
+  width: 142px;
+  height: 55px;
+
+  /* #Black/black */
+  background: #000000;
+  border-radius: 4px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+
+  /* Content */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+
+  width: 62px;
+  height: 24px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+
+  /* ButtonText */
+
+  width: 62px;
+  height: 24px;
+
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  /* identical to box height, or 133% */
+  text-align: center;
+  letter-spacing: -0.1px;
+
+  /* #White/white */
+  color: #ffffff;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+
+  /* Vector 121 */
+
+  width: 1144px;
+  height: 0px;
+
+  /* #Grey/grey-200 */
+  border: 1px solid #e1e1e1;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 5;
+  flex-grow: 0;
+}
+
+/* Frame 1000004366 */
+.F1000004366 {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+
+  width: 1144px;
+  height: 149px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 6;
+  flex-grow: 0;
+}
+
+/* Frame 1000004371 */
+.F1000004371 {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  gap: 16px;
+
+  width: 1144px;
+  height: 30px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+
+  /* 나는 호빵맨 */
+
+  margin: 0 auto;
+  width: 91px;
+  height: 30px;
+
+  /* KOR/Bold_20px */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+  /* identical to box height, or 30px */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.003em;
+
+  /* #Black/black */
+  color: #000000;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+
+  /* EllipsisIcon */
+
+  margin: 0 auto;
+  width: 24px;
+  height: 24px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+
+  /* Vector */
+
+  position: absolute;
+  left: 43.75%;
+  right: 43.75%;
+  top: 12.4%;
+  bottom: 12.6%;
+
+  /* #Black/black */
+  background: #000000;
+
+  /* 디지털 마케팅 실무자들은(저 포함..) SEO든 CRO*든 카피라이팅이든 콘텐츠 마케팅이든 애널리틱스나 UX든 무엇을 담당하든지 간에! 이탈률에 대해 설명해야 되는 순간을 피할 순 없습니다 */
+
+  width: 1144px;
+  height: 60px;
+
+  /* KOR/Regular 20px */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  /* or 30px */
+  letter-spacing: -0.003em;
+
+  /* #Black/black */
+  color: #000000;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+
+  /* 2023.07.19 11:53:50 */
+
+  width: 141px;
+  height: 27px;
+
+  /* KOR/Regular_16px */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 170%;
+  /* or 27px */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.003em;
+
+  /* #Grey/grey-400 */
+  color: #b8b7b7;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+
+  /* Vector 122 */
+
+  width: 1144px;
+  height: 0px;
+
+  /* #Grey/grey-200 */
+  border: 1px solid #e1e1e1;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 7;
+  flex-grow: 0;
+}
+
+/* Frame 1000004367 */
+.F1000004367 {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+
+  width: 1144px;
+  height: 149px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 8;
+  flex-grow: 0;
+
+  /* 나는 호빵맨 */
+
+  width: 91px;
+  height: 30px;
+
+  /* KOR/Bold_20px */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+  /* identical to box height, or 30px */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.003em;
+
+  /* #Black/black */
+  color: #000000;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+
+  /* 디지털 마케팅 실무자들은(저 포함..) SEO든 CRO*든 카피라이팅이든 콘텐츠 마케팅이든 애널리틱스나 UX든 무엇을 담당하든지 간에! 이탈률에 대해 설명해야 되는 순간을 피할 순 없습니다 */
+
+  width: 1144px;
+  height: 60px;
+
+  /* KOR/Regular 20px */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  /* or 30px */
+  letter-spacing: -0.003em;
+
+  /* #Black/black */
+  color: #000000;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+
+  /* 2023.07.19 11:53:50 */
+
+  width: 141px;
+  height: 27px;
+
+  /* KOR/Regular_16px */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 170%;
+  /* or 27px */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.003em;
+
+  /* #Grey/grey-400 */
+  color: #b8b7b7;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
