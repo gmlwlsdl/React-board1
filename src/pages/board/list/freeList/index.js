@@ -11,13 +11,16 @@ const BoardList = () => {
   useEffect(() => {
     // 서버로부터 데이터를 가져오는 비동기 함수
     const fetchData = async () => {
-      try {
-        const response = await fetch('http://localhost:3001/api/getPost');
-        const data = await response.json();
-        setPosts(data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
+      const response = await fetch('/.netlify/functions/getPost');
+      const result = await response.json();
+      setPosts(result);
+      // try {
+      //   const response = await fetch('http://localhost:3001/api/getPost');
+      //   const data = await response.json();
+      //   setPosts(data);
+      // } catch (error) {
+      //   console.error('Error fetching data:', error);
+      // }
     };
 
     fetchData();
@@ -78,9 +81,12 @@ const BoardList = () => {
                     </div>
                   </div>
                   {/* <div className="F1000004339_f"> */}
-                  {posts.map((post) => (
-                    <TableRow post={post} />
+                  {posts.map((post, index) => (
+                    <TableRow key={index} post={post} />
                   ))}
+                  {/* {posts.map((post) => (
+                    <TableRow post={post} />
+                  ))} */}
                   {/* </div> */}
                 </div>
               </div>

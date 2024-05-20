@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -26,7 +25,7 @@ function App() {
             <Route path="/Done" element={<SigninDone />} />
             <Route path="/board" element={<BoardList />} />
             <Route path="/quest" element={<QuestList />} />
-            <Route path="/api/post/:num" element={<BoardDetail />} />
+            <Route path="/post/:num" element={<BoardDetail />} />
             <Route path="/quest/:num" element={<BoardQuestDetail />} />
           </Routes>
         </div>
@@ -37,3 +36,30 @@ function App() {
 }
 
 export default App;
+
+// import React, { useEffect, useState } from 'react';
+
+// function App() {
+//   const [data, setData] = useState([]);
+
+//   const fetchData = async () => {
+//     const response = await fetch('/.netlify/functions/getData');
+//     const result = await response.json();
+//     setData(result);
+//   };
+
+//   useEffect(() => {
+//     fetchData();
+//   }, []);
+
+//   return (
+//     <div>
+//       <h1>Fetched Data</h1>
+//       <ul>
+//         {data.map((item, index) => (
+//           <li key={index}>{item.email}</li>
+//         ))}
+//       </ul>
+//     </div>
+//   );
+// }

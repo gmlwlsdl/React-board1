@@ -11,49 +11,49 @@ const formatData = (dateString) => {
   return `${year}-${month}-${day}`;
 };
 
+const fetchPost = async (num) => {
+  try {
+    const response = await fetch(`/.netlify/functions/getPostD?num=${num}`);
+    if (response.status === 404) {
+      throw new Error('Post not found');
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching post:', error);
+    throw error;
+  }
+};
+
+const fetchTag = async (num) => {
+  try {
+    const response = await fetch(`/.netlify/functions/getPostT?num=${num}`);
+    if (response.status === 404) {
+      throw new Error('Tag not found');
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching tags:', error);
+    throw error;
+  }
+};
+
 const BoardDetail = () => {
   const { num } = useParams();
   const [post, setPost] = useState(null);
-  const [loading, setLoading] = useState(true); // loading 상태 추가
-  const [error, setError] = useState(null); // error 상태 추가
   const [tags, setTags] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchPost = async () => {
-      try {
-        const response = await fetch(`http://localhost:3001/api/post/${num}`);
-        const responseTag = await fetch(
-          `http://localhost:3001/api/post/${num}/tags`,
-        );
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const data = await response.json();
-        setPost(data);
-        if (!responseTag.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const dataTag = await responseTag.json();
-        setTags(dataTag);
-      } catch (error) {
-        console.error('Error fetching post:', error);
-        setError(error);
-      } finally {
-        setLoading(false);
-      }
+    const fetchPostData = async () => {
+      const postData = await fetchPost(num);
+      setPost(postData);
+      const tagData = await fetchTag(num);
+      setTags(tagData);
     };
-
-    fetchPost();
+    fetchPostData();
   }, [num]);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
 
   if (!post) {
     return <div>게시글을 찾을 수 없습니다.</div>;
@@ -90,11 +90,17 @@ const BoardDetail = () => {
                 <p className="FileName_d">파일이름.pdf</p>
               </div>
               <div className="F1000004359">
-                {tags.map((tag, index) => (
+                {tags.split(',').map((tagItem, index) => (
+                  <div key={index} className="F1000004353">
+                    <p className="tag_d">#{tagItem.trim()}</p>
+                  </div>
+                ))}
+
+                {/* {tags.map((tag, index) => (
                   <div key={index} className="F1000004353">
                     <p className="tag_d">#{tag.name}</p>
                   </div>
-                ))}
+                ))} */}
               </div>
               <div className="F1000004363">
                 <input type="text" className="Rectangle474_d" />
