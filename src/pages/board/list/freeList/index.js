@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router-dom';
 import '../../../../css/globalCss.css';
 import './index.css';
 import TableRow from './TableRow';
@@ -66,16 +65,16 @@ const BoardList = () => {
                       <div className="No_f">No</div>
                     </div>
                     <div className="F1000004337_f">
-                      <div className="Title_f">제목</div>
+                      <p className="Title_f">제목</p>
                     </div>
                     <div className="F1000004334_f">
-                      <div className="Writer_f">글쓴이</div>
+                      <p className="Writer_f">글쓴이</p>
                     </div>
                     <div className="F1000004335_f">
-                      <div className="Tiem_f">작성시간</div>
+                      <p className="Tiem_f">작성시간</p>
                     </div>
                     <div className="F1000004336_f">
-                      <div className="Views_f">조회수</div>
+                      <p className="Views_f">조회수</p>
                     </div>
                   </div>
                   {/* <div className="F1000004339_f"> */}

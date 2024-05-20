@@ -3,8 +3,9 @@
   box-sizing: border-box;
   width: 100%;
   height: 250px;
-  margin-top: 300px;
-  position: fixed;
+  /* min-height: 100vh; */
+  position: relative;
+  transform: translateY(200%);
   bottom: 0;
   left: 0;
   background: #ffffff;
@@ -123,7 +124,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   padding: 0;
   gap: 200px;
   width: 100%;
@@ -151,10 +152,11 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0;
+  margin-left: 100px;
+  margin-bottom: 40px;
   gap: 4px;
   width: 283px;
-  height: 71px;
+  height: 105px;
 }
 
 /* 대표 홍길동 ㅣ 사업자 등록 번호 123-4567-890 */
@@ -172,7 +174,7 @@
 
 /* 서울특별시 가가동 나나로 111-2 8층 */
 .seoul {
-  width: 194px;
+  width: 283px;
   height: 21px;
   font-family: 'Pretendard';
   font-style: normal;
@@ -185,7 +187,7 @@
 
 /* 통신 판매업 신고 제 2014-서울홍홍홍 0291호 */
 .addr {
-  width: 251px;
+  width: 283px;
   height: 21px;
   font-family: 'Pretendard';
   font-style: normal;
@@ -202,6 +204,8 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 0;
+  margin-right: 10px;
+  margin-bottom: 80px;
   gap: 4px;
   width: 203px;
   height: 71px;
@@ -209,7 +213,7 @@
 
 /* 고객지원 111-2345 */
 .number_f {
-  width: 107px;
+  width: 203px;
   height: 21px;
   font-family: 'Pretendard';
   font-style: normal;
@@ -222,7 +226,7 @@
 
 /* 이메일 help@gmail.com */
 .email_f {
-  width: 138px;
+  width: 203px;
   height: 21px;
   font-family: 'Pretendard';
   font-style: normal;
@@ -234,8 +238,8 @@
 }
 
 /* 평일 09:00 - 17:00 토,일 공휴일 휴무 */
-.time_f {
-  width: 203px;
+.time_foo {
+  width: 205px;
   height: 21px;
   font-family: 'Pretendard';
   font-style: normal;

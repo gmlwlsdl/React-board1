@@ -92,52 +92,50 @@
   flex: none;
   order: 0;
   flex-grow: 0;
+}
+/* chevron */
+.chevron {
+  width: 20px;
+  height: 20px;
 
-  /* chevron */
-  .chevron {
-    width: 20px;
-    height: 20px;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+/* Vector */
+.Vector {
+  position: absolute;
+  left: 33.33%;
+  right: 37.5%;
+  top: 20.83%;
+  bottom: 20.83%;
 
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+  /* #Black/black */
+  border: 2px solid #000000;
+}
 
-    /* Vector */
-    .Vector {
-      position: absolute;
-      left: 33.33%;
-      right: 37.5%;
-      top: 20.83%;
-      bottom: 20.83%;
+/* 로그인 */
+.Posttitle {
+  width: 166px;
+  height: 48px;
 
-      /* #Black/black */
-      border: 2px solid #000000;
-    }
-  }
+  /* KOR/Bold_32px */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 150%;
+  /* identical to box height, or 48px */
+  letter-spacing: -0.3px;
 
-  /* 로그인 */
-  .Posttitle {
-    width: 166px;
-    height: 48px;
+  /* #Black/black */
+  color: #000000;
 
-    /* KOR/Bold_32px */
-    font-family: 'Pretendard';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 150%;
-    /* identical to box height, or 48px */
-    letter-spacing: -0.3px;
-
-    /* #Black/black */
-    color: #000000;
-
-    /* Inside auto layout */
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-  }
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
 }
 
 .F816639 {

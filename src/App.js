@@ -17,17 +17,19 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Nav />
-        <Routes>
-          <Route path="/" element={<BoardList />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signin" element={<Signin />} />
-          <Route path="/Done" element={<SigninDone />} />
-          <Route path="/board" element={<BoardList />} />
-          <Route path="/quest" element={<QuestList />} />
-          <Route path="/api/post/:num" element={<BoardDetail />} />
-          <Route path="/quest/:num" element={<BoardQuestDetail />} />
-        </Routes>
+        <div id="wrap">
+          <Nav />
+          <Routes>
+            <Route path="/" element={<BoardList />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signin" element={<Signin />} />
+            <Route path="/Done" element={<SigninDone />} />
+            <Route path="/board" element={<BoardList />} />
+            <Route path="/quest" element={<QuestList />} />
+            <Route path="/api/post/:num" element={<BoardDetail />} />
+            <Route path="/quest/:num" element={<BoardQuestDetail />} />
+          </Routes>
+        </div>
         <Footer />
       </BrowserRouter>
     </>

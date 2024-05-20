@@ -17,7 +17,7 @@ function Footer() {
           <div className="F1000003057_f">
             <p className="number_f">고객지원 111-2345</p>
             <p className="email_f">이메일 help@gmail.com</p>
-            <p className="time_f">평일 09:00 - 17:00 토,일 공휴일 휴무</p>
+            <p className="time_foo">평일 09:00 - 17:00 토,일 공휴일 휴무</p>
           </div>
         </div>
         <div className="Frame816910_f">

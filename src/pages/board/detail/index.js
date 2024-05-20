@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { FaChevronLeft } from 'react-icons/fa';
 
 const BoardDetail = () => {
@@ -51,7 +51,6 @@ const BoardDetail = () => {
                   <div className="chevron">
                     <FaChevronLeft className="Vector" />
                   </div>
-
                   <p className="Posttitle">{post.title}</p>
                 </div>
                 <div className="F816639">
