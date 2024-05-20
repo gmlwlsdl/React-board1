@@ -291,7 +291,7 @@
   flex-grow: 0;
 }
 /* 첨부된 파일 */
-.uploadFile_d {
+.UploadFile_d {
   width: 92px;
   height: 30px;
   margin: 0px;
@@ -314,7 +314,7 @@
   flex-grow: 0;
 }
 /* 파일이름 */
-.fileName_d {
+.FileName_d {
   width: 150px;
   height: 30px;
   margin: 0px;
@@ -348,6 +348,7 @@
 
   width: 373px;
   height: 32px;
+  flex-wrap: wrap;
 
   /* Inside auto layout */
   flex: none;
@@ -360,7 +361,8 @@
   /* Auto layout */
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
   padding: 4px 20px;
   gap: 10px;
 
@@ -378,8 +380,9 @@
 }
 /* ButtonText */
 .tag_d {
-  width: 37px;
+  width: 60px;
   height: 24px;
+  margin-top: 7px;
 
   /* KOR/Medium 16px */
   font-family: 'Pretendard';
@@ -395,144 +398,9 @@
   color: #000000;
 
   /* Inside auto layout */
-  flex: none;
+  /* flex: none;
   order: 0;
-  flex-grow: 0;
-}
-
-/* /* Frame 1000004358 */
-.F1000004358 {
-  /* Auto layout */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 4px 20px;
-  gap: 10px;
-
-  width: 91px;
-  height: 32px;
-
-  /* #Grey/grey-100 */
-  background: #eeeeee;
-  border-radius: 50px;
-
-  /* Inside auto layout */
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-
-  /* ButtonText */
-
-  width: 51px;
-  height: 24px;
-
-  /* KOR/Medium 16px */
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 150%;
-  /* identical to box height, or 24px */
-  text-align: center;
-  letter-spacing: -0.3px;
-
-  /* #Black/black */
-  color: #000000;
-
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-}
-
-/* Frame 1000004359 */
-.F1000004359 {
-  /* Auto layout */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 4px 20px;
-  gap: 10px;
-
-  width: 104px;
-  height: 32px;
-
-  /* #Grey/grey-100 */
-  background: #eeeeee;
-  border-radius: 50px;
-
-  /* Inside auto layout */
-  flex: none;
-  order: 2;
-  flex-grow: 0;
-
-  /* ButtonText */
-
-  width: 64px;
-  height: 24px;
-
-  /* KOR/Medium 16px */
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 150%;
-  /* identical to box height, or 24px */
-  text-align: center;
-  letter-spacing: -0.3px;
-
-  /* #Black/black */
-  color: #000000;
-
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-}
-
-/* Frame 1000004360 */
-.F1000004360 {
-  /* Auto layout */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 4px 20px;
-  gap: 10px;
-
-  width: 77px;
-  height: 32px;
-
-  /* #Grey/grey-100 */
-  background: #eeeeee;
-  border-radius: 50px;
-
-  /* Inside auto layout */
-  flex: none;
-  order: 3;
-  flex-grow: 0;
-
-  /* ButtonText */
-
-  width: 37px;
-  height: 24px;
-
-  /* KOR/Medium 16px */
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 150%;
-  /* identical to box height, or 24px */
-  text-align: center;
-  letter-spacing: -0.3px;
-
-  /* #Black/black */
-  color: #000000;
-
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+  flex-grow: 0; */
 }
 
 /* Frame 1000004363 */
@@ -551,13 +419,13 @@
   flex: none;
   order: 4;
   flex-grow: 0;
-
-  /* Rectangle 474 */
-
+}
+/* Rectangle 474 */
+.Rectangle474_d {
   box-sizing: border-box;
 
   width: 977px;
-  height: 55px;
+  height: 79px;
 
   /* #White/white */
   background: #ffffff;
@@ -592,9 +460,9 @@
   flex: none;
   order: 1;
   flex-grow: 0;
-
-  /* Content */
-
+}
+/* Content */
+.contents2_d {
   /* Auto layout */
   display: flex;
   flex-direction: row;
@@ -609,11 +477,12 @@
   flex: none;
   order: 0;
   flex-grow: 0;
-
-  /* ButtonText */
-
+}
+/* ButtonText */
+.replyBtn_d {
   width: 62px;
   height: 24px;
+  margin: 0px;
 
   font-family: 'Pretendard';
   font-style: normal;
@@ -631,9 +500,9 @@
   flex: none;
   order: 0;
   flex-grow: 0;
-
-  /* Vector 121 */
-
+}
+/* Vector 121 */
+.vector121_d {
   width: 1144px;
   height: 0px;
 
@@ -647,7 +516,7 @@
 }
 
 /* Frame 1000004366 */
-.F1000004366 {
+.F1000004366_d {
   /* Auto layout */
   display: flex;
   flex-direction: column;
@@ -665,7 +534,7 @@
 }
 
 /* Frame 1000004371 */
-.F1000004371 {
+.F1000004371_d {
   /* Auto layout */
   display: flex;
   flex-direction: row;
@@ -681,9 +550,9 @@
   flex: none;
   order: 0;
   flex-grow: 0;
-
-  /* 나는 호빵맨 */
-
+}
+/* 나는 호빵맨 */
+.replyWriter_d {
   margin: 0 auto;
   width: 91px;
   height: 30px;
@@ -707,7 +576,8 @@
   flex: none;
   order: 0;
   flex-grow: 0;
-
+}
+.EllipsisIcon_d {
   /* EllipsisIcon */
 
   margin: 0 auto;
@@ -718,18 +588,20 @@
   flex: none;
   order: 1;
   flex-grow: 0;
-
-  /* Vector */
-
-  position: absolute;
+}
+/* Vector */
+.EllipVector_d {
+  position: 0px;
   left: 43.75%;
   right: 43.75%;
   top: 12.4%;
   bottom: 12.6%;
+  margin: 0px;
 
   /* #Black/black */
-  background: #000000;
-
+  /* background: #000000; */
+}
+.replyContent_d {
   /* 디지털 마케팅 실무자들은(저 포함..) SEO든 CRO*든 카피라이팅이든 콘텐츠 마케팅이든 애널리틱스나 UX든 무엇을 담당하든지 간에! 이탈률에 대해 설명해야 되는 순간을 피할 순 없습니다 */
 
   width: 1144px;
@@ -751,9 +623,9 @@
   flex: none;
   order: 1;
   flex-grow: 0;
-
-  /* 2023.07.19 11:53:50 */
-
+}
+/* 2023.07.19 11:53:50 */
+.replyTime_d {
   width: 141px;
   height: 27px;
 
@@ -776,9 +648,9 @@
   flex: none;
   order: 2;
   flex-grow: 0;
-
-  /* Vector 122 */
-
+}
+/* Vector 122 */
+.vector122_d {
   width: 1144px;
   height: 0px;
 
