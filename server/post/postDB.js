@@ -17,3 +17,16 @@ exports.getPostById = (num) => {
     });
   });
 };
+
+exports.getPostTagsById = (num) => {
+  return new Promise((resolve, reject) => {
+    db.query(
+      'SELECT t.name FROM post_tags pt JOIN tags t ON pt.tag_id = t.id WHERE pt.post_num = ?;',
+      [num],
+      (err, result) => {
+        if (err) reject(err);
+        else resolve(result);
+      },
+    );
+  });
+};

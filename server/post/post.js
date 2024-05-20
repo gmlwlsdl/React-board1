@@ -23,3 +23,18 @@ exports.getPostById = async (req, res) => {
     res.status(500).json({ message: '서버 에러', error: err });
   }
 };
+
+exports.getPostTagsById = async (req, res) => {
+  const { num } = req.params;
+  try {
+    const tags = await userDB.getPostTagsById(num);
+    if (!tags.length) {
+      // tags가 빈 배열인지 확인
+      return res.status(200).json({ message: '태그가 없습니다.' });
+    }
+    res.status(200).json(tags);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: '서버 에러', error: err });
+  }
+};

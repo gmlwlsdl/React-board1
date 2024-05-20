@@ -2,10 +2,7 @@
   position: relative;
   width: 1920px;
   height: 1967px;
-  left: 2281px;
-  top: 3094px;
 
-  /* #White/white */
   background: #ffffff;
 }
 
@@ -105,19 +102,20 @@
 }
 /* Vector */
 .Vector {
-  position: absolute;
-  left: 33.33%;
+  position: 0px;
+  /* left: 33.33%;
   right: 37.5%;
   top: 20.83%;
-  bottom: 20.83%;
+  bottom: 20.83%; */
+  position: 0px;
 
   /* #Black/black */
-  border: 2px solid #000000;
+  /* border: 2px solid #000000; */
 }
 
 /* 로그인 */
 .Posttitle {
-  width: 166px;
+  width: 180px;
   height: 48px;
 
   /* KOR/Bold_32px */
@@ -153,9 +151,9 @@
   flex: none;
   order: 1;
   flex-grow: 0;
-
-  /* 나는 호빵맨 */
-
+}
+/* 나는 호빵맨 */
+.writer_d {
   width: 73px;
   height: 27px;
 
@@ -166,7 +164,6 @@
   font-size: 16px;
   line-height: 170%;
   /* or 27px */
-  display: flex;
   align-items: center;
   text-align: center;
   letter-spacing: -0.003em;
@@ -178,9 +175,9 @@
   flex: none;
   order: 0;
   flex-grow: 0;
-
-  /* Vector 119 */
-
+}
+/* Vector 119 */
+.Vector119_d {
   width: 0px;
   height: 18px;
 
@@ -191,10 +188,10 @@
   flex: none;
   order: 1;
   flex-grow: 0;
-
-  /* 1분전 */
-
-  width: 35px;
+}
+/* 1분전 */
+.time_d {
+  width: 100px;
   height: 27px;
 
   /* KOR/Regular_16px */
@@ -204,7 +201,6 @@
   font-size: 16px;
   line-height: 170%;
   /* or 27px */
-  display: flex;
   align-items: center;
   text-align: center;
   letter-spacing: -0.003em;
@@ -216,9 +212,9 @@
   flex: none;
   order: 2;
   flex-grow: 0;
-
-  /* Vector 120 */
-
+}
+/* Vector 120 */
+.Vector120_d {
   width: 0px;
   height: 18px;
 
@@ -229,9 +225,9 @@
   flex: none;
   order: 3;
   flex-grow: 0;
-
-  /* 조회수 145,3223 */
-
+}
+/* 조회수 145,3223 */
+.views_d {
   width: 114px;
   height: 27px;
 
@@ -242,7 +238,6 @@
   font-size: 16px;
   line-height: 170%;
   /* or 27px */
-  display: flex;
   align-items: center;
   text-align: center;
   letter-spacing: -0.003em;
@@ -287,18 +282,19 @@
   padding: 0px;
   gap: 20px;
 
-  width: 219px;
+  width: 242px;
   height: 30px;
 
   /* Inside auto layout */
   flex: none;
   order: 2;
   flex-grow: 0;
-
-  /* 로그인 */
-
+}
+/* 첨부된 파일 */
+.uploadFile_d {
   width: 92px;
   height: 30px;
+  margin: 0px;
 
   /* KOR/Regular 20px */
   font-family: 'Pretendard';
@@ -316,11 +312,12 @@
   flex: none;
   order: 0;
   flex-grow: 0;
-
-  /* 로그인 */
-
-  width: 107px;
+}
+/* 파일이름 */
+.fileName_d {
+  width: 150px;
   height: 30px;
+  margin: 0px;
 
   /* KOR/Bold_20px */
   font-family: 'Pretendard';
@@ -378,9 +375,9 @@
   flex: none;
   order: 0;
   flex-grow: 0;
-
-  /* ButtonText */
-
+}
+/* ButtonText */
+.tag_d {
   width: 37px;
   height: 24px;
 
@@ -403,7 +400,7 @@
   flex-grow: 0;
 }
 
-/* Frame 1000004358 */
+/* /* Frame 1000004358 */
 .F1000004358 {
   /* Auto layout */
   display: flex;
