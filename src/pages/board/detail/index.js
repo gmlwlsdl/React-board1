@@ -14,7 +14,7 @@ const formatData = (dateString) => {
 const fetchPost = async (num) => {
   try {
     const response = await fetch(`/.netlify/functions/getPostD?num=${num}`);
-    if (response.status === 404) {
+    if (!response.ok) {
       throw new Error('Post not found');
     }
     const data = await response.json();
@@ -25,16 +25,30 @@ const fetchPost = async (num) => {
   }
 };
 
-const fetchTag = async (num) => {
+const fetchTags = async (num) => {
   try {
     const response = await fetch(`/.netlify/functions/getPostT?num=${num}`);
-    if (response.status === 404) {
-      throw new Error('Tag not found');
+    if (!response.ok) {
+      throw new Error('Tags not found');
     }
     const data = await response.json();
-    return data;
+    return data.tags;
   } catch (error) {
     console.error('Error fetching tags:', error);
+    throw error;
+  }
+};
+
+const fetchReply = async (num) => {
+  try {
+    const response = await fetch(`/.netlify/functions/getPostR?num=${num}`);
+    if (!response.ok) {
+      throw new Error('Replies not found');
+    }
+    const data = await response.json();
+    return data.replies;
+  } catch (error) {
+    console.error('Error fetching replies:', error);
     throw error;
   }
 };
@@ -43,20 +57,29 @@ const BoardDetail = () => {
   const { num } = useParams();
   const [post, setPost] = useState(null);
   const [tags, setTags] = useState([]);
+  const [replies, setReplies] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchPostData = async () => {
-      const postData = await fetchPost(num);
-      setPost(postData);
-      const tagData = await fetchTag(num);
-      setTags(tagData);
+      try {
+        const postData = await fetchPost(num);
+        setPost(postData);
+
+        const tagData = await fetchTags(num);
+        setTags(tagData.split(',').map((tag) => tag.trim()));
+
+        const replyData = await fetchReply(num);
+        setReplies(replyData);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
     };
     fetchPostData();
   }, [num]);
 
   if (!post) {
-    return <div>게시글을 찾을 수 없습니다.</div>;
+    return <div>Loading..</div>;
   }
 
   return (
@@ -90,17 +113,11 @@ const BoardDetail = () => {
                 <p className="FileName_d">파일이름.pdf</p>
               </div>
               <div className="F1000004359">
-                {tags.split(',').map((tagItem, index) => (
+                {tags.map((tag, index) => (
                   <div key={index} className="F1000004353">
-                    <p className="tag_d">#{tagItem.trim()}</p>
+                    <p className="tag_d">{tag}</p>
                   </div>
                 ))}
-
-                {/* {tags.map((tag, index) => (
-                  <div key={index} className="F1000004353">
-                    <p className="tag_d">#{tag.name}</p>
-                  </div>
-                ))} */}
               </div>
               <div className="F1000004363">
                 <input type="text" className="Rectangle474_d" />
@@ -109,20 +126,23 @@ const BoardDetail = () => {
                     <p className="replyBtn_d">댓글작성</p>
                   </div>
                 </div>
-                <div className="vector121_d"></div>
               </div>
-              <br></br>
-              <div className="F1000004366_d">
-                <div className="F1000004371_d">
-                  <p className="replyWriter_d">댓글작성자</p>
-                  <div className="EllipsisIcon_d">
-                    <FaEllipsisV className="EllipVector_d" />
+              <br />
+              {/* <div className="vector121_d"></div> */}
+              {replies.map((reply, index) => (
+                <div key={index} className="F1000004366_d">
+                  <p className="vector122_d"></p>
+                  <div className="F1000004371_d">
+                    <p className="replyWriter_d">{reply.writer}</p>
+                    <div className="EllipsisIcon_d">
+                      <FaEllipsisV className="EllipVector_d" />
+                    </div>
                   </div>
+                  <p className="replyContent_d">{reply.contents}</p>
+                  <p className="replyTime_d">{formatData(reply.created_at)}</p>
                 </div>
-                <p className="replyContent_d">댓글내용</p>
-                <p className="replyTime_d">댓글작성시간</p>
-              </div>
-              <p className="vector122_d"></p>
+              ))}
+              {/* <p className="vector122_d"></p> */}
             </div>
           </div>
         </div>

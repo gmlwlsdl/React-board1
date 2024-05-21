@@ -30,30 +30,31 @@ const handler = async (event) => {
     }
 
     const database = await connectToDatabase();
-    const collection = database.collection(process.env.POST_TAGS_COLLECTION);
+    const collection = database.collection(process.env.REPLIES_COLLECTION);
 
-    // 특정 num 값에 해당하는 게시물 정보를 가져옴
-    const result = await collection.findOne({ post_num: parseInt(num) });
+    // 특정 post_num 값에 해당하는 댓글들을 가져옴
+    const replies = await collection
+      .find({ post_num: parseInt(num) })
+      .toArray();
 
-    // 게시물이 존재하지 않는 경우
-    if (!result) {
+    // 댓글이 존재하지 않는 경우
+    if (!replies || replies.length === 0) {
       return {
         statusCode: 404,
         headers: {
           'Access-Control-Allow-Origin': '*',
         },
-        body: JSON.stringify({ error: 'Post not found' }),
+        body: JSON.stringify({ error: 'Replies not found' }),
       };
     }
 
-    // 게시물의 태그를 추출하여 반환
-    const tags = result.tag;
+    // 댓글을 반환
     return {
       statusCode: 200,
       headers: {
         'Access-Control-Allow-Origin': '*',
       },
-      body: JSON.stringify({ tags }),
+      body: JSON.stringify({ replies }),
     };
   } catch (error) {
     return {
