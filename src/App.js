@@ -15,7 +15,7 @@ import SigninDone from './pages/sign/signIn/done';
 function App() {
   return (
     <>
-      <BrowserRouter basename="{process.env.PUBLIC_URL}">
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <div id="wrap">
           <Nav />
           <Routes>
