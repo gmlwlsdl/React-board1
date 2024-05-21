@@ -2,7 +2,7 @@
   "name": "React-board",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://master--werid1212.netlify.app/React-board1",
+  "homepage": "https://gmlwlsdl.github.io/React-board1",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -10,6 +10,7 @@
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "express": "^4.19.2",
+    "gh-pages": "^6.1.1",
     "mongodb": "^6.6.2",
     "mongoose": "^8.4.0",
     "react": "^18.3.1",
@@ -24,7 +25,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
