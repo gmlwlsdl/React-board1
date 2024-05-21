@@ -2,7 +2,7 @@
   "name": "React-board",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://gmlwlsdl.github.io/React-board1",
+  "homepage": "https://gmlwlsdl.github.io/React-board1/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
