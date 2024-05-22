@@ -194,8 +194,9 @@
 
   /* Auto layout */
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
   padding: 12px 40px;
   gap: 10px;
 
@@ -214,15 +215,17 @@
   /* Auto layout */
   padding: 0px;
   gap: 8px;
+  text-align: center;
+  margin: 0px auto;
 
-  width: 47px;
+  width: 70px;
   height: 24px;
 
   /* Inside auto layout */
 }
 /* ButtonText */
 .ButtonText3_n {
-  width: 47px;
+  width: 70px;
   height: 24px;
   margin: 0px;
 

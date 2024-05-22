@@ -44,8 +44,7 @@ function Nav() {
         <div className="F1000004324_n">
           <div className="Content3_n">
             {sessionName ? (
-              <div className="logout_n">
-                {sessionName} 님
+              <div style={{ width: '70px', height: '24px' }}>
                 <p className="ButtonText3_n" onClick={handleLogout}>
                   로그아웃
                 </p>
