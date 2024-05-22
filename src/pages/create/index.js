@@ -1,7 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import './index.css';
 
 const WritePost = () => {
+  const [title, setTitle] = useState('');
+  const [contents, setContents] = useState('');
+  const [file, setFile] = useState('');
+  const [tag, setTag] = useState('');
+  const [writer, setWriter] = useState('');
+  const navigate = useNavigate();
+
+  const uploadPost = async (event) => {
+    event.preventDefault();
+    const sessionName = window.sessionStorage.getItem('nickname');
+    setWriter(sessionName);
+
+    try {
+      const res = await fetch('/.netlify/functions/writePost', {
+        method: 'POST',
+        body: JSON.stringify({ title, contents, writer, tag }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      const data = await res.json();
+      alert(data.message);
+
+      if (res.status === 200) {
+        setTitle('');
+        setContents('');
+        setWriter('');
+        setFile('');
+        setTag('');
+        navigate('/');
+      }
+    } catch (err) {
+      console.error('Error:', err);
+    }
+  };
+
   return (
     <div>
       <div className="parent_w">
@@ -15,6 +54,8 @@ const WritePost = () => {
                   <div className="F1000004354_w">
                     <input
                       type="text"
+                      value={title}
+                      onChange={(e) => setTitle(e.target.value)}
                       placeholder="게시글 제목"
                       className="writeTitle_w"
                     />
@@ -25,6 +66,8 @@ const WritePost = () => {
                   <div className="F1000004354_w" style={{ height: '320px' }}>
                     <input
                       type="text"
+                      value={contents}
+                      onChange={(e) => setContents(e.target.value)}
                       placeholder="게시글 내용"
                       className="writeContents_w"
                     />
@@ -35,6 +78,8 @@ const WritePost = () => {
                   <div className="F1000004354_w">
                     <input
                       type="text"
+                      value={file}
+                      onChange={(e) => setFile(e.target.value)}
                       placeholder="첨부파일.pdf"
                       className="writeFile_w"
                     />
@@ -45,14 +90,16 @@ const WritePost = () => {
                   <div className="F1000004354_w">
                     <input
                       type="text"
-                      placeholder="해시태그"
+                      value={tag}
+                      onChange={(e) => setTag(e.target.value)}
+                      placeholder="ex)#유머, #유익함, #토론"
                       className="writeTag_w"
                     />
                   </div>
                 </div>
               </div>
               <div className="F1000004326_w">
-                <div className="Content2_w">
+                <div className="Content2_w" onClick={uploadPost}>
                   <p className="writeBtn_w">게시글 작성</p>
                 </div>
               </div>

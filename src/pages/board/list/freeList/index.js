@@ -11,7 +11,10 @@ const BoardList = () => {
   const Navigate = useNavigate();
 
   useEffect(() => {
-    // 서버로부터 데이터를 가져오는 비동기 함수
+    const sessionName = window.sessionStorage.getItem('nickname');
+    if (sessionName) {
+      setSessionName(sessionName);
+    }
     const fetchData = async () => {
       const response = await fetch('/.netlify/functions/getPost');
       const result = await response.json();
@@ -30,8 +33,12 @@ const BoardList = () => {
   };
 
   const write = () => {
-    // if()
-    Navigate('/create');
+    if (!sessionName) {
+      alert('로그인이 되어 있지 않습니다.');
+      Navigate('/');
+    } else {
+      Navigate('/create');
+    }
   };
 
   return (
