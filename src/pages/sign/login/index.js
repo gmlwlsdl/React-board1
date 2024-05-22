@@ -18,10 +18,9 @@ const Login = () => {
     }
 
     try {
-      const res = await fetch('http://localhost:3001/api/loginCheck', {
+      const res = await fetch('/.netlify/functions/loginCheck', {
         method: 'POST',
         body: JSON.stringify({ userEmail: email, userPW: pw }),
-        credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -31,13 +30,11 @@ const Login = () => {
       alert(data.message);
 
       if (res.status === 200) {
-        if (data.userEmail && data.userPW && data.nickname) {
+        if (data.userEmail && data.nickname) {
           sessionStorage.setItem('email', data.userEmail);
-          sessionStorage.setItem('pw', data.userPW);
           sessionStorage.setItem('nickname', data.nickname);
           sessionStorage.setItem('login', '1');
-          navigate('/board');
-          window.location.reload('/Nav');
+          navigate('/');
         } else {
           console.error('Data 객체에 필요한 속성이 없습니다.');
         }

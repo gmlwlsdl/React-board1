@@ -58,6 +58,7 @@ const BoardDetail = () => {
   const [post, setPost] = useState(null);
   const [tags, setTags] = useState([]);
   const [replies, setReplies] = useState([]);
+  const [replyContent, setReplyContent] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -77,6 +78,42 @@ const BoardDetail = () => {
     };
     fetchPostData();
   }, [num]);
+
+  const handleReplyContentChange = (event) => {
+    setReplyContent(event.target.value);
+  };
+
+  const writeReply = async () => {
+    if (replyContent.trim() === '') {
+      alert('댓글 내용을 입력해주세요.');
+      return;
+    }
+
+    try {
+      const response = await fetch('/.netlify/functions/writeReply', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          post_num: num,
+          contents: replyContent,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to write reply');
+      }
+
+      const result = await response.json();
+      console.log('Reply written successfully:', result);
+      setReplyContent(''); // Clear the input field
+      // fetchPostData(); // Refresh the post data to include the new reply
+    } catch (error) {
+      console.error('Error writing reply:', error);
+      alert('댓글 작성 중 오류가 발생했습니다.');
+    }
+  };
 
   if (!post) {
     return <div>Loading..</div>;
@@ -120,9 +157,15 @@ const BoardDetail = () => {
                 ))}
               </div>
               <div className="F1000004363">
-                <input type="text" className="Rectangle474_d" />
+                <input
+                  type="text"
+                  id="contents"
+                  className="Rectangle474_d"
+                  value={replyContent}
+                  onChange={handleReplyContentChange}
+                />
                 <div className="F1000004325">
-                  <div className="contents2_d">
+                  <div className="contents2_d" onClick={writeReply}>
                     <p className="replyBtn_d">댓글작성</p>
                   </div>
                 </div>
