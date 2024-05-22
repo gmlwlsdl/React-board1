@@ -60,7 +60,8 @@ const BoardDetail = () => {
   const [tags, setTags] = useState([]);
   const [replies, setReplies] = useState([]);
   const [replyContent, setReplyContent] = useState('');
-  const [showDropdown, setShowDropdown] = useState(false);
+  const [writer, setWriter] = useState('');
+  const [dropdownStates, setDropdownStates] = useState({});
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -83,6 +84,7 @@ const BoardDetail = () => {
 
   const writeReply = async () => {
     const sessionName = window.sessionStorage.getItem('nickname');
+    setWriter(sessionName);
 
     if (replyContent.trim() === '') {
       alert('댓글 내용을 입력해주세요.');
@@ -115,8 +117,38 @@ const BoardDetail = () => {
     }
   };
 
-  const toggleDropdown = () => {
-    setShowDropdown(!showDropdown);
+  const deleteReply = async (replyID) => {
+    try {
+      console.log(replyID);
+      const response = await fetch('/.netlify/functions/deleteReply', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          replyId: replyID,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to delete reply');
+      }
+
+      const result = await response.json();
+      console.log('Reply deleted successfully:', result);
+      // 댓글 삭제 후 상태 업데이트
+      setReplies(replies.filter((reply) => reply.replyID !== replyID));
+    } catch (error) {
+      console.error('Error deleting reply:', error);
+      alert('댓글 삭제 중 오류가 발생했습니다.');
+    }
+  };
+
+  const toggleDropdown = (replyID) => {
+    setDropdownStates((prevStates) => ({
+      ...prevStates,
+      [replyID]: !prevStates[replyID],
+    }));
   };
 
   if (!post) {
@@ -175,7 +207,6 @@ const BoardDetail = () => {
                 </div>
               </div>
               <br />
-              {/* <div className="vector121_d"></div> */}
               {replies.map((reply, index) => (
                 <div key={index} className="F1000004366_d">
                   <p className="vector122_d"></p>
@@ -184,9 +215,9 @@ const BoardDetail = () => {
                     <div className="EllipsisIcon_d">
                       <FaEllipsisV
                         className="EllipVector_d"
-                        onClick={toggleDropdown}
+                        onClick={() => toggleDropdown(reply.replyID)}
                       />
-                      {showDropdown && (
+                      {dropdownStates[reply.replyID] && (
                         <Dropdown className="dropdownMenu">
                           {
                             <>
@@ -196,7 +227,10 @@ const BoardDetail = () => {
                                 </div>
                               </div>
                               <div className="Assets2_drop">
-                                <div className="item2_drop">
+                                <div
+                                  className="item2_drop"
+                                  onClick={() => deleteReply(reply.replyID)}
+                                >
                                   <p className="option2">삭제</p>
                                 </div>
                               </div>

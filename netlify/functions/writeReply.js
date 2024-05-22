@@ -36,11 +36,25 @@ const handler = async (event) => {
 
     const postNumInt64 = Number(post_num);
 
+    const generateRandomString = (length) => {
+      let result = '';
+      const characters =
+        'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      const charactersLength = characters.length;
+      for (let i = 0; i < length; i++) {
+        result += characters.charAt(
+          Math.floor(Math.random() * charactersLength),
+        );
+      }
+      return result;
+    };
+
     const newReply = {
       post_num: postNumInt64,
       contents,
       writer,
       created_at: new Date(),
+      replyID: generateRandomString(10),
     };
 
     const result = await repliesCollection.insertOne(newReply);

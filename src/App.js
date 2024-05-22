@@ -7,7 +7,7 @@ import Footer from './pages/footer/index';
 import BoardList from './pages/board/list/freeList';
 import QuestList from './pages/board/list/questList';
 import BoardDetail from './pages/board/detail';
-import BoardQuestDetail from './pages/board/detail/index2';
+import BoardQuestDetail from './pages/board/detail/index';
 import Login from './pages/sign/login';
 import Signin from './pages/sign/signIn';
 import SigninDone from './pages/sign/signIn/done';
