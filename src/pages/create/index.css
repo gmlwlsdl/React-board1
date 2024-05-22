@@ -1,0 +1,518 @@
+/* 게시글 작성 */
+.parent_w {
+  position: relative;
+  width: auto;
+  height: auto;
+  /* width: 1920px;
+  height: 1339px;
+  left: 8470px;
+  top: 3094px; */
+
+  /* #White/white */
+  background: #ffffff;
+}
+
+/* Frame 1000004037 */
+.F1000004037_w {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+
+  position: absolute;
+  width: 1903px;
+  height: 1339px;
+  left: 0px;
+  top: 0px;
+}
+/* Frame 1000004376 */
+.F1000004376_w {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 100px 388px;
+  gap: 10px;
+
+  width: 527px;
+  height: 921px;
+
+  /* #White/white */
+  background: #ffffff;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+/* Frame 1000004374 */
+.F1000004374_w {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 40px;
+
+  width: 1144px;
+  height: 721px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+/* 로그인 */
+.write_post {
+  width: 145px;
+  height: 48px;
+
+  /* KOR/Bold_32px */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 150%;
+  /* identical to box height, or 48px */
+  letter-spacing: -0.3px;
+
+  color: #040404;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+/* Frame 1000004375 */
+.F1000004375_w {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 20px;
+
+  width: 1144px;
+  height: 545px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+/* Frame 1000004363 */
+.F1000004363_w {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 20px;
+
+  width: 1144px;
+  height: 55px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+/* 로그인 */
+.title_w {
+  width: 140px;
+  height: 48px;
+
+  /* KOR/Bold_20px */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+  /* or 30px */
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.003em;
+
+  color: #040404;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+/* Frame 1000004354 */
+.F1000004354_w {
+  box-sizing: border-box;
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px;
+  /* padding: 8px 20px; */
+  gap: 10px;
+
+  width: 952;
+  height: 294px;
+
+  /* #White/white */
+  background: #ffffff;
+  /* #Grey/grey-200 */
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+/* ButtonText */
+.writeTitle_w {
+  width: 944px;
+  height: 30px;
+
+  /* KOR/Regular 20px */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  /* identical to box height, or 30px */
+  letter-spacing: -0.003em;
+
+  /* #Black/black */
+  color: #000000;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+/* Frame 1000004364 */
+.F1000004364_w {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 20px;
+
+  width: 1144px;
+  height: 320px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+/* 로그인 */
+.contents_w {
+  width: 140px;
+  height: 48px;
+
+  /* KOR/Bold_20px */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+  /* or 30px */
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.003em;
+
+  color: #040404;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+/* Frame 1000004354 */
+.F1000004354_w {
+  box-sizing: border-box;
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 8px 20px;
+  gap: 10px;
+
+  width: 984px;
+  height: 320px;
+
+  /* #White/white */
+  background: #ffffff;
+  /* #Grey/grey-200 */
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+/* ButtonText */
+.writeContents_w {
+  width: 944px;
+  height: 288px;
+
+  /* KOR/Regular 20px */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  /* or 30px */
+  letter-spacing: -0.003em;
+
+  /* #Black/black */
+  color: #000000;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+/* Frame 1000004365 */
+.F1000004365_w {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 20px;
+
+  width: 1144px;
+  height: 55px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+/* 로그인 */
+.file_w {
+  width: 140px;
+  height: 48px;
+
+  /* KOR/Bold_20px */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+  /* or 30px */
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.003em;
+
+  color: #040404;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+/* Frame 1000004354 */
+.F1000004354_w {
+  box-sizing: border-box;
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 8px 20px;
+  gap: 10px;
+
+  width: 984px;
+  height: 55px;
+
+  /* #White/white */
+  background: #ffffff;
+  /* #Grey/grey-200 */
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+/* ButtonText */
+.writeFile_w {
+  width: 944px;
+  height: 30px;
+
+  /* KOR/Regular 20px */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  /* identical to box height, or 30px */
+  letter-spacing: -0.003em;
+
+  /* #Black/black */
+  color: #000000;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+/* Frame 1000004366 */
+.F1000004366_w {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 20px;
+
+  width: 1144px;
+  height: 55px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 3;
+  flex-grow: 0;
+}
+/* 로그인 */
+.tag_w {
+  width: 140px;
+  height: 48px;
+
+  /* KOR/Bold_20px */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+  /* or 30px */
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.003em;
+
+  color: #040404;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+/* Frame 1000004354 */
+.F1000004354_w {
+  box-sizing: border-box;
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 8px 20px;
+  gap: 10px;
+
+  width: 984px;
+  height: 55px;
+
+  /* #White/white */
+  background: #ffffff;
+  /* #Grey/grey-200 */
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+/* ButtonText */
+.writeTag_w {
+  width: 944px;
+  height: 30px;
+
+  /* KOR/Regular 20px */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  /* identical to box height, or 30px */
+  letter-spacing: -0.003em;
+
+  /* #Black/black */
+  color: #000000;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+/* Frame 1000004326 */
+.F1000004326_w {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 40px;
+  gap: 10px;
+
+  width: 162px;
+  height: 48px;
+
+  /* #Black/black */
+  background: #000000;
+  border-radius: 4px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+/* Content */
+.Content2_w {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+
+  width: 82px;
+  height: 24px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+/* ButtonText */
+.writeBtn_w {
+  width: 82px;
+  height: 24px;
+
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  /* identical to box height, or 133% */
+  text-align: center;
+  letter-spacing: -0.1px;
+
+  /* #White/white */
+  color: #ffffff;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}

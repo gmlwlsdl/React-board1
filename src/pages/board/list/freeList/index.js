@@ -7,6 +7,7 @@ import TableRow from './TableRow';
 
 const BoardList = () => {
   const [posts, setPosts] = useState([]);
+  const [sessionName, setSessionName] = useState('');
   const Navigate = useNavigate();
 
   useEffect(() => {
@@ -15,13 +16,6 @@ const BoardList = () => {
       const response = await fetch('/.netlify/functions/getPost');
       const result = await response.json();
       setPosts(result);
-      // try {
-      //   const response = await fetch('http://localhost:3001/api/getPost');
-      //   const data = await response.json();
-      //   setPosts(data);
-      // } catch (error) {
-      //   console.error('Error fetching data:', error);
-      // }
     };
 
     fetchData();
@@ -36,6 +30,7 @@ const BoardList = () => {
   };
 
   const write = () => {
+    // if()
     Navigate('/create');
   };
 
@@ -85,14 +80,9 @@ const BoardList = () => {
                       <p className="Views_f">조회수</p>
                     </div>
                   </div>
-                  {/* <div className="F1000004339_f"> */}
                   {posts.map((post, index) => (
                     <TableRow key={index} post={post} />
                   ))}
-                  {/* {posts.map((post) => (
-                    <TableRow post={post} />
-                  ))} */}
-                  {/* </div> */}
                 </div>
                 <div className="F1000004349_f">
                   <div className="Frame41_f">
