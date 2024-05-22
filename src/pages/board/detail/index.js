@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { FaChevronLeft, FaEllipsisV } from 'react-icons/fa';
 import './index.css';
+import { Dropdown } from 'react-bootstrap';
 
 const formatData = (dateString) => {
   const date = new Date(dateString);
@@ -59,7 +60,7 @@ const BoardDetail = () => {
   const [tags, setTags] = useState([]);
   const [replies, setReplies] = useState([]);
   const [replyContent, setReplyContent] = useState('');
-  const [writer, setWriter] = useState('');
+  const [showDropdown, setShowDropdown] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -82,7 +83,6 @@ const BoardDetail = () => {
 
   const writeReply = async () => {
     const sessionName = window.sessionStorage.getItem('nickname');
-    setWriter(sessionName);
 
     if (replyContent.trim() === '') {
       alert('댓글 내용을 입력해주세요.');
@@ -113,6 +113,10 @@ const BoardDetail = () => {
       console.error('Error writing reply:', error);
       alert('댓글 작성 중 오류가 발생했습니다.');
     }
+  };
+
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
   };
 
   if (!post) {
@@ -178,14 +182,34 @@ const BoardDetail = () => {
                   <div className="F1000004371_d">
                     <p className="replyWriter_d">{reply.writer}</p>
                     <div className="EllipsisIcon_d">
-                      <FaEllipsisV className="EllipVector_d" />
+                      <FaEllipsisV
+                        className="EllipVector_d"
+                        onClick={toggleDropdown}
+                      />
+                      {showDropdown && (
+                        <Dropdown className="dropdownMenu">
+                          {
+                            <>
+                              <div className="Assets1_drop">
+                                <div className="item1_drop">
+                                  <p className="option1">수정</p>
+                                </div>
+                              </div>
+                              <div className="Assets2_drop">
+                                <div className="item2_drop">
+                                  <p className="option2">삭제</p>
+                                </div>
+                              </div>
+                            </>
+                          }
+                        </Dropdown>
+                      )}
                     </div>
                   </div>
                   <p className="replyContent_d">{reply.contents}</p>
                   <p className="replyTime_d">{formatData(reply.created_at)}</p>
                 </div>
               ))}
-              {/* <p className="vector122_d"></p> */}
             </div>
           </div>
         </div>
