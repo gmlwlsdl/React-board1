@@ -1,5 +1,5 @@
 /* 게시판 */
-.parent_f {
+.parent_q {
   position: relative;
   width: auto;
   height: auto;
@@ -8,7 +8,7 @@
   background: #ffffff;
 }
 /* Frame 1000004037 */
-.F1000004037_f {
+.F1000004037_q {
   /* Auto layout */
 
   align-items: center;
@@ -21,7 +21,7 @@
     top: 0px; */
 }
 /* Frame 1000004356 */
-.F1000004356_f {
+.F1000004356_q {
   /* Auto layout */
   display: flex;
   flex-direction: column;
@@ -38,7 +38,7 @@
   flex-grow: 0;
 }
 /* Frame 1000004327 */
-.F1000004327_f {
+.F1000004327_q {
   /* Auto layout */
   display: flex;
   flex-direction: column;
@@ -55,7 +55,7 @@
   flex-grow: 0;
 }
 /* 로그인 */
-.Login_f {
+.Login_q {
   width: 55px;
   height: 30px;
 
@@ -78,7 +78,7 @@
 }
 
 /* 로그인 */
-.Login2_f {
+.Login2_q {
   width: 138px;
   height: 48px;
 
@@ -100,7 +100,7 @@
 }
 
 /* Frame 1000004355 */
-.F1000004355_f {
+.F1000004355_q {
   /* Auto layout */
   display: flex;
   flex-direction: column;
@@ -118,7 +118,7 @@
   flex-grow: 0;
 }
 /* Frame 1000004353 */
-.F1000004353_f {
+.F1000004353_q {
   /* Auto layout */
   display: flex;
   justify-content: center; /* 플랙스 박스 정렬 */
@@ -135,7 +135,7 @@
   flex-grow: 0;
 }
 /* Frame 1000004324 */
-.F10000043242_f {
+.F10000043242_q {
   /* Auto layout */
   display: flex;
   flex-direction: column;
@@ -148,7 +148,7 @@
   height: 37px;
 
   /* 1 */
-  background: #ee3918;
+  background: #eeeeee;
   border-radius: 4px;
 
   /* Inside auto layout */
@@ -157,7 +157,7 @@
   flex-grow: 0;
 }
 /* ButtonText */
-.ButtonText0_f {
+.ButtonText0_q {
   width: 63px;
   height: 21px;
   margin: 10px;
@@ -173,7 +173,7 @@
   letter-spacing: -0.3px;
 
   /* #White/white */
-  color: #ffffff;
+  color: #000000;
 
   /* Inside auto layout */
   flex: none;
@@ -182,7 +182,7 @@
 }
 
 /* Frame 10000043532 */
-.F10000043532_f {
+.F10000043532_q {
   /* Auto layout */
   display: flex;
   flex-direction: column;
@@ -194,7 +194,7 @@
   height: 37px;
 
   /* #Grey/grey-100 */
-  background: #eeeeee;
+  background: #ee3918;
   border-radius: 4px;
 
   /* Inside auto layout */
@@ -203,7 +203,7 @@
   flex-grow: 0;
 }
 /* ButtonText */
-.ButtonText1_f {
+.ButtonText1_q {
   width: 63px;
   height: 21px;
   margin: 10px;
@@ -219,7 +219,7 @@
   letter-spacing: -0.3px;
 
   /* #Black/black */
-  color: #000000;
+  color: #eeeeee;
 
   /* Inside auto layout */
   flex: none;
@@ -228,7 +228,7 @@
 }
 
 /* Frame 1000004354 */
-.F1000004354_f {
+.F1000004354_q {
   /* Auto layout */
   display: flex;
   flex-direction: column;
@@ -250,7 +250,7 @@
 }
 
 /* ButtonText */
-.ButtonText2_f {
+.ButtonText2_q {
   width: 63px;
   height: 21px;
   margin: 10px;
@@ -275,7 +275,7 @@
 }
 
 /* Frame 1000004351 */
-.F1000004351_f {
+.F1000004351_q {
   /* Auto layout */
   display: flex;
   flex-direction: column;
@@ -292,7 +292,7 @@
   flex-grow: 0;
 }
 /* Frame 1000004340 */
-.F1000004340_f {
+.F1000004340_q {
   /* Auto layout */
   display: flex;
   flex-direction: column;
@@ -308,7 +308,7 @@
   flex-grow: 0;
 }
 /* Frame 1000004338 */
-.F1000004338_f {
+.F1000004338_q {
   /* Auto layout */
   display: flex;
   flex-direction: row;
@@ -324,7 +324,7 @@
   flex-grow: 0;
 }
 /* Frame 1000004333 */
-.F1000004333_f {
+.F1000004333_q {
   box-sizing: border-box;
 
   /* Auto layout */
@@ -346,7 +346,7 @@
   flex-grow: 0;
 }
 /* No */
-.No_f {
+.No_q {
   width: 21px;
   height: 24px;
 
@@ -368,7 +368,7 @@
 }
 
 /* Frame 1000004337 */
-.F1000004337_f {
+.F1000004337_q {
   box-sizing: border-box;
 
   /* Auto layout */
@@ -390,7 +390,7 @@
   flex-grow: 0;
 }
 /* 제목 */
-.Title_f {
+.Title_q {
   width: 28px;
   height: 24px;
 
@@ -412,7 +412,7 @@
 }
 
 /* Frame 1000004334 */
-.F1000004334_f {
+.F1000004334_q {
   box-sizing: border-box;
 
   /* Auto layout */
@@ -434,7 +434,7 @@
   flex-grow: 0;
 }
 /* 글쓴이 */
-.Writer_f {
+.Writer_q {
   width: 41px;
   height: 24px;
 
@@ -456,7 +456,7 @@
 }
 
 /* Frame 1000004335 */
-.F1000004335_f {
+.F1000004335_q {
   box-sizing: border-box;
 
   /* Auto layout */
@@ -478,7 +478,7 @@
   flex-grow: 0;
 }
 /* 작성시간 */
-.Time_f {
+.Time_q {
   width: 55px;
   height: 24px;
 
@@ -500,7 +500,7 @@
 }
 
 /* Frame 1000004336 */
-.F1000004336_f {
+.F1000004336_q {
   box-sizing: border-box;
 
   /* Auto layout */
@@ -522,7 +522,7 @@
   flex-grow: 0;
 }
 /* 조회수 */
-.Views_f {
+.Views_q {
   width: 41px;
   height: 24px;
 
@@ -544,7 +544,7 @@
 }
 
 /* Frame 1000004339 */
-.F1000004339_f {
+.F1000004339_q {
   /* Auto layout */
   display: flex;
   flex-direction: row;
@@ -560,7 +560,7 @@
   flex-grow: 0;
 }
 /* Frame 10000043332 */
-.F10000043332_f {
+.F10000043332_q {
   box-sizing: border-box;
 
   /* Auto layout */
@@ -585,7 +585,7 @@
   flex-grow: 0;
 }
 /* 10 */
-.no_f {
+.no_q {
   width: 17px;
   height: 27px;
 
@@ -607,7 +607,7 @@
 }
 
 /* Frame 10000043372 */
-.F10000043372_f {
+.F10000043372_q {
   box-sizing: border-box;
 
   /* Auto layout */
@@ -632,7 +632,7 @@
   flex-grow: 0;
 }
 /* 제목 */
-.Title_f {
+.Title_q {
   width: 42px;
   height: 27px;
 
@@ -654,7 +654,7 @@
 }
 
 /* Frame 10000043342 */
-.F10000043342_f {
+.F10000043342_q {
   box-sizing: border-box;
 
   /* Auto layout */
@@ -679,7 +679,7 @@
   flex-grow: 0;
 }
 /* 글쓴이 */
-.writer_f {
+.writer_q {
   width: 42px;
   height: 27px;
 
@@ -701,7 +701,7 @@
 }
 
 /* Frame 10000043352 */
-.F10000043352_f {
+.F10000043352_q {
   box-sizing: border-box;
 
   /* Auto layout */
@@ -726,7 +726,7 @@
   flex-grow: 0;
 }
 /* 작성시간 */
-.time_f {
+.time_q {
   width: 56px;
   height: 27px;
 
@@ -748,7 +748,7 @@
 }
 
 /* Frame 10000043362 */
-.F10000043362_f {
+.F10000043362_q {
   box-sizing: border-box;
 
   /* Auto layout */
@@ -773,7 +773,7 @@
   flex-grow: 0;
 }
 /* 조회수 */
-.view_f {
+.view_q {
   width: 42px;
   height: 27px;
 
@@ -807,7 +807,7 @@
 }
 
 /* Frame 1000004349   */
-.F1000004349_f {
+.F1000004349_q {
   /* Auto layout */
   display: flex;
   flex-direction: row;
@@ -824,7 +824,7 @@
   flex-grow: 0;
 }
 /* Frame 41 */
-.Frame41_f {
+.Frame41_q {
   /* Auto layout */
   display: flex;
   flex-direction: row;
@@ -842,7 +842,7 @@
   flex-grow: 0;
 }
 /* chevron */
-.Chevron_f {
+.Chevron_q {
   width: 20px;
   height: 20px;
 
@@ -852,7 +852,7 @@
   flex-grow: 0;
 }
 /* Vector */
-.Vector_f {
+.Vector_q {
   position: absolute;
   left: 33.33%;
   right: 37.5%;
@@ -864,7 +864,7 @@
 }
 
 /* Frame 40 */
-.Frame40_f {
+.Frame40_q {
   /* Auto layout */
   display: flex;
   flex-direction: row;
@@ -882,7 +882,7 @@
   flex-grow: 0;
 }
 /* 1 */
-.num_f {
+.num_q {
   width: 7px;
   height: 21px;
 
@@ -896,7 +896,7 @@
   letter-spacing: -0.3px;
 }
 /* 1 */
-.num1_f {
+.num1_q {
   color: #ee3918;
 
   /* Inside auto layout */
@@ -906,7 +906,7 @@
 }
 
 /* 2 */
-.num2_f {
+.num2_q {
   width: 9px;
   height: 21px;
 
@@ -928,7 +928,7 @@
 }
 
 /* chevron */
-.Chevron2_f {
+.Chevron2_q {
   width: 20px;
   height: 20px;
 
@@ -938,7 +938,7 @@
   flex-grow: 0;
 }
 /* Vector */
-.Vector2_f {
+.Vector2_q {
   position: absolute;
   left: 62.5%;
   right: 8.33%;
@@ -951,7 +951,7 @@
 }
 
 /* Frame 1000004325 */
-.F1000004325_f {
+.F1000004325_q {
   /* Auto layout */
   display: flex;
   flex-direction: column;
@@ -972,7 +972,7 @@
   flex-grow: 0;
 }
 /* Content */
-.Content2_f {
+.Content2_q {
   /* Auto layout */
   display: flex;
   flex-direction: row;
@@ -989,7 +989,7 @@
   flex-grow: 0;
 }
 /* ButtonText */
-.ButtonText3_f {
+.ButtonText3_q {
   width: 47px;
   height: 24px;
 

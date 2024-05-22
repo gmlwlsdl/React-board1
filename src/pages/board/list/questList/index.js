@@ -4,7 +4,7 @@ import '../../../../css/globalCss.css';
 import './index.css';
 import TableRow from './TableRow';
 
-const BoardList = () => {
+const QuestList = () => {
   const [posts, setPosts] = useState([]);
   const Navigate = useNavigate();
 
@@ -14,13 +14,6 @@ const BoardList = () => {
       const response = await fetch('/.netlify/functions/getPostQ');
       const result = await response.json();
       setPosts(result);
-      // try {
-      //   const response = await fetch('http://localhost:3001/api/getPost');
-      //   const data = await response.json();
-      //   setPosts(data);
-      // } catch (error) {
-      //   console.error('Error fetching data:', error);
-      // }
     };
 
     fetchData();
@@ -36,51 +29,51 @@ const BoardList = () => {
 
   return (
     <div>
-      <div className="parent_f">
-        <div className="F1000004037_f">
-          <div className="F1000004356_f">
-            <div className="F1000004327_f">
-              <p className="Login_f">board</p>
-              <p className="Login2_f">자유게시판</p>
+      <div className="parent_q">
+        <div className="F1000004037_q">
+          <div className="F1000004356_q">
+            <div className="F1000004327_q">
+              <p className="Login_q">board</p>
+              <p className="Login2_q">자유게시판</p>
             </div>
-            <div className="F1000004355_f">
-              <div className="F1000004353_f">
-                <div className="F10000043532_f">
-                  <p className="ButtonText1_f" onClick={handleBoard}>
+            <div className="F1000004355_q">
+              <div className="F1000004353_q">
+                <div className="F10000043242_q">
+                  <p className="ButtonText0_q" onClick={handleBoard}>
                     자유 게시판
                   </p>
                 </div>
-                <div className="F10000043242_f">
-                  <p className="ButtonText0_f" onClick={handleQuest}>
+                <div className="F10000043532_q">
+                  <p className="ButtonText1_q" onClick={handleQuest}>
                     질문 게시판
                   </p>
                 </div>
-                <div className="F1000004354_f">
-                  <p className="ButtonText2_f" onClick={handleQuest}>
+                <div className="F1000004354_q">
+                  <p className="ButtonText2_q" onClick={handleQuest}>
                     질문 게시판
                   </p>
                 </div>
               </div>
-              <div className="F1000004351_f">
-                <div className="F1000004340_f">
-                  <div className="F1000004338_f">
-                    <div className="F1000004333_f">
-                      <div className="No_f">No</div>
+              <div className="F1000004351_q">
+                <div className="F1000004340_q">
+                  <div className="F1000004338_q">
+                    <div className="F1000004333_q">
+                      <div className="No_q">No</div>
                     </div>
-                    <div className="F1000004337_f">
-                      <p className="Title_f">제목</p>
+                    <div className="F1000004337_q">
+                      <p className="Title_q">제목</p>
                     </div>
-                    <div className="F1000004334_f">
-                      <p className="Writer_f">글쓴이</p>
+                    <div className="F1000004334_q">
+                      <p className="Writer_q">글쓴이</p>
                     </div>
-                    <div className="F1000004335_f">
-                      <p className="Tiem_f">작성시간</p>
+                    <div className="F1000004335_q">
+                      <p className="Tiem_q">작성시간</p>
                     </div>
-                    <div className="F1000004336_f">
-                      <p className="Views_f">조회수</p>
+                    <div className="F1000004336_q">
+                      <p className="Views_q">조회수</p>
                     </div>
                   </div>
-                  {/* <div className="F1000004339_f"> */}
+                  {/* <div className="F1000004339_q"> */}
                   {posts.map((post, index) => (
                     <TableRow key={index} post={post} />
                   ))}
@@ -98,4 +91,4 @@ const BoardList = () => {
   );
 };
 
-export default BoardList;
+export default QuestList;

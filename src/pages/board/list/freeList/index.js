@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { FaChevronLeft } from 'react-icons/fa';
 import '../../../../css/globalCss.css';
 import './index.css';
 import TableRow from './TableRow';
@@ -32,6 +33,10 @@ const BoardList = () => {
 
   const handleQuest = () => {
     Navigate('/quest');
+  };
+
+  const write = () => {
+    Navigate('/create');
   };
 
   return (
@@ -88,6 +93,27 @@ const BoardList = () => {
                     <TableRow post={post} />
                   ))} */}
                   {/* </div> */}
+                </div>
+                <div className="F1000004349_f">
+                  <div className="Frame41_f">
+                    <div className="Chevron_f">
+                      <FaChevronLeft className="Vector_f" />
+                    </div>
+                    <div className="Frame40_f">
+                      <p className="num1_f">1</p>
+                      <p className="num2_f">2</p>
+                      <p className="numdot_f">...</p>
+                      <p className="num5_f">5</p>
+                    </div>
+                    <div className="Chevron2_f">
+                      <FaChevronLeft className="Vector2_f" />
+                    </div>
+                  </div>
+                  <div className="F1000004325_f">
+                    <div className="Content2_f" onClick={write}>
+                      <p className="ButtonText3_f">글쓰기</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

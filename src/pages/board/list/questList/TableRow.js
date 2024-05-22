@@ -12,23 +12,23 @@ const formatData = (dateString) => {
 
 const TableRow = ({ post }) => {
   return (
-    <div className="F1000004339_f">
-      <td className="F10000043332_f">
-        <div className="no_f">{post.num}</div>
+    <div className="F1000004339_q">
+      <td className="F10000043332_q">
+        <div className="no_q">{post.num}</div>
       </td>
-      <td className="F10000043372_f">
-        <div className="title_f">
+      <td className="F10000043372_q">
+        <div className="title_q">
           <Link to={`/post/${post.num}`}>{post.title}</Link>
         </div>
       </td>
-      <td className="F10000043342_f">
-        <div className="writer_f">{post.writer}</div>
+      <td className="F10000043342_q">
+        <div className="writer_q">{post.writer}</div>
       </td>
-      <td className="F10000043352_f">
-        <div className="time_f">{formatData(post.created_at)}</div>
+      <td className="F10000043352_q">
+        <div className="time_q">{formatData(post.created_at)}</div>
       </td>
-      <td className="F10000043362_f">
-        <div className="view_f">{post.views}</div>
+      <td className="F10000043362_q">
+        <div className="view_q">{post.views}</div>
       </td>
     </div>
   );

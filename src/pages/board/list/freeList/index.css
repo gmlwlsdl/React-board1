@@ -829,7 +829,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   padding: 0px;
   gap: 24px;
 
@@ -846,6 +846,11 @@
   width: 20px;
   height: 20px;
 
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
@@ -854,13 +859,13 @@
 /* Vector */
 .Vector_f {
   position: absolute;
-  left: 33.33%;
+  /* left: 33.33%;
   right: 37.5%;
   top: 20.83%;
-  bottom: 20.83%;
+  bottom: 20.83%; */
 
   /* Grayscale / Black */
-  border: 2px solid #000000;
+  border: 0px solid #000000;
 }
 
 /* Frame 40 */
@@ -882,7 +887,7 @@
   flex-grow: 0;
 }
 /* 1 */
-.num_f {
+.num1_f {
   width: 7px;
   height: 21px;
 
@@ -894,9 +899,7 @@
   line-height: 150%;
   /* identical to box height, or 21px */
   letter-spacing: -0.3px;
-}
-/* 1 */
-.num1_f {
+
   color: #ee3918;
 
   /* Inside auto layout */
@@ -927,10 +930,57 @@
   flex-grow: 0;
 }
 
+.numdot_f {
+  width: 9px;
+  height: 21px;
+
+  /* KOR/regular_14px */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  /* identical to box height, or 21px */
+  letter-spacing: -0.3px;
+
+  color: #000000;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+
+.num5_f {
+  width: 9px;
+  height: 21px;
+
+  /* KOR/regular_14px */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  /* identical to box height, or 21px */
+  letter-spacing: -0.3px;
+
+  color: #000000;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 3;
+  flex-grow: 0;
+}
+
 /* chevron */
 .Chevron2_f {
   width: 20px;
   height: 20px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 
   /* Inside auto layout */
   flex: none;
@@ -940,13 +990,13 @@
 /* Vector */
 .Vector2_f {
   position: absolute;
-  left: 62.5%;
+  /* left: 62.5%;
   right: 8.33%;
   top: 79.17%;
-  bottom: -37.5%;
+  bottom: -37.5%; */
 
   /* Grayscale / Black */
-  border: 2px solid #000000;
+  border: 0px solid #000000;
   transform: rotate(180deg);
 }
 
@@ -955,7 +1005,7 @@
   /* Auto layout */
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   padding: 12px 40px;
   gap: 10px;
 
