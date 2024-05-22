@@ -45,13 +45,13 @@ const BoardList = () => {
             </div>
             <div className="F1000004355_f">
               <div className="F1000004353_f">
-                <div className="F10000043242_f">
-                  <p className="ButtonText0_f" onClick={handleBoard}>
+                <div className="F10000043532_f">
+                  <p className="ButtonText1_f" onClick={handleBoard}>
                     자유 게시판
                   </p>
                 </div>
-                <div className="F10000043532_f">
-                  <p className="ButtonText1_f" onClick={handleQuest}>
+                <div className="F10000043242_f">
+                  <p className="ButtonText0_f" onClick={handleQuest}>
                     질문 게시판
                   </p>
                 </div>
