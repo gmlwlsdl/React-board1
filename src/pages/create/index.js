@@ -19,7 +19,7 @@ const WritePost = () => {
     try {
       const res = await fetch('/.netlify/functions/writePost', {
         method: 'POST',
-        body: JSON.stringify({ title, contents, writer, tag }),
+        body: JSON.stringify({ title, contents, writer, file, tag }),
         headers: {
           'Content-Type': 'application/json',
         },
@@ -80,7 +80,7 @@ const WritePost = () => {
                       type="text"
                       value={file}
                       onChange={(e) => setFile(e.target.value)}
-                      placeholder="첨부파일.pdf"
+                      placeholder="ex)첨부파일.pdf"
                       className="writeFile_w"
                     />
                   </div>

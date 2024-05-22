@@ -16,9 +16,9 @@ const connectToDatabase = async () => {
 
 const handler = async (event) => {
   try {
-    const { title, contents, writer, tag } = JSON.parse(event.body);
+    const { title, contents, writer, file, tag } = JSON.parse(event.body);
 
-    if (!title || !contents || !writer || !tag) {
+    if (!title || !contents || !writer || !file || !tag) {
       return {
         statusCode: 400,
         headers: {
@@ -44,6 +44,7 @@ const handler = async (event) => {
       writer,
       created_at: new Date(),
       views: 0,
+      file,
     };
 
     await postsCollection.insertOne(newPost);

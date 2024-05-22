@@ -147,7 +147,7 @@ const BoardDetail = () => {
               <div className="contents">{post.contents}</div>
               <div className="F1000004372">
                 <p className="UploadFile_d">첨부된 파일</p>
-                <p className="FileName_d">파일이름.pdf</p>
+                <p className="FileName_d">{post.file}</p>
               </div>
               <div className="F1000004359">
                 {tags.map((tag, index) => (
