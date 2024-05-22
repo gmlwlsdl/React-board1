@@ -27,7 +27,7 @@ const BoardList = () => {
   }, []);
 
   const handleBoard = () => {
-    Navigate('/board');
+    Navigate('/');
   };
 
   const handleQuest = () => {

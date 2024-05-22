@@ -1,107 +1,101 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../../../../css/globalCss.css';
-import '../questList/index.css';
+import './index.css';
+import TableRow from './TableRow';
 
-const QuestList = () => {
-  const changeBtn = (e) => {
-    const btns = document.querySelectorAll('.boardbtn');
-    btns.forEach((boardbtn) => {
-      if (e.currentTarget === boardbtn) {
-        boardbtn.classList.add('active');
-      } else {
-        boardbtn.classList.remove('active');
-      }
-    });
-    console.log(e.currentTarget);
+const BoardList = () => {
+  const [posts, setPosts] = useState([]);
+  const Navigate = useNavigate();
+
+  useEffect(() => {
+    // 서버로부터 데이터를 가져오는 비동기 함수
+    const fetchData = async () => {
+      const response = await fetch('/.netlify/functions/getPostQ');
+      const result = await response.json();
+      setPosts(result);
+      // try {
+      //   const response = await fetch('http://localhost:3001/api/getPost');
+      //   const data = await response.json();
+      //   setPosts(data);
+      // } catch (error) {
+      //   console.error('Error fetching data:', error);
+      // }
+    };
+
+    fetchData();
+  }, []);
+
+  const handleBoard = () => {
+    Navigate('/');
+  };
+
+  const handleQuest = () => {
+    Navigate('/quest');
   };
 
   return (
-    <div className="parent" style={{ margin: '100px, 388px, 100px, 388px' }}>
-      <div style={{ fontWeight: '700' }}>
-        <p style={{ color: '#EE3918', fontSize: '20px' }}>board</p>
-        <p style={{ color: '#040404', fontSize: '32px' }}>질문게시판</p>
-      </div>
-
-      <div className="boardButton">
-        <div>
-          <Link to="/board">
-            <Button
-              children="자유게시판"
-              variant="primary"
-              className="boardbtn"
-              onClick={changeBtn}
-            />
-          </Link>
+    <div>
+      <div className="parent_f">
+        <div className="F1000004037_f">
+          <div className="F1000004356_f">
+            <div className="F1000004327_f">
+              <p className="Login_f">board</p>
+              <p className="Login2_f">자유게시판</p>
+            </div>
+            <div className="F1000004355_f">
+              <div className="F1000004353_f">
+                <div className="F10000043242_f">
+                  <p className="ButtonText0_f" onClick={handleBoard}>
+                    자유 게시판
+                  </p>
+                </div>
+                <div className="F10000043532_f">
+                  <p className="ButtonText1_f" onClick={handleQuest}>
+                    질문 게시판
+                  </p>
+                </div>
+                <div className="F1000004354_f">
+                  <p className="ButtonText2_f" onClick={handleQuest}>
+                    질문 게시판
+                  </p>
+                </div>
+              </div>
+              <div className="F1000004351_f">
+                <div className="F1000004340_f">
+                  <div className="F1000004338_f">
+                    <div className="F1000004333_f">
+                      <div className="No_f">No</div>
+                    </div>
+                    <div className="F1000004337_f">
+                      <p className="Title_f">제목</p>
+                    </div>
+                    <div className="F1000004334_f">
+                      <p className="Writer_f">글쓴이</p>
+                    </div>
+                    <div className="F1000004335_f">
+                      <p className="Tiem_f">작성시간</p>
+                    </div>
+                    <div className="F1000004336_f">
+                      <p className="Views_f">조회수</p>
+                    </div>
+                  </div>
+                  {/* <div className="F1000004339_f"> */}
+                  {posts.map((post, index) => (
+                    <TableRow key={index} post={post} />
+                  ))}
+                  {/* {posts.map((post) => (
+                    <TableRow post={post} />
+                  ))} */}
+                  {/* </div> */}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div>
-          <Link to="/quest">
-            <Button
-              children="질문게시판"
-              variant="primary"
-              className="boardbtn"
-              style={{ backgroundColor: '#ee3918', color: '#eeeeee' }}
-              onClick={changeBtn}
-            />
-          </Link>
-        </div>
-        <div>
-          <Link to="/quest">
-            <Button
-              children="질문 게시판"
-              variant="primary"
-              className="boardbtn"
-              onClick={changeBtn}
-            />
-          </Link>
-        </div>
-      </div>
-
-      <div className="tableContainer">
-        <div className="tableCss">
-          <table>
-            <colgroup>
-              <col width={'5%'} />
-              <col width={'50%'} />
-              <col width={'15%'} />
-              <col width={'15%'} />
-              <col width={'15%'} />
-            </colgroup>
-
-            <thead>
-              <tr>
-                <th>No</th>
-                <th>제목</th>
-                <th>글쓴이</th>
-                <th>작성시간</th>
-                <th>조회수</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>
-                  <Link to={'/quest/1'}>질문임</Link>
-                </td>
-                <td>2023.3.3</td>
-                <td>관리자</td>
-                <td>3</td>
-              </tr>
-            </tbody>
-          </table>
-          <p>페이지 넘기기</p>
-        </div>
-      </div>
-
-      <div>
-        <Link to="/list/create">
-          <Button children="Write" variant="primary" />
-        </Link>
       </div>
     </div>
   );
 };
 
-export default QuestList;
+export default BoardList;
