@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { FaChevronLeft, FaEllipsisV } from 'react-icons/fa';
 import './index.css';
+import ModalComponent from './ModalComponent';
 import { Dropdown } from 'react-bootstrap';
 
 const formatData = (dateString) => {
@@ -61,7 +62,10 @@ const BoardDetail = () => {
   const [replies, setReplies] = useState([]);
   const [replyContent, setReplyContent] = useState('');
   const [writer, setWriter] = useState('');
+  const [showModal, setShowModal] = useState(false); // 모달 상태
+  const [replyToDelete, setReplyToDelete] = useState(null); // 삭제할 댓글 ID
   const [dropdownStates, setDropdownStates] = useState({});
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -119,7 +123,6 @@ const BoardDetail = () => {
 
   const deleteReply = async (replyID) => {
     try {
-      console.log(replyID);
       const response = await fetch('/.netlify/functions/deleteReply', {
         method: 'POST',
         headers: {
@@ -149,6 +152,22 @@ const BoardDetail = () => {
       ...prevStates,
       [replyID]: !prevStates[replyID],
     }));
+  };
+
+  const openModal = (replyID) => {
+    setReplyToDelete(replyID);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setReplyToDelete(null);
+    navigate(`/post/${num}`);
+  };
+
+  const handleConfirmDelete = async () => {
+    await deleteReply(replyToDelete);
+    handleCloseModal();
   };
 
   if (!post) {
@@ -229,7 +248,7 @@ const BoardDetail = () => {
                               <div className="Assets2_drop">
                                 <div
                                   className="item2_drop"
-                                  onClick={() => deleteReply(reply.replyID)}
+                                  onClick={() => openModal(reply.replyID)}
                                 >
                                   <p className="option2">삭제</p>
                                 </div>
@@ -248,6 +267,11 @@ const BoardDetail = () => {
           </div>
         </div>
       </div>
+      <ModalComponent
+        show={showModal}
+        handleClose={handleCloseModal}
+        handleConfirm={handleConfirmDelete}
+      />
     </div>
   );
 };

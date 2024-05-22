@@ -1,0 +1,276 @@
+/* Frame 1000004554 */
+.F1000004554_modal {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+
+  position: relative;
+  text-align: center;
+  /* $box-shadow-lg */
+  filter: drop-shadow(0px 8px 24px rgba(0, 0, 0, 0.1));
+}
+
+/* Assets/modal */
+.assets1_modal {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 32px 24px 16px;
+  gap: 16px;
+
+  width: 400px;
+  height: 118px;
+
+  /* #White/white */
+  background: #ffffff;
+  border-radius: 8px 8px 0px 0px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+/* ✍️ Header Title */
+.headerTitle_modal {
+  width: 66px;
+  height: 27px;
+
+  /* KOR/Bold 18px */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 150%;
+  /* identical to box height, or 27px */
+  text-align: center;
+  letter-spacing: -0.3px;
+
+  /* #Black/black */
+  color: #000000;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+/* ✍️ Label */
+.headerLabel_modal {
+  width: 195px;
+  height: 27px;
+
+  /* KOR/Regular_16px */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 170%;
+  /* or 27px */
+  text-align: center;
+  letter-spacing: -0.003em;
+
+  /* #Grey/grey-700 */
+  color: #414040;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+/* Assets/modal */
+.assets2_modal {
+  box-sizing: border-box;
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 16px 24px;
+  gap: 10px;
+
+  width: 400px;
+  height: 72px;
+
+  /* #White/white */
+  background: #ffffff;
+  /* #Grey/grey-100 */
+  border-top: 1px solid #eeeeee;
+  border-radius: 0px 0px 8px 8px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+/* Frame 816923 */
+.Frame816923_modal {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0px;
+  gap: 10px;
+
+  width: 126px;
+  height: 40px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+/* button */
+.btn_modal {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+
+  width: 58px;
+  height: 40px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+/* Button */
+
+/* Button */
+.btn1_modal {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 9px 16px;
+  gap: 10px;
+
+  width: 58px;
+  height: 40px;
+
+  /* #Grey/grey-300 */
+  background: #cfcfcf;
+  border-radius: 4px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+/* Content */
+.content_modal {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
+
+  width: 26px;
+  height: 22px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+/* ButtonText */
+.btnText_modal {
+  width: 26px;
+  height: 22px;
+
+  /* KOR/subtitle-1ㅣ0.875rem
+
+Subtitle 14px
+*/
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  /* identical to box height, or 157% */
+  text-align: center;
+  letter-spacing: -0.1px;
+
+  /* #White/white */
+  color: #ffffff;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+/* Button */
+.btn2_modal {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 9px 16px;
+  gap: 10px;
+
+  width: 58px;
+  height: 40px;
+
+  /* #Black/black */
+  background: #000000;
+  border-radius: 4px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+/* Content */
+.content2_modal {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
+
+  width: 26px;
+  height: 22px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+/* ButtonText */
+.btnText2_modal {
+  width: 26px;
+  height: 22px;
+
+  /* KOR/subtitle-1ㅣ0.875rem
+
+Subtitle 14px
+*/
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  /* identical to box height, or 157% */
+  text-align: center;
+  letter-spacing: -0.1px;
+
+  /* #White/white */
+  color: #ffffff;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
