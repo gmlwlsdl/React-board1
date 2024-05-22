@@ -59,6 +59,7 @@ const BoardDetail = () => {
   const [tags, setTags] = useState([]);
   const [replies, setReplies] = useState([]);
   const [replyContent, setReplyContent] = useState('');
+  const [writer, setWriter] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -79,11 +80,10 @@ const BoardDetail = () => {
     fetchPostData();
   }, [num]);
 
-  const handleReplyContentChange = (event) => {
-    setReplyContent(event.target.value);
-  };
-
   const writeReply = async () => {
+    const sessionName = window.sessionStorage.getItem('nickname');
+    setWriter(sessionName);
+
     if (replyContent.trim() === '') {
       alert('댓글 내용을 입력해주세요.');
       return;
@@ -98,6 +98,7 @@ const BoardDetail = () => {
         body: JSON.stringify({
           post_num: num,
           contents: replyContent,
+          writer: sessionName,
         }),
       });
 
@@ -107,8 +108,7 @@ const BoardDetail = () => {
 
       const result = await response.json();
       console.log('Reply written successfully:', result);
-      setReplyContent(''); // Clear the input field
-      // fetchPostData(); // Refresh the post data to include the new reply
+      setReplyContent('');
     } catch (error) {
       console.error('Error writing reply:', error);
       alert('댓글 작성 중 오류가 발생했습니다.');
@@ -162,7 +162,7 @@ const BoardDetail = () => {
                   id="contents"
                   className="Rectangle474_d"
                   value={replyContent}
-                  onChange={handleReplyContentChange}
+                  onChange={(e) => setReplyContent(e.target.value)}
                 />
                 <div className="F1000004325">
                   <div className="contents2_d" onClick={writeReply}>
