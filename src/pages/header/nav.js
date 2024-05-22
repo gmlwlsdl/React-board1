@@ -31,7 +31,7 @@ function Nav() {
   };
 
   const handleBoard = () => {
-    navigate('/board');
+    navigate('/');
   };
 
   const handleDash = () => {
