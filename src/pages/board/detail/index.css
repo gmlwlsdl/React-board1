@@ -57,6 +57,7 @@
   flex-grow: 0;
 }
 
+/* Frame 1000004368 */
 .F1000004368 {
   /* Auto layout */
   display: flex;
@@ -65,7 +66,7 @@
   padding: 0px;
   gap: 20px;
 
-  width: 262px;
+  width: 1144px;
   height: 95px;
 
   /* Inside auto layout */
@@ -74,14 +75,36 @@
   flex-grow: 0;
 }
 
+/* Frame 1000004370 */
+.F1000004370 {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  gap: 20px;
+
+  width: 1144px;
+  height: 48px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+/* Frame 1000004357 */
 .F1000004357 {
   /* Auto layout */
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
   gap: 16px;
 
+  /* margin: 0 auto; */
   width: 202px;
   height: 48px;
 
@@ -103,19 +126,17 @@
 /* Vector */
 .Vector {
   position: 0px;
-  /* left: 33.33%;
+  left: 33.33%;
   right: 37.5%;
   top: 20.83%;
-  bottom: 20.83%; */
-  position: 0px;
+  bottom: 20.83%;
 
   /* #Black/black */
   /* border: 2px solid #000000; */
 }
-
 /* 로그인 */
 .Posttitle {
-  width: 180px;
+  width: 300px;
   height: 48px;
 
   /* KOR/Bold_32px */
@@ -135,7 +156,29 @@
   order: 1;
   flex-grow: 0;
 }
+/* EllipsisIcon */
+.CllipsisIcon0_d {
+  margin: 0px;
+  width: 32px;
+  height: 32px;
 
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+/* Vector */
+.Vector0_d {
+  position: 0px;
+  left: 43.75%;
+  right: 43.75%;
+  top: 12.4%;
+  bottom: 12.6%;
+
+  /* #Black/black */
+  /* background: #000000; */
+}
+/* Frame 816639 */
 .F816639 {
   /* Auto layout */
   display: flex;
@@ -144,7 +187,7 @@
   padding: 0px;
   gap: 10px;
 
-  width: 262px;
+  width: 280px;
   height: 27px;
 
   /* Inside auto layout */
@@ -154,7 +197,7 @@
 }
 /* 나는 호빵맨 */
 .writer_d {
-  width: 73px;
+  width: 50px;
   height: 27px;
 
   /* KOR/Regular_16px */
@@ -164,6 +207,7 @@
   font-size: 16px;
   line-height: 170%;
   /* or 27px */
+  display: flex;
   align-items: center;
   text-align: center;
   letter-spacing: -0.003em;
@@ -191,9 +235,9 @@
 }
 /* 1분전 */
 .time_d {
-  width: 100px;
+  width: 110px;
   height: 27px;
-
+  padding: 0px 0px 0px 13px;
   /* KOR/Regular_16px */
   font-family: 'Pretendard';
   font-style: normal;
@@ -201,6 +245,7 @@
   font-size: 16px;
   line-height: 170%;
   /* or 27px */
+  display: flex;
   align-items: center;
   text-align: center;
   letter-spacing: -0.003em;
@@ -238,6 +283,7 @@
   font-size: 16px;
   line-height: 170%;
   /* or 27px */
+  display: flex;
   align-items: center;
   text-align: center;
   letter-spacing: -0.003em;
@@ -250,7 +296,6 @@
   order: 4;
   flex-grow: 0;
 }
-
 .contents {
   width: 1144px;
   height: 510px;

@@ -16,9 +16,9 @@ const connectToDatabase = async () => {
 
 const handler = async (event) => {
   try {
-    const { title, contents, writer, file, tag } = JSON.parse(event.body);
+    const { title, contents, writer, file } = JSON.parse(event.body);
 
-    if (!title || !contents || !writer || !file || !tag) {
+    if (!title || !contents || !writer || !file) {
       return {
         statusCode: 400,
         headers: {
@@ -53,7 +53,7 @@ const handler = async (event) => {
     // 태그를 저장
     const newTags = {
       post_num: postCount + 1,
-      tag: tag,
+      tag: '#질문',
       type: '질문',
     };
 

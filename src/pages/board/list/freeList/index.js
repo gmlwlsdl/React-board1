@@ -81,7 +81,7 @@ const BoardList = () => {
                       <p className="Writer_f">글쓴이</p>
                     </div>
                     <div className="F1000004335_f">
-                      <p className="Tiem_f">작성시간</p>
+                      <p className="Time_f">작성시간</p>
                     </div>
                     <div className="F1000004336_f">
                       <p className="Views_f">조회수</p>

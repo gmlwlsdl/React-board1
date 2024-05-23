@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { FaChevronLeft, FaEllipsisV } from 'react-icons/fa';
 import './index.css';
 import ModalComponent from './ModalComponent';
+import PostModalComponent from './PostModalComponent';
 import { Dropdown } from 'react-bootstrap';
 
 const formatData = (dateString) => {
@@ -63,13 +64,20 @@ const BoardQuestDetail = () => {
   const [replyContent, setReplyContent] = useState('');
   const [writer, setWriter] = useState('');
   const [showModal, setShowModal] = useState(false); // 모달 상태
+  const [showPostModal, setShowPostModal] = useState(false); // 모달 상태
   const [replyToDelete, setReplyToDelete] = useState(null); // 삭제할 댓글 ID
+  const [postNumToDelete, setPostNumToDelete] = useState(null);
+  const [postWriterToDelete, setPostWriterToDelete] = useState(null);
   const [dropdownStates, setDropdownStates] = useState({});
 
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchPostData = async () => {
+      const sessionName = window.sessionStorage.getItem('nickname');
+      if (sessionName) {
+        setWriter(sessionName);
+      }
       try {
         const postData = await fetchPost(num);
         setPost(postData);
@@ -87,9 +95,6 @@ const BoardQuestDetail = () => {
   }, [num]);
 
   const writeReply = async () => {
-    const sessionName = window.sessionStorage.getItem('nickname');
-    setWriter(sessionName);
-
     if (replyContent.trim() === '') {
       alert('댓글 내용을 입력해주세요.');
       return;
@@ -104,7 +109,7 @@ const BoardQuestDetail = () => {
         body: JSON.stringify({
           post_num: num,
           contents: replyContent,
-          writer: sessionName,
+          writer: writer,
         }),
       });
 
@@ -148,6 +153,30 @@ const BoardQuestDetail = () => {
     }
   };
 
+  // deletePost 함수를 deleteQPost 함수로 수정
+  const deletePost = async (postNum, postWriter) => {
+    try {
+      const response = await fetch('/.netlify/functions/deleteQPost', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          num: postNum,
+          writer: postWriter,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to delete post');
+      }
+      navigate('/');
+    } catch (error) {
+      console.error('Error deleting post:', error);
+      alert('게시글 삭제 중 오류가 발생했습니다.'); // 수정된 부분
+    }
+  };
+
   const toggleDropdown = (replyID) => {
     setDropdownStates((prevStates) => ({
       ...prevStates,
@@ -155,7 +184,15 @@ const BoardQuestDetail = () => {
     }));
   };
 
+  const posttoggleDropdown = (postWriter) => {
+    setDropdownStates((prevStates) => ({
+      ...prevStates,
+      [postWriter]: !prevStates[postWriter],
+    }));
+  };
+
   const openModal = (replyID, replyWriter) => {
+    console.log(writer);
     if (writer !== replyWriter) {
       alert('댓글 작성자만 관리할 수 있습니다.');
       handleCloseModal();
@@ -165,15 +202,39 @@ const BoardQuestDetail = () => {
     setShowModal(true);
   };
 
+  const openPostModal = (postNum, postWriter) => {
+    console.log(writer);
+    if (writer !== postWriter) {
+      alert('게시글 작성자만 관리할 수 있습니다.');
+      handleClosePostModal();
+      return;
+    }
+    setPostNumToDelete(postNum);
+    setPostWriterToDelete(postWriter);
+    setShowPostModal(true);
+  };
+
   const handleCloseModal = () => {
     setShowModal(false);
     setReplyToDelete(null);
-    navigate(`/quest/${num}`);
+    navigate(`/post/${num}`);
+  };
+
+  const handleClosePostModal = () => {
+    setShowPostModal(false);
+    setPostNumToDelete(null);
+    setPostWriterToDelete(null);
+    navigate(`/`);
   };
 
   const handleConfirmDelete = async () => {
     await deleteReply(replyToDelete);
     handleCloseModal();
+  };
+
+  const handleConfirmPostDelete = async () => {
+    await deletePost(postNumToDelete, postWriterToDelete);
+    handleClosePostModal();
   };
 
   if (!post) {
@@ -187,14 +248,45 @@ const BoardQuestDetail = () => {
           <div className="F1000004369">
             <div className="F1000004361">
               <div className="F1000004368">
-                <div className="F1000004357">
-                  <div className="chevron">
-                    <FaChevronLeft
-                      className="Vector"
-                      onClick={() => navigate('/')}
-                    />
+                <div className="F1000004370">
+                  <div className="F1000004357">
+                    <div className="chevron">
+                      <FaChevronLeft
+                        className="Vector"
+                        onClick={() => navigate('/')}
+                      />
+                    </div>
+                    <p className="Posttitle">{post.title}</p>
                   </div>
-                  <p className="Posttitle">{post.title}</p>
+                  <div className="CllipsisIcon0_d">
+                    <FaEllipsisV
+                      className="Vector0_d"
+                      onClick={() => posttoggleDropdown(post.num)}
+                    />
+                    {dropdownStates[post.num] && (
+                      <Dropdown className="dropdownMenu">
+                        {
+                          <>
+                            <div className="Assets1_drop">
+                              <div className="item1_drop">
+                                <p className="option1">수정</p>
+                              </div>
+                            </div>
+                            <div className="Assets2_drop">
+                              <div
+                                className="item2_drop"
+                                onClick={() =>
+                                  openPostModal(post.num, post.writer)
+                                }
+                              >
+                                <p className="option2">삭제</p>
+                              </div>
+                            </div>
+                          </>
+                        }
+                      </Dropdown>
+                    )}
+                  </div>
                 </div>
                 <div className="F816639">
                   <p className="writer_d">{post.writer}</p>
@@ -275,6 +367,11 @@ const BoardQuestDetail = () => {
           </div>
         </div>
       </div>
+      <PostModalComponent
+        show={showPostModal}
+        handleClose={handleClosePostModal}
+        handleConfirm={handleConfirmPostDelete}
+      />
       <ModalComponent
         show={showModal}
         handleClose={handleCloseModal}

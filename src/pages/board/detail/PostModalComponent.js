@@ -2,14 +2,14 @@ import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import './modal.css';
 
-const ModalComponent = ({ show, handleClose, handleConfirm }) => {
+const PostModalComponent = ({ show, handleClose, handleConfirm }) => {
   return (
     <Modal show={show} onHide={handleClose} dialogClassName="F1000004554_modal">
       <Modal.Header className="assets1_modal">
-        <Modal.Title className="headerTitle_modal">댓글 삭제</Modal.Title>
+        <Modal.Title className="headerTitle_modal">게시글 삭제</Modal.Title>
       </Modal.Header>
       <Modal.Body className="headerLabel_modal">
-        해당 댓글을 삭제하시겠습니까?
+        해당 게시글을 삭제하시겠습니까?
       </Modal.Body>
       <Modal.Footer className="assets2_modal">
         <Button
@@ -27,4 +27,4 @@ const ModalComponent = ({ show, handleClose, handleConfirm }) => {
   );
 };
 
-export default ModalComponent;
+export default PostModalComponent;

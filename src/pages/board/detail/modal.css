@@ -37,7 +37,7 @@
 
 /* ✍️ Header Title */
 .headerTitle_modal {
-  width: 66px;
+  width: 90px;
   height: 27px;
 
   /* KOR/Bold 18px */
@@ -60,8 +60,9 @@
 }
 /* ✍️ Label */
 .headerLabel_modal {
-  width: 195px;
+  width: 210px;
   height: 27px;
+  margin-left: 120px;
 
   /* KOR/Regular_16px */
   font-family: 'Pretendard';
@@ -87,13 +88,13 @@
 
   /* Auto layout */
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: flex-end;
   align-items: flex-end;
   padding: 16px 24px;
   gap: 10px;
 
-  width: 400px;
+  width: 448px;
   height: 72px;
 
   /* #White/white */
@@ -160,6 +161,7 @@
   /* #Grey/grey-300 */
   background: #cfcfcf;
   border-radius: 4px;
+  border: none;
 
   /* Inside auto layout */
   flex: none;
@@ -185,7 +187,7 @@
 }
 /* ButtonText */
 .btnText_modal {
-  width: 26px;
+  width: 58px;
   height: 22px;
 
   /* KOR/subtitle-1ㅣ0.875rem
@@ -250,7 +252,7 @@ Subtitle 14px
 }
 /* ButtonText */
 .btnText2_modal {
-  width: 26px;
+  width: 58px;
   height: 22px;
 
   /* KOR/subtitle-1ㅣ0.875rem

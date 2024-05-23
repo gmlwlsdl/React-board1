@@ -15,6 +15,7 @@ const WritePost = () => {
     event.preventDefault();
     const sessionName = window.sessionStorage.getItem('nickname');
     setWriter(sessionName);
+    console.log(writer);
 
     try {
       const res = await fetch('/.netlify/functions/writePost', {

@@ -1,0 +1,235 @@
+/* 회원가입 완료 */
+.parent_done {
+  position: relative;
+  width: auto;
+  height: auto;
+  /* width: 1920px;
+  height: 1071px;
+  left: 4361px;
+  top: 717px; */
+
+  /* #White/white */
+  background: #ffffff;
+}
+
+/* Frame 1000004037 */
+.F1000004037_done {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+
+  position: absolute;
+  width: 1920px;
+  height: 1068px;
+  left: 0px;
+  top: 0px;
+}
+
+/* Frame 1000004356 */
+.F1000004356_done {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 200px 388px;
+  gap: 80px;
+
+  width: 1144px;
+  height: 250px;
+
+  /* #White/white */
+  background: #ffffff;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+/* Frame 1000004327 */
+.F1000004327_done {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
+
+  width: 1144px;
+  height: 122px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+/* Group 1000003256 */
+.F1000003256_done {
+  width: 40px;
+  height: 40px;
+
+  align-items: center;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+/* Ellipse 8 */
+.Ellipse8_done {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  left: 927px;
+  top: 189px;
+  border-radius: 50px;
+
+  /* 1 */
+  background: #ee3918;
+  z-index: 1;
+}
+/* Check */
+.Check_done {
+  position: relative;
+  width: 15.38px;
+  height: 15.38px;
+  /* left: calc(50% - 15.38px / 2 - 0px);
+  top: calc(50% - 15.38px / 2 - 41px); */
+  align-items: center;
+}
+/* Vector */
+.Vector_done {
+  position: relative;
+  align-items: center;
+  /* left: 4.47%;
+  right: 4.46%;
+  top: 14.06%;
+  bottom: 14.08%; */
+
+  /* #White/white */
+  color: #ffffff;
+  z-index: 2;
+}
+/* 로그인 */
+.msg1_done {
+  width: 258px;
+  height: 36px;
+
+  /* KOR/Bold 24px */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 150%;
+  /* identical to box height, or 36px */
+  letter-spacing: -0.3px;
+
+  color: #040404;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+/* 로그인 */
+.msg2_done {
+  width: 92px;
+  height: 30px;
+  align-items: center;
+  text-align: center;
+
+  /* KOR/Regular 20px */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  /* identical to box height, or 30px */
+  letter-spacing: -0.003em;
+
+  /* #Grey/grey-500 */
+  color: #808080;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+/* Frame 1000004353 */
+.F1000004353_done {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 12px;
+  margin-right: 85px;
+
+  width: 127px;
+  height: 48px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+/* Frame 1000004325 */
+.F1000004325_done {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 40px;
+  gap: 10px;
+
+  width: 127px;
+  height: 48px;
+
+  /* #Black/black */
+  background: #000000;
+  border-radius: 4px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+/* Content */
+.Content1_done {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+
+  width: 47px;
+  height: 24px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+/* ButtonText */
+.btnText_done {
+  width: 47px;
+  height: 24px;
+
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  /* identical to box height, or 133% */
+  text-align: center;
+  letter-spacing: -0.1px;
+
+  /* #White/white */
+  color: #ffffff;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}

@@ -682,6 +682,7 @@
 .writer_f {
   width: 42px;
   height: 27px;
+  text-align: center;
 
   /* KOR/Regular_16px */
   font-family: 'Pretendard';
@@ -727,8 +728,9 @@
 }
 /* 작성시간 */
 .time_f {
-  width: 56px;
+  width: 160px;
   height: 27px;
+  text-align: center;
 
   /* KOR/Regular_16px */
   font-family: 'Pretendard';
@@ -776,6 +778,7 @@
 .view_f {
   width: 42px;
   height: 27px;
+  text-align: center;
 
   /* KOR/Regular_16px */
   font-family: 'Pretendard';

@@ -81,7 +81,7 @@ const QuestList = () => {
                       <p className="Writer_q">글쓴이</p>
                     </div>
                     <div className="F1000004335_q">
-                      <p className="Tiem_q">작성시간</p>
+                      <p className="Time_q">작성시간</p>
                     </div>
                     <div className="F1000004336_q">
                       <p className="Views_q">조회수</p>
