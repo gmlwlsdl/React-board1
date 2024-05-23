@@ -1,17 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../../../css/globalCss.css';
+import { FaChevronLeft } from 'react-icons/fa';
 import './index.css';
 import TableRow from './TableRow';
 
 const QuestList = () => {
   const [posts, setPosts] = useState([]);
+  const [sessionName, setSessionName] = useState('');
   const Navigate = useNavigate();
 
   useEffect(() => {
-    // 서버로부터 데이터를 가져오는 비동기 함수
+    const sessionName = window.sessionStorage.getItem('nickname');
+    if (sessionName) {
+      setSessionName(sessionName);
+    }
     const fetchData = async () => {
-      const response = await fetch('/.netlify/functions/getPostQ');
+      const response = await fetch('/.netlify/functions/getQPost');
       const result = await response.json();
       setPosts(result);
     };
@@ -27,6 +32,15 @@ const QuestList = () => {
     Navigate('/quest');
   };
 
+  const write = () => {
+    if (!sessionName) {
+      alert('로그인이 되어 있지 않습니다.');
+      Navigate('/');
+    } else {
+      Navigate('/createQ');
+    }
+  };
+
   return (
     <div>
       <div className="parent_q">
@@ -34,7 +48,7 @@ const QuestList = () => {
           <div className="F1000004356_q">
             <div className="F1000004327_q">
               <p className="Login_q">board</p>
-              <p className="Login2_q">자유게시판</p>
+              <p className="Login2_q">질문게시판</p>
             </div>
             <div className="F1000004355_q">
               <div className="F1000004353_q">
@@ -77,10 +91,27 @@ const QuestList = () => {
                   {posts.map((post, index) => (
                     <TableRow key={index} post={post} />
                   ))}
-                  {/* {posts.map((post) => (
-                    <TableRow post={post} />
-                  ))} */}
-                  {/* </div> */}
+                </div>
+                <div className="F1000004349_f">
+                  <div className="Frame41_f">
+                    <div className="Chevron_f">
+                      <FaChevronLeft className="Vector_f" />
+                    </div>
+                    <div className="Frame40_f">
+                      <p className="num1_f">1</p>
+                      <p className="num2_f">2</p>
+                      <p className="numdot_f">...</p>
+                      <p className="num5_f">5</p>
+                    </div>
+                    <div className="Chevron2_f">
+                      <FaChevronLeft className="Vector2_f" />
+                    </div>
+                  </div>
+                  <div className="F1000004325_f">
+                    <div className="Content2_f" onClick={write}>
+                      <p className="ButtonText3_f">글쓰기</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

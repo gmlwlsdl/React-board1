@@ -30,12 +30,12 @@ const handler = async (event) => {
     }
 
     const database = await connectToDatabase();
-    const collection = database.collection(process.env.POST_TAGS_COLLECTION);
+    const collection = database.collection(process.env.QUESTS_COLLECTION);
 
     // 특정 num 값에 해당하는 게시물 정보를 가져옴
     const result = await collection.findOne({
-      post_num: parseInt(num),
-      type: '자유',
+      num: parseInt(num),
+      type: '질문',
     });
 
     // 게시물이 존재하지 않는 경우
@@ -49,14 +49,13 @@ const handler = async (event) => {
       };
     }
 
-    // 게시물의 태그를 추출하여 반환
-    const tags = result.tag;
+    // 게시물을 반환
     return {
       statusCode: 200,
       headers: {
         'Access-Control-Allow-Origin': '*',
       },
-      body: JSON.stringify({ tags }),
+      body: JSON.stringify(result),
     };
   } catch (error) {
     return {

@@ -34,7 +34,7 @@ const handler = async (event) => {
 
     // 특정 post_num 값에 해당하는 댓글들을 가져옴
     const replies = await collection
-      .find({ post_num: parseInt(num) })
+      .find({ post_num: parseInt(num), type: '자유' })
       .toArray();
 
     // 댓글이 존재하지 않는 경우

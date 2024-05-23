@@ -35,7 +35,7 @@ const handler = async (event) => {
     // 특정 num 값에 해당하는 게시물 정보를 가져옴
     const result = await collection.findOne({
       post_num: parseInt(num),
-      type: '자유',
+      type: '질문',
     });
 
     // 게시물이 존재하지 않는 경우

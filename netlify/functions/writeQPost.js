@@ -29,13 +29,13 @@ const handler = async (event) => {
     }
 
     const database = await connectToDatabase();
-    const postsCollection = database.collection(process.env.POSTS_COLLECTION);
+    const qpostsCollection = database.collection(process.env.QUESTS_COLLECTION);
     const tagsCollection = database.collection(
       process.env.POST_TAGS_COLLECTION,
     );
 
     // 게시글 번호를 결정하기 위해 현재 컬렉션의 데이터 개수를 검색
-    const postCount = await postsCollection.countDocuments();
+    const postCount = await qpostsCollection.countDocuments();
 
     const newPost = {
       num: postCount + 1, // 새로운 게시글 번호
@@ -45,16 +45,16 @@ const handler = async (event) => {
       created_at: new Date(),
       views: 0,
       file,
-      type: '자유',
+      type: '질문',
     };
 
-    await postsCollection.insertOne(newPost);
+    await qpostsCollection.insertOne(newPost);
 
     // 태그를 저장
     const newTags = {
       post_num: postCount + 1,
       tag: tag,
-      type: '자유',
+      type: '질문',
     };
 
     await tagsCollection.insertOne(newTags);

@@ -71,7 +71,7 @@ const handler = async (event) => {
         'Access-Control-Allow-Origin': '*',
       },
       body: JSON.stringify({
-        message: '로그인 성공!',
+        message: '로그인 성공!, 새로고침을 해주세요',
         userEmail: user.email,
         nickname: user.nickname,
       }),

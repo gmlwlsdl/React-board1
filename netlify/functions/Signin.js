@@ -14,11 +14,23 @@ const connectToDatabase = async () => {
   return cachedDb;
 };
 
+const textToHash = async (text) => {
+  const saltRounds = 3;
+
+  try {
+    const hash = await bcrypt.hash(text, saltRounds);
+    return hash;
+  } catch (err) {
+    console.error(err);
+    throw err;
+  }
+};
+
 const handler = async (event) => {
   try {
-    const { title, contents, writer, file, tag } = JSON.parse(event.body);
+    const { userEmail, userPW, nickname } = JSON.parse(event.body);
 
-    if (!title || !contents || !writer || !file || !tag) {
+    if (!userEmail || !userPW || !nickname) {
       return {
         statusCode: 400,
         headers: {
@@ -29,42 +41,36 @@ const handler = async (event) => {
     }
 
     const database = await connectToDatabase();
-    const postsCollection = database.collection(process.env.POSTS_COLLECTION);
-    const tagsCollection = database.collection(
-      process.env.POST_TAGS_COLLECTION,
-    );
+    const usersCollection = database.collection(process.env.USERS_COLLECTION);
 
-    // 게시글 번호를 결정하기 위해 현재 컬렉션의 데이터 개수를 검색
-    const postCount = await postsCollection.countDocuments();
+    const user = await usersCollection.findOne({ email: userEmail });
 
-    const newPost = {
-      num: postCount + 1, // 새로운 게시글 번호
-      title,
-      contents,
-      writer,
-      created_at: new Date(),
-      views: 0,
-      file,
-      type: '자유',
+    if (user) {
+      return {
+        statusCode: 401,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+        },
+        body: JSON.stringify({ message: '사용 중인 이메일 입니다.' }),
+      };
+    }
+
+    const hash = await textToHash(userPW);
+
+    const newUser = {
+      email: userEmail,
+      pw: hash,
+      nickname: nickname,
     };
 
-    await postsCollection.insertOne(newPost);
-
-    // 태그를 저장
-    const newTags = {
-      post_num: postCount + 1,
-      tag: tag,
-      type: '자유',
-    };
-
-    await tagsCollection.insertOne(newTags);
+    await usersCollection.insertOne(newUser);
 
     return {
       statusCode: 200,
       headers: {
         'Access-Control-Allow-Origin': '*',
       },
-      body: JSON.stringify({ message: '게시글 및 태그 작성 성공!' }),
+      body: JSON.stringify({ message: '회원가입 완료' }),
     };
   } catch (error) {
     console.error('Error:', error);

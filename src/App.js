@@ -7,11 +7,12 @@ import Footer from './pages/footer/index';
 import BoardList from './pages/board/list/freeList';
 import QuestList from './pages/board/list/questList';
 import BoardDetail from './pages/board/detail';
-import BoardQuestDetail from './pages/board/detail/index';
+import BoardQuestDetail from './pages/board/detail/index2';
 import Login from './pages/sign/login';
 import Signin from './pages/sign/signIn';
 import SigninDone from './pages/sign/signIn/done';
 import WritePost from './pages/create/index';
+import WriteQPost from './pages/create/index2';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/board" element={<BoardList />} />
             <Route path="/quest" element={<QuestList />} />
             <Route path="/create" element={<WritePost />} />
+            <Route path="/createQ" element={<WriteQPost />} />
             <Route path="/post/:num" element={<BoardDetail />} />
             <Route path="/quest/:num" element={<BoardQuestDetail />} />
           </Routes>

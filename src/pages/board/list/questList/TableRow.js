@@ -18,7 +18,7 @@ const TableRow = ({ post }) => {
       </td>
       <td className="F10000043372_q">
         <div className="title_q">
-          <Link to={`/post/${post.num}`}>{post.title}</Link>
+          <Link to={`/quest/${post.num}`}>{post.title}</Link>
         </div>
       </td>
       <td className="F10000043342_q">

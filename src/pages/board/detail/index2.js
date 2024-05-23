@@ -15,7 +15,7 @@ const formatData = (dateString) => {
 
 const fetchPost = async (num) => {
   try {
-    const response = await fetch(`/.netlify/functions/getPostD?num=${num}`);
+    const response = await fetch(`/.netlify/functions/getQPostD?num=${num}`);
     if (!response.ok) {
       throw new Error('Post not found');
     }
@@ -29,7 +29,7 @@ const fetchPost = async (num) => {
 
 const fetchTags = async (num) => {
   try {
-    const response = await fetch(`/.netlify/functions/getPostT?num=${num}`);
+    const response = await fetch(`/.netlify/functions/getQPostT?num=${num}`);
     if (!response.ok) {
       throw new Error('Tags not found');
     }
@@ -43,7 +43,7 @@ const fetchTags = async (num) => {
 
 const fetchReply = async (num) => {
   try {
-    const response = await fetch(`/.netlify/functions/getPostR?num=${num}`);
+    const response = await fetch(`/.netlify/functions/getQPostR?num=${num}`);
     if (!response.ok) {
       throw new Error('Replies not found');
     }
@@ -55,7 +55,7 @@ const fetchReply = async (num) => {
   }
 };
 
-const BoardDetail = () => {
+const BoardQuestDetail = () => {
   const { num } = useParams();
   const [post, setPost] = useState(null);
   const [tags, setTags] = useState([]);
@@ -89,13 +89,14 @@ const BoardDetail = () => {
   const writeReply = async () => {
     const sessionName = window.sessionStorage.getItem('nickname');
     setWriter(sessionName);
+
     if (replyContent.trim() === '') {
       alert('댓글 내용을 입력해주세요.');
       return;
     }
 
     try {
-      const response = await fetch('/.netlify/functions/writeReply', {
+      const response = await fetch('/.netlify/functions/writeQReply', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -167,7 +168,7 @@ const BoardDetail = () => {
   const handleCloseModal = () => {
     setShowModal(false);
     setReplyToDelete(null);
-    navigate(`/post/${num}`);
+    navigate(`/quest/${num}`);
   };
 
   const handleConfirmDelete = async () => {
@@ -283,4 +284,4 @@ const BoardDetail = () => {
   );
 };
 
-export default BoardDetail;
+export default BoardQuestDetail;

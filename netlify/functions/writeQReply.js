@@ -1,5 +1,4 @@
 const { MongoClient } = require('mongodb');
-const bcrypt = require('bcrypt');
 
 const mongoClient = new MongoClient(process.env.MONGODB_URI);
 
@@ -16,9 +15,11 @@ const connectToDatabase = async () => {
 
 const handler = async (event) => {
   try {
-    const { title, contents, writer, file, tag } = JSON.parse(event.body);
+    const { post_num, contents, writer } = JSON.parse(event.body);
 
-    if (!title || !contents || !writer || !file || !tag) {
+    console.log('Received data:', { post_num, contents, writer });
+
+    if (!post_num || !contents || !writer) {
       return {
         statusCode: 400,
         headers: {
@@ -29,42 +30,44 @@ const handler = async (event) => {
     }
 
     const database = await connectToDatabase();
-    const postsCollection = database.collection(process.env.POSTS_COLLECTION);
-    const tagsCollection = database.collection(
-      process.env.POST_TAGS_COLLECTION,
+    const repliesCollection = database.collection(
+      process.env.REPLIES_COLLECTION,
     );
 
-    // 게시글 번호를 결정하기 위해 현재 컬렉션의 데이터 개수를 검색
-    const postCount = await postsCollection.countDocuments();
+    const postNumInt64 = Number(post_num);
 
-    const newPost = {
-      num: postCount + 1, // 새로운 게시글 번호
-      title,
+    const generateRandomString = (length) => {
+      let result = '';
+      const characters =
+        'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      const charactersLength = characters.length;
+      for (let i = 0; i < length; i++) {
+        result += characters.charAt(
+          Math.floor(Math.random() * charactersLength),
+        );
+      }
+      return result;
+    };
+
+    const newReply = {
+      post_num: postNumInt64,
       contents,
       writer,
       created_at: new Date(),
-      views: 0,
-      file,
-      type: '자유',
+      replyID: generateRandomString(10),
+      type: '질문',
     };
 
-    await postsCollection.insertOne(newPost);
+    const result = await repliesCollection.insertOne(newReply);
 
-    // 태그를 저장
-    const newTags = {
-      post_num: postCount + 1,
-      tag: tag,
-      type: '자유',
-    };
-
-    await tagsCollection.insertOne(newTags);
+    console.log('New reply inserted:', result);
 
     return {
       statusCode: 200,
       headers: {
         'Access-Control-Allow-Origin': '*',
       },
-      body: JSON.stringify({ message: '게시글 및 태그 작성 성공!' }),
+      body: JSON.stringify({ message: '댓글 작성 성공!, 새로고침을 해주세요' }),
     };
   } catch (error) {
     console.error('Error:', error);

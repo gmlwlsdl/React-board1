@@ -55,6 +55,7 @@ const handler = async (event) => {
       writer,
       created_at: new Date(),
       replyID: generateRandomString(10),
+      type: '자유',
     };
 
     const result = await repliesCollection.insertOne(newReply);
@@ -66,7 +67,7 @@ const handler = async (event) => {
       headers: {
         'Access-Control-Allow-Origin': '*',
       },
-      body: JSON.stringify({ message: '댓글 작성 성공!' }),
+      body: JSON.stringify({ message: '댓글 작성 성공!, 새로고침을 해주세요' }),
     };
   } catch (error) {
     console.error('Error:', error);
