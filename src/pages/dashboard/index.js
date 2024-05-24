@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import * as d3 from 'd3';
 import { FaChevronDown } from 'react-icons/fa6';
 import { FaRegCalendarAlt } from 'react-icons/fa';
-import { IoRemoveOutline } from 'react-icons/io5';
 import './index.css';
+import './db';
+// import { getTagsData } from './dashData';
 
 const D3 = () => {
   const [sessionName, setSessionName] = useState('');
@@ -19,11 +20,11 @@ const D3 = () => {
     makeGraph();
   }, []);
 
-  const makeGraph = () => {
+  const makeGraph = async () => {
     // setting canvas
-    const width = 400;
+    const width = 800;
     const height = 400;
-    const margin = { top: 40, left: 40, bottom: 40, right: 40 };
+    const margin = { top: 40, left: 80, bottom: 40, right: 40 };
 
     const svg = d3
       .select('body')
@@ -31,31 +32,28 @@ const D3 = () => {
       .attr('width', width)
       .attr('height', height);
 
-    // data
-    const data = [
-      { month: '1월', value: 40, color: 'red' },
-      { month: '2월', value: 10, color: 'orange' },
-      { month: '3월', value: 60, color: 'yellow' },
-      { month: '4월', value: 95, color: 'green' },
-      { month: '5월', value: 30, color: 'blue' },
-      { month: '6월', value: 78, color: 'indigo' },
-    ];
+    // Connect to MongoDB
+    const database = await connectToDatabase();
+    const tagsCollection = database.collection(process.env.TAGS_COLLECTION);
+
+    // Fetch data from MongoDB
+    const tagsData = await tagsCollection.find().toArray();
 
     // setting axis
     const x = d3
       .scaleBand()
-      .domain(data.map((d) => d.month))
-      .range([margin.left, width - margin.right]);
+      .domain(tagsData.map((d) => d.name)) // Use tag names for x-axis
+      .range([margin.left, width - margin.right])
+      .padding(0.1);
 
     const y = d3
       .scaleLinear()
-      .domain([0, d3.max(data, (d) => d.value)])
+      .domain([0, d3.max(tagsData, (d) => d.count)])
       .nice()
       .range([height - margin.bottom, margin.top]);
 
     const xAxis = (g) => {
       return g
-        .attr('transform', `translate(0, ${height})`)
         .attr('transform', `translate(0, ${height - margin.bottom})`)
         .call(d3.axisBottom(x).tickSizeOuter(0));
     };
@@ -64,7 +62,10 @@ const D3 = () => {
       g
         .attr('transform', `translate(${margin.left}, 0)`)
         .call(
-          d3.axisLeft(y).tickValues([0, 20, 40, 60, 80, 100]).tickSize(-width),
+          d3
+            .axisLeft(y)
+            .ticks(5)
+            .tickSizeInner(-width + margin.left + margin.right),
         )
         .call((g) => g.select('.domain').remove())
         .attr('class', 'grid');
@@ -77,40 +78,26 @@ const D3 = () => {
     svg
       .append('g')
       .selectAll('rect')
-      .data(data)
+      .data(tagsData)
       .enter()
       .append('rect')
-      .attr('x', (data) => x(data.month) + x.bandwidth() / 2 - 10)
-      .attr('y', (data) => y(data.value))
-      .attr('width', 20)
-      .attr('height', (data) => y(0) - y(data.value))
+      .attr('x', (data) => x(data.name))
+      .attr('y', (data) => y(data.count))
+      .attr('width', x.bandwidth())
+      .attr('height', (data) => y(0) - y(data.count))
       .attr('class', 'bar-chart')
-      .attr('fill', (data) => data.color);
-
-    // 선 그래프
-    const line = d3
-      .line()
-      .x((d) => x(d.month) + x.bandwidth() / 2)
-      .y((d) => y(d.value));
-
-    svg
-      .append('path')
-      .datum(data)
-      .attr('fill', 'none')
-      .attr('stroke', 'red')
-      .attr('stroke-width', 1)
-      .attr('d', line);
+      .attr('fill', 'steelblue');
 
     // add text
     svg
       .append('g')
       .selectAll('text')
-      .data(data)
+      .data(tagsData)
       .enter()
       .append('text')
-      .text((d) => d.value)
-      .attr('x', (data) => x(data.month) + x.bandwidth() / 2)
-      .attr('y', (data) => y(data.value) - 5)
+      .text((d) => d.count)
+      .attr('x', (data) => x(data.name) + x.bandwidth() / 2)
+      .attr('y', (data) => y(data.count) - 5)
       .attr('fill', 'black')
       .attr('font-family', 'Tahoma')
       .attr('font-size', '12px')
