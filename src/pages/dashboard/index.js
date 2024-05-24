@@ -3,28 +3,31 @@ import * as d3 from 'd3';
 import { FaChevronDown } from 'react-icons/fa6';
 import { FaRegCalendarAlt } from 'react-icons/fa';
 import './index.css';
-import './db';
-// import { getTagsData } from './dashData';
 
 const D3 = () => {
   const [sessionName, setSessionName] = useState('');
 
   useEffect(() => {
     const sessionName = window.sessionStorage.getItem('nickname');
+    setSessionName(sessionName || null);
 
-    if (sessionName) {
-      setSessionName(sessionName);
-    } else {
-      setSessionName(null);
-    }
+    // Call the function to create the graph
     makeGraph();
+
+    // Cleanup function to remove the existing graph when component unmounts or before re-rendering
+    return () => {
+      d3.select('svg').remove();
+    };
   }, []);
 
-  const makeGraph = async () => {
-    // setting canvas
-    const width = 800;
+  const makeGraph = () => {
+    // Check and remove existing svg if any
+    d3.select('svg').remove();
+
+    // Setting canvas
+    const width = 400;
     const height = 400;
-    const margin = { top: 40, left: 80, bottom: 40, right: 40 };
+    const margin = { top: 40, left: 40, bottom: 40, right: 40 };
 
     const svg = d3
       .select('body')
@@ -32,31 +35,33 @@ const D3 = () => {
       .attr('width', width)
       .attr('height', height);
 
-    // Connect to MongoDB
-    const database = await connectToDatabase();
-    const tagsCollection = database.collection(process.env.TAGS_COLLECTION);
+    // Data
+    const data = [
+      { month: '1월', value: 40, color: 'red' },
+      { month: '2월', value: 10, color: 'orange' },
+      { month: '3월', value: 60, color: 'yellow' },
+      { month: '4월', value: 95, color: 'green' },
+      { month: '5월', value: 30, color: 'blue' },
+      { month: '6월', value: 78, color: 'indigo' },
+    ];
 
-    // Fetch data from MongoDB
-    const tagsData = await tagsCollection.find().toArray();
-
-    // setting axis
+    // Setting axis
     const x = d3
       .scaleBand()
-      .domain(tagsData.map((d) => d.name)) // Use tag names for x-axis
+      .domain(data.map((d) => d.month))
       .range([margin.left, width - margin.right])
       .padding(0.1);
 
     const y = d3
       .scaleLinear()
-      .domain([0, d3.max(tagsData, (d) => d.count)])
+      .domain([0, d3.max(data, (d) => d.value)])
       .nice()
       .range([height - margin.bottom, margin.top]);
 
-    const xAxis = (g) => {
-      return g
+    const xAxis = (g) =>
+      g
         .attr('transform', `translate(0, ${height - margin.bottom})`)
         .call(d3.axisBottom(x).tickSizeOuter(0));
-    };
 
     const yAxis = (g) =>
       g
@@ -65,39 +70,53 @@ const D3 = () => {
           d3
             .axisLeft(y)
             .ticks(5)
-            .tickSizeInner(-width + margin.left + margin.right),
+            .tickSize(-width + margin.left + margin.right),
         )
         .call((g) => g.select('.domain').remove())
         .attr('class', 'grid');
 
-    // apply axis to canvas
+    // Apply axis to canvas
     svg.append('g').call(xAxis);
     svg.append('g').call(yAxis);
 
-    // 막대 차트
+    // Vertical bar chart
     svg
       .append('g')
       .selectAll('rect')
-      .data(tagsData)
+      .data(data)
       .enter()
       .append('rect')
-      .attr('x', (data) => x(data.name))
-      .attr('y', (data) => y(data.count))
+      .attr('x', (data) => x(data.month))
+      .attr('y', (data) => y(data.value))
       .attr('width', x.bandwidth())
-      .attr('height', (data) => y(0) - y(data.count))
+      .attr('height', (data) => y(0) - y(data.value))
       .attr('class', 'bar-chart')
-      .attr('fill', 'steelblue');
+      .attr('fill', (data) => data.color);
 
-    // add text
+    // Line chart
+    const line = d3
+      .line()
+      .x((d) => x(d.month) + x.bandwidth() / 2)
+      .y((d) => y(d.value));
+
+    svg
+      .append('path')
+      .datum(data)
+      .attr('fill', 'none')
+      .attr('stroke', 'red')
+      .attr('stroke-width', 1)
+      .attr('d', line);
+
+    // Add text
     svg
       .append('g')
       .selectAll('text')
-      .data(tagsData)
+      .data(data)
       .enter()
       .append('text')
-      .text((d) => d.count)
-      .attr('x', (data) => x(data.name) + x.bandwidth() / 2)
-      .attr('y', (data) => y(data.count) - 5)
+      .text((d) => d.value)
+      .attr('x', (data) => x(data.month) + x.bandwidth() / 2)
+      .attr('y', (data) => y(data.value) - 5)
       .attr('fill', 'black')
       .attr('font-family', 'Tahoma')
       .attr('font-size', '12px')
@@ -140,12 +159,6 @@ const D3 = () => {
             <div className="F1000004173_dash">
               <div className="F1000004172_dash">
                 <FaRegCalendarAlt className="CourseHistoryIcon" />
-                {/* <div className="IconShape">
-                  <div className="Path1_dash"></div>
-                  <div className="Path2_dash"></div>
-                  <IoRemoveOutline className="Path3_dash" />
-                  <IoRemoveOutline className="Path4_dash" />
-                </div> */}
                 <div className="period_dash">2023/10/11-2023/10/26</div>
               </div>
               <div className="ChevronDownIcon">
@@ -158,4 +171,5 @@ const D3 = () => {
     </div>
   );
 };
+
 export default D3;
