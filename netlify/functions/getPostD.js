@@ -33,10 +33,23 @@ const handler = async (event) => {
     const collection = database.collection(process.env.POSTS_COLLECTION);
 
     // 특정 num 값에 해당하는 게시물 정보를 가져옴
-    const result = await collection.findOne({
-      num: parseInt(num),
-      type: '자유',
-    });
+    // const result = await collection.findOne({
+    //   num: parseInt(num),
+    //   type: '자유',
+    //   // $inc: { views: 1 },
+    // });
+
+    // const views = await collection.updateOne(
+    //   { num: parseInt(num) },
+    //   { type: '자유' },
+    //   { $inc: { views: 1 } },
+    // );
+
+    const result = await collection.findOneAndUpdate(
+      { num: parseInt(num), type: '자유' },
+      { $inc: { views: 1 } }, // 조회수 증가
+      { returnOriginal: false }, // 업데이트된 문서를 반환하도록 설정
+    );
 
     // 게시물이 존재하지 않는 경우
     if (!result) {

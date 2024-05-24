@@ -93,7 +93,7 @@ const WritePost = () => {
                       type="text"
                       value={tag}
                       onChange={(e) => setTag(e.target.value)}
-                      placeholder="ex)#유머, #유익함, #토론"
+                      placeholder="ex)#유머, #유익함, #토론, #DB, #AI"
                       className="writeTag_w"
                     />
                   </div>

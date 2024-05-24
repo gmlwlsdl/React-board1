@@ -217,14 +217,14 @@ const BoardQuestDetail = () => {
   const handleCloseModal = () => {
     setShowModal(false);
     setReplyToDelete(null);
-    navigate(`/post/${num}`);
+    navigate(`/quest/${num}`);
   };
 
   const handleClosePostModal = () => {
     setShowPostModal(false);
     setPostNumToDelete(null);
     setPostWriterToDelete(null);
-    navigate(`/`);
+    navigate(`/quest`);
   };
 
   const handleConfirmDelete = async () => {
@@ -253,7 +253,7 @@ const BoardQuestDetail = () => {
                     <div className="chevron">
                       <FaChevronLeft
                         className="Vector"
-                        onClick={() => navigate('/')}
+                        onClick={() => navigate('/quest')}
                       />
                     </div>
                     <p className="Posttitle">{post.title}</p>

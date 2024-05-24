@@ -14,6 +14,42 @@ const connectToDatabase = async () => {
   return cachedDb;
 };
 
+const extractTags = (tag) => {
+  if (tag) {
+    return tag.split(',').map((tag) => tag.trim());
+  }
+  return [];
+};
+
+const searchAndUpdateTagsInCollection = async (tags) => {
+  try {
+    const database = await connectToDatabase();
+    const tagsCollectionName = process.env.TAGS_COLLECTION || 'tags';
+    const tagsCollection = database.collection(tagsCollectionName);
+
+    // 태그의 count 증가
+    await Promise.all(
+      tags.map(async (tag) => {
+        await tagsCollection.updateOne(
+          { name: tag },
+          { $inc: { count: 1 } },
+          { upsert: true },
+        );
+      }),
+    );
+
+    // 증가된 태그를 검색하여 결과 반환
+    const searchResults = await tagsCollection
+      .find({ name: { $in: tags } })
+      .toArray();
+
+    return searchResults;
+  } catch (error) {
+    console.error('Error searching and updating tags:', error);
+    throw error;
+  }
+};
+
 const handler = async (event) => {
   try {
     const { title, contents, writer, file, tag } = JSON.parse(event.body);
@@ -30,7 +66,7 @@ const handler = async (event) => {
 
     const database = await connectToDatabase();
     const postsCollection = database.collection(process.env.POSTS_COLLECTION);
-    const tagsCollection = database.collection(
+    const posttagsCollection = database.collection(
       process.env.POST_TAGS_COLLECTION,
     );
 
@@ -57,14 +93,22 @@ const handler = async (event) => {
       type: '자유',
     };
 
-    await tagsCollection.insertOne(newTags);
+    await posttagsCollection.insertOne(newTags);
+
+    console.log(tag);
+    const tags = extractTags(tag);
+    console.log(tags);
+    const searchResults = await searchAndUpdateTagsInCollection(tags);
 
     return {
       statusCode: 200,
       headers: {
         'Access-Control-Allow-Origin': '*',
       },
-      body: JSON.stringify({ message: '게시글 및 태그 작성 성공!' }),
+      body: JSON.stringify({
+        message: '게시글 및 태그 작성 성공!',
+        tags: searchResults,
+      }),
     };
   } catch (error) {
     console.error('Error:', error);

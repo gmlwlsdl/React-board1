@@ -13,6 +13,7 @@ import Signin from './pages/sign/signIn';
 import SigninDone from './pages/sign/signIn/done';
 import WritePost from './pages/create/index';
 import WriteQPost from './pages/create/index2';
+import D3 from './pages/dashboard';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/Done" element={<SigninDone />} />
             <Route path="/board" element={<BoardList />} />
             <Route path="/quest" element={<QuestList />} />
+            <Route path="/dash" element={<D3 />} />
             <Route path="/create" element={<WritePost />} />
             <Route path="/createQ" element={<WriteQPost />} />
             <Route path="/post/:num" element={<BoardDetail />} />

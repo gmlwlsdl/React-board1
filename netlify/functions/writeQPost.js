@@ -14,6 +14,30 @@ const connectToDatabase = async () => {
   return cachedDb;
 };
 
+const searchAndUpdateTagsInCollection = async (tag) => {
+  // 배열이 아니라 문자열로 전달됩니다.
+  try {
+    const database = await connectToDatabase();
+    const tagsCollectionName = process.env.TAGS_COLLECTION || 'tags';
+    const tagsCollection = database.collection(tagsCollectionName);
+
+    // 태그의 count 증가
+    await tagsCollection.updateOne(
+      { name: tag },
+      { $inc: { count: 1 } },
+      { upsert: true },
+    );
+
+    // 증가된 태그를 검색하여 결과 반환
+    const searchResults = await tagsCollection.find({ name: tag }).toArray();
+
+    return searchResults;
+  } catch (error) {
+    console.error('Error searching and updating tags:', error);
+    throw error;
+  }
+};
+
 const handler = async (event) => {
   try {
     const { title, contents, writer, file } = JSON.parse(event.body);
@@ -50,21 +74,27 @@ const handler = async (event) => {
 
     await qpostsCollection.insertOne(newPost);
 
+    const tag = '#질문';
+
     // 태그를 저장
     const newTags = {
       post_num: postCount + 1,
-      tag: '#질문',
+      tag: tag, // 단일 태그 문자열을 그대로 사용합니다.
       type: '질문',
     };
 
     await tagsCollection.insertOne(newTags);
+    const searchResults = await searchAndUpdateTagsInCollection(tag); // 태그를 문자열로 전달합니다.
 
     return {
       statusCode: 200,
       headers: {
         'Access-Control-Allow-Origin': '*',
       },
-      body: JSON.stringify({ message: '게시글 및 태그 작성 성공!' }),
+      body: JSON.stringify({
+        message: '게시글 및 태그 작성 성공!',
+        tag: searchResults,
+      }),
     };
   } catch (error) {
     console.error('Error:', error);
