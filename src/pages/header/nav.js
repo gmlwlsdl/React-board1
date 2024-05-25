@@ -42,19 +42,19 @@ function Nav() {
     <div>
       <div className="gnb_n">
         <div className="F1000004324_n">
-          <div className="Content3_n">
-            {sessionName ? (
+          {sessionName ? (
+            <button className="Content3_n" onClick={handleLogout}>
               <div style={{ width: '70px', height: '24px' }}>
-                <p className="ButtonText3_n" onClick={handleLogout}>
-                  로그아웃
-                </p>
+                <p className="ButtonText3_n">로그아웃</p>
               </div>
-            ) : (
-              <p className="ButtonText3_n" onClick={handleLogin}>
-                로그인
-              </p>
-            )}
-          </div>
+            </button>
+          ) : (
+            <button className="Content3_n" onClick={handleLogin}>
+              <div style={{ width: '70px', height: '24px' }}>
+                <p className="ButtonText3_n">로그인</p>
+              </div>
+            </button>
+          )}
         </div>
         <div className="F1000003051_n">
           <p className="Testsite_n">Testsite</p>

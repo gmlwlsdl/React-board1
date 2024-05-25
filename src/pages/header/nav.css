@@ -197,7 +197,7 @@
   flex-direction: row;
   align-items: center;
   text-align: center;
-  padding: 12px 40px;
+  /* padding: 12px 40px; */
   gap: 10px;
 
   position: absolute;
@@ -207,20 +207,22 @@
   top: 25px;
 
   /* #Grey/grey-200 */
-  border: 1px solid #e1e1e1;
+  /* border: 1px solid #eeeeee; */
   border-radius: 4px;
 }
 /* Content */
 .Content3_n {
   /* Auto layout */
   padding: 0px;
-  gap: 8px;
   text-align: center;
   align-items: center;
   margin: 0px auto;
 
-  width: 70px;
-  height: 24px;
+  width: 127px;
+  height: 48px;
+  border: 1px solid #e1e1e1;
+  background-color: white;
+  border-radius: 5px;
 
   /* Inside auto layout */
 }
@@ -228,7 +230,9 @@
 .ButtonText3_n {
   width: 70px;
   height: 24px;
-  margin: 0px;
+  margin: 0px 0px 0px 28px;
+  text-align: center;
+  align-items: center;
 
   font-family: 'Pretendard';
   font-style: normal;
