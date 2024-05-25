@@ -900,6 +900,7 @@
 .Ellipse850_dash {
   width: 16px;
   height: 16px;
+  border-radius: 50px;
 
   /* #Red/red-300 */
   background: #f58a91;
@@ -911,8 +912,9 @@
 }
 /* 게시글 등록수 */
 .postText_dash {
-  width: 64px;
+  width: 70px;
   height: 18px;
+  margin: 0px;
 
   /* KOR/Medium 12px */
   font-family: 'Pretendard';
@@ -1153,9 +1155,9 @@
   color: #000000;
 
   /* Inside auto layout */
-  flex: none;
+  /* flex: none;
   order: 0;
-  flex-grow: 0;
+  flex-grow: 0; */
 }
 /* #개그 */
 .tagName2_dash {
@@ -1463,6 +1465,7 @@
 .Ellipse850_2_dash {
   width: 16px;
   height: 16px;
+  border-radius: 50px;
 
   /* #Red/red-300 */
   background: #f58a91;
@@ -1476,6 +1479,7 @@
 .boardName1_dash {
   width: 51px;
   height: 18px;
+  margin: 0px;
 
   /* KOR/Medium 12px */
   font-family: 'Pretendard';
@@ -1515,6 +1519,7 @@
 .Ellipse850_3_dash {
   width: 16px;
   height: 16px;
+  border-radius: 50px;
 
   /* #Blue/blue-300 */
   background: #8ab2ff;
@@ -1528,6 +1533,7 @@
 .boardName2_dash {
   width: 51px;
   height: 18px;
+  margin: 0px;
 
   /* KOR/Medium 12px */
   font-family: 'Pretendard';

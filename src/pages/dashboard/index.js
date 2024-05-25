@@ -18,6 +18,20 @@ export const fetchCreatedAtArray = async () => {
   }
 };
 
+const fetchTagData = async () => {
+  try {
+    const response = await fetch('/.netlify/functions/dashTag');
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching tag data:', error);
+    throw error;
+  }
+};
+
 const D3 = () => {
   const [sessionName, setSessionName] = useState('');
   const [createdAtArray, setCreatedAtArray] = useState([]);
@@ -26,7 +40,6 @@ const D3 = () => {
     const sessionName = window.sessionStorage.getItem('nickname');
     setSessionName(sessionName || null);
 
-    // Fetch created_at data and create the graph
     const fetchData = async () => {
       try {
         const createdAtData = await fetchCreatedAtArray();
@@ -38,17 +51,30 @@ const D3 = () => {
       }
     };
 
+    const fetchAndDrawGraphs = async () => {
+      try {
+        const createdAtData = await fetchCreatedAtArray();
+        const tagData = await fetchTagData();
+        makeGraph(createdAtData);
+        makeBarGraph(tagData);
+      } catch (error) {
+        console.error('Error fetching data and drawing graphs:', error);
+      }
+    };
+
     fetchData();
+    fetchAndDrawGraphs();
 
     return () => {
       d3.select('svg').remove();
+      d3.selectAll('.graph').remove();
     };
   }, []);
 
   const makeGraph = (data) => {
     if (!data.length) return;
 
-    // 중복된 날짜를 제거하고 count를 계산합니다.
+    // 중복된 날짜를 제거하고 count를 계산
     const dateCounts = data.reduce((acc, date) => {
       const key = date.split('T')[0];
       acc[key] = (acc[key] || 0) + 1;
@@ -57,10 +83,8 @@ const D3 = () => {
 
     console.log(dateCounts);
 
-    // Check and remove existing svg if any
     d3.select('svg').remove();
 
-    // Setting canvas
     const width = 714;
     const height = 316;
     const margin = { top: 40, left: 40, bottom: 40, right: 40 };
@@ -71,7 +95,6 @@ const D3 = () => {
       .attr('width', width)
       .attr('height', height);
 
-    // Transform the data into a suitable format for the graph
     const transformedData = Object.keys(dateCounts).map((date) => ({
       date: new Date(date),
       count: dateCounts[date],
@@ -79,7 +102,6 @@ const D3 = () => {
 
     console.log(transformedData);
 
-    // Setting axis
     const x = d3
       .scaleTime()
       .domain(d3.extent(transformedData, (d) => d.date))
@@ -122,14 +144,13 @@ const D3 = () => {
             .selectAll('.tick line')
             .style('stroke', '#e1e1e1')
             .style('stroke-dasharray', '1px 2px'),
-        ) // Apply y-axis line style
+        )
         .attr('class', 'grid');
 
-    // Apply axis to canvas
     svg.append('g').call(xAxis);
     svg.append('g').call(yAxis);
 
-    // Line chart
+    // line grapgh
     const line = d3
       .line()
       .x((d) => x(d.date))
@@ -143,7 +164,6 @@ const D3 = () => {
       .attr('stroke-width', 1.5)
       .attr('d', line);
 
-    // Add circles at data points
     svg
       .append('g')
       .selectAll('circle')
@@ -153,6 +173,81 @@ const D3 = () => {
       .attr('cx', (d) => x(d.date))
       .attr('cy', (d) => y(d.count))
       .attr('r', 3)
+      .attr('fill', '#f58a91');
+  };
+
+  const makeBarGraph = (tagData) => {
+    if (!tagData.length) return;
+
+    const transformedData = tagData.map((tag) => ({
+      name: Object.keys(tag)[0], // 객체의 첫 번째 키를 name으로 설정
+      count: Object.values(tag)[0], // 객체의 첫 번째 값(카운트)를 count로 설정
+    }));
+
+    console.log(transformedData);
+
+    d3.select('.tagGraph').remove();
+
+    const width = 714;
+    const height = 316;
+    const margin = { top: 40, left: 40, bottom: 40, right: 40 };
+
+    const svg = d3
+      .select('.G1000003511_dash')
+      .append('svg')
+      .attr('class', 'tagGraph')
+      .attr('width', width)
+      .attr('height', height);
+
+    const x = d3
+      .scaleBand()
+      .domain(transformedData.map((d) => d.name))
+      .range([margin.left, width - margin.right])
+      .padding(0.1);
+
+    const y = d3
+      .scaleLinear()
+      .domain([0, d3.max(transformedData, (d) => d.count)])
+      .nice()
+      .range([height - margin.bottom, margin.top]);
+
+    const xAxis = (g) =>
+      g
+        .attr('transform', `translate(0, ${height - margin.bottom})`)
+        .call(d3.axisBottom(x))
+        .selectAll('text')
+        .attr('class', 'tagName1_dash');
+
+    const yAxis = (g) =>
+      g
+        .attr('transform', `translate(${margin.left}, 0)`)
+        .call(
+          d3
+            .axisLeft(y)
+            .ticks(5)
+            .tickSize(-width + margin.left + margin.right),
+        )
+        .call((g) => g.select('.domain').remove())
+        .call((g) =>
+          g
+            .selectAll('.tick line')
+            .style('stroke', '#e1e1e1')
+            .style('stroke-dasharray', '1px 2px'),
+        );
+
+    svg.append('g').call(xAxis);
+    svg.append('g').call(yAxis);
+
+    svg
+      .selectAll('.bar')
+      .data(transformedData)
+      .enter()
+      .append('rect')
+      .attr('class', 'bar')
+      .attr('x', (d) => x(d.name))
+      .attr('y', (d) => y(d.count))
+      .attr('width', x.bandwidth())
+      .attr('height', (d) => height - margin.bottom - y(d.count))
       .attr('fill', '#f58a91');
   };
 
@@ -190,9 +285,29 @@ const D3 = () => {
               </div>
               <div className="G1000003513_dash"></div>
             </div>
-            <div className="F1000004566_dash"></div>
+            <div className="F1000004566_dash">
+              <p className="hashDash_dash">해시태그별 게시글 등록 수</p>
+              <div className="F1000004568_2_dash">
+                <div className="Ellipse850_dash"></div>
+                <p className="postText_dash">게시글 등록 수</p>
+              </div>
+              <div className="G1000003511_dash"></div>
+            </div>
           </div>
-          <div className="F1000004568_?_dash"></div>
+          <div className="F1000004568_3_dash">
+            <p className="eachtagTitle_dash">게시판별 게시글 등록 수</p>
+            <div className="F1000004574_dash">
+              <div className="F1000004568_4_dash">
+                <div className="Ellipse850_2_dash"></div>
+                <p className="boardName1_dash">자유게시판</p>
+              </div>
+              <div className="F1000004569_dash">
+                <div className="Ellipse850_3_dash"></div>
+                <p className="boardName2_dash">질문게시판</p>
+              </div>
+            </div>
+            <div className="G1000003511_2_dash"></div>
+          </div>
         </div>
         <div className="Calendar_dash">
           <div className="Dropdown_dash">
