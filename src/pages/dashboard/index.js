@@ -32,6 +32,34 @@ const fetchTagData = async () => {
   }
 };
 
+export const fetchPostsData = async () => {
+  try {
+    const response = await fetch('/.netlify/functions/dashPost');
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching created_at array:', error);
+    throw error;
+  }
+};
+
+export const fetchQuestsData = async () => {
+  try {
+    const response = await fetch('/.netlify/functions/dashQuest');
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching created_at array:', error);
+    throw error;
+  }
+};
+
 const D3 = () => {
   const [sessionName, setSessionName] = useState('');
   const [createdAtArray, setCreatedAtArray] = useState([]);
@@ -62,12 +90,25 @@ const D3 = () => {
       }
     };
 
+    const fetchSeparatedData = async () => {
+      try {
+        const postsData = await fetchPostsData();
+        const questsData = await fetchQuestsData();
+
+        makeSeparatedBarGraph(postsData, questsData);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
     fetchData();
     fetchAndDrawGraphs();
+    fetchSeparatedData();
 
     return () => {
-      d3.select('svg').remove();
-      d3.selectAll('.graph').remove();
+      // d3.select('svg').remove();
+      // d3.selectAll('.tagGraph').remove();
+      // d3.selectAll('.tapSeparatedGraph').remove();
     };
   }, []);
 
@@ -251,6 +292,132 @@ const D3 = () => {
       .attr('fill', '#f58a91');
   };
 
+  const makeSeparatedBarGraph = (postsData, questsData) => {
+    if (!postsData.length && !questsData.length) return;
+
+    // 중복된 날짜를 제거하고 count를 계산
+    const postsDateCounts = postsData.reduce((acc, date) => {
+      const key = date.split('T')[0];
+      acc[key] = (acc[key] || 0) + 1;
+      return acc;
+    }, {});
+
+    const questsDateCounts = questsData.reduce((acc, date) => {
+      const key = date.split('T')[0];
+      acc[key] = (acc[key] || 0) + 1;
+      return acc;
+    }, {});
+
+    console.log(postsDateCounts);
+    console.log(questsDateCounts);
+
+    d3.select('.tapSeparatedGraph').remove();
+
+    const width = 714;
+    const height = 316;
+    const margin = { top: 40, left: 40, bottom: 40, right: 40 };
+
+    const svg = d3
+      .select('.G1000003511_2_dash')
+      .append('svg')
+      .attr('class', 'tapSeparatedGraph')
+      .attr('width', width)
+      .attr('height', height);
+
+    // 날짜별로 데이터를 병합
+    const mergedData = {};
+    Object.keys(postsDateCounts).forEach((date) => {
+      if (!mergedData[date]) {
+        mergedData[date] = {
+          date: new Date(date),
+          postsCount: 0,
+          questsCount: 0,
+        };
+      }
+      mergedData[date].postsCount = postsDateCounts[date];
+    });
+
+    Object.keys(questsDateCounts).forEach((date) => {
+      if (!mergedData[date]) {
+        mergedData[date] = {
+          date: new Date(date),
+          postsCount: 0,
+          questsCount: 0,
+        };
+      }
+      mergedData[date].questsCount = questsDateCounts[date];
+    });
+
+    const allData = Object.values(mergedData);
+
+    // 날짜 순서대로 정렬
+    allData.sort((a, b) => a.date - b.date);
+
+    const x = d3
+      .scaleBand()
+      .domain(allData.map((d) => d.date))
+      .range([margin.left, width - margin.right])
+      .padding(0.1);
+
+    const y = d3
+      .scaleLinear()
+      .domain([0, d3.max(allData, (d) => d.postsCount + d.questsCount)])
+      .nice()
+      .range([height - margin.bottom, margin.top]);
+
+    const xAxis = (g) =>
+      g
+        .attr('transform', `translate(0, ${height - margin.bottom})`)
+        .call(d3.axisBottom(x).tickFormat(d3.timeFormat('%Y-%m-%d')))
+        .selectAll('text')
+        .attr('class', 'tagName1_dash');
+
+    const yAxis = (g) =>
+      g
+        .attr('transform', `translate(${margin.left}, 0)`)
+        .call(
+          d3
+            .axisLeft(y)
+            .ticks(5)
+            .tickSize(-width + margin.left + margin.right),
+        )
+        .call((g) => g.select('.domain').remove())
+        .call((g) =>
+          g
+            .selectAll('.tick line')
+            .style('stroke', '#e1e1e1')
+            .style('stroke-dasharray', '1px 2px'),
+        );
+
+    svg.append('g').call(xAxis);
+    svg.append('g').call(yAxis);
+
+    // 누적 막대 그래프 그리기
+    svg
+      .selectAll('.post-bar')
+      .data(allData)
+      .enter()
+      .append('rect')
+      .attr('class', 'post-bar')
+      .attr('x', (d) => x(d.date))
+      .attr('y', (d) => y(d.postsCount + d.questsCount))
+      .attr('width', x.bandwidth())
+      .attr('height', (d) => height - margin.bottom - y(d.postsCount))
+      .attr('fill', '#f58a91');
+
+    svg
+      .selectAll('.quest-bar')
+      .data(allData)
+      .enter()
+      .append('rect')
+      .attr('class', 'quest-bar')
+      .attr('x', (d) => x(d.date))
+      .attr('y', (d) => y(d.questsCount))
+      .attr('width', x.bandwidth())
+      .attr('height', (d) => height - margin.bottom - y(d.questsCount))
+      .attr('fill', '#8ab2ff');
+  };
+
   return (
     <div>
       <div className="parent_dash">
@@ -313,7 +480,7 @@ const D3 = () => {
           <div className="Dropdown_dash">
             <div className="F1000004173_dash">
               <div className="F1000004172_dash">
-                <FaRegCalendarAlt className="CourseHistoryIcon" />
+                <FaRegCalendarAlt className="CourseHistoryIcon_dash" />
                 <div className="period_dash">2023/10/11-2023/10/26</div>
               </div>
               <div className="ChevronDownIcon">

@@ -2341,7 +2341,7 @@ tailwind-shadow-sm
   flex-grow: 0;
 }
 /* CourseHistoryIcon */
-.CourseHistoryIcon {
+.CourseHistoryIcon_dash {
   width: 20px;
   height: 20px;
 
@@ -2444,5 +2444,5 @@ tailwind-shadow-sm
   top: 33.87%;
   bottom: 31%;
 
-  background: #28303f;
+  /* background: #28303f; */
 }
