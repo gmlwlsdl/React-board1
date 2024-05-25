@@ -4,64 +4,108 @@ import { FaChevronDown } from 'react-icons/fa6';
 import { FaRegCalendarAlt } from 'react-icons/fa';
 import './index.css';
 
+export const fetchCreatedAtArray = async () => {
+  try {
+    const response = await fetch('/.netlify/functions/dashPost');
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching created_at array:', error);
+    throw error;
+  }
+};
+
 const D3 = () => {
   const [sessionName, setSessionName] = useState('');
+  const [createdAtArray, setCreatedAtArray] = useState([]);
 
   useEffect(() => {
     const sessionName = window.sessionStorage.getItem('nickname');
     setSessionName(sessionName || null);
 
-    // Call the function to create the graph
-    makeGraph();
+    // Fetch created_at data and create the graph
+    const fetchData = async () => {
+      try {
+        const createdAtData = await fetchCreatedAtArray();
+        setCreatedAtArray(createdAtData);
+        console.log(createdAtArray);
+        makeGraph(createdAtData);
+      } catch (error) {
+        console.error('Error fetching created_at data:', error);
+      }
+    };
 
-    // Cleanup function to remove the existing graph when component unmounts or before re-rendering
+    fetchData();
+
     return () => {
       d3.select('svg').remove();
     };
   }, []);
 
-  const makeGraph = () => {
+  const makeGraph = (data) => {
+    if (!data.length) return;
+
+    // 중복된 날짜를 제거하고 count를 계산합니다.
+    const dateCounts = data.reduce((acc, date) => {
+      const key = date.split('T')[0];
+      acc[key] = (acc[key] || 0) + 1;
+      return acc;
+    }, {});
+
+    console.log(dateCounts);
+
     // Check and remove existing svg if any
     d3.select('svg').remove();
 
     // Setting canvas
-    const width = 400;
-    const height = 400;
+    const width = 714;
+    const height = 316;
     const margin = { top: 40, left: 40, bottom: 40, right: 40 };
 
     const svg = d3
-      .select('body')
+      .select('.G1000003513_dash')
       .append('svg')
       .attr('width', width)
       .attr('height', height);
 
-    // Data
-    const data = [
-      { month: '1월', value: 40, color: 'red' },
-      { month: '2월', value: 10, color: 'orange' },
-      { month: '3월', value: 60, color: 'yellow' },
-      { month: '4월', value: 95, color: 'green' },
-      { month: '5월', value: 30, color: 'blue' },
-      { month: '6월', value: 78, color: 'indigo' },
-    ];
+    // Transform the data into a suitable format for the graph
+    const transformedData = Object.keys(dateCounts).map((date) => ({
+      date: new Date(date),
+      count: dateCounts[date],
+    }));
+
+    console.log(transformedData);
 
     // Setting axis
     const x = d3
-      .scaleBand()
-      .domain(data.map((d) => d.month))
-      .range([margin.left, width - margin.right])
-      .padding(0.1);
+      .scaleTime()
+      .domain(d3.extent(transformedData, (d) => d.date))
+      .range([margin.left, width - margin.right]);
 
     const y = d3
       .scaleLinear()
-      .domain([0, d3.max(data, (d) => d.value)])
+      .domain([0, d3.max(transformedData, (d) => d.count)])
       .nice()
       .range([height - margin.bottom, margin.top]);
 
     const xAxis = (g) =>
       g
         .attr('transform', `translate(0, ${height - margin.bottom})`)
-        .call(d3.axisBottom(x).tickSizeOuter(0));
+        .call(
+          d3
+            .axisBottom(x)
+            .tickSizeOuter(0)
+            .tickFormat((d) => {
+              const formatDate = d3.timeFormat('%Y-%m-%d')(d);
+              return dateCounts[formatDate] ? formatDate : ''; // count가 있는 날짜만 표시
+            })
+            .tickPadding(10), // 눈금과 텍스트 사이의 간격 설정
+        )
+        .call((g) => g.selectAll('.tick text').attr('class', 'day1_dash')) // x 축 텍스트에 클래스 추가
+        .attr('class', 'x-axis');
 
     const yAxis = (g) =>
       g
@@ -73,54 +117,43 @@ const D3 = () => {
             .tickSize(-width + margin.left + margin.right),
         )
         .call((g) => g.select('.domain').remove())
+        .call((g) =>
+          g
+            .selectAll('.tick line')
+            .style('stroke', '#e1e1e1')
+            .style('stroke-dasharray', '1px 2px'),
+        ) // Apply y-axis line style
         .attr('class', 'grid');
 
     // Apply axis to canvas
     svg.append('g').call(xAxis);
     svg.append('g').call(yAxis);
 
-    // Vertical bar chart
-    svg
-      .append('g')
-      .selectAll('rect')
-      .data(data)
-      .enter()
-      .append('rect')
-      .attr('x', (data) => x(data.month))
-      .attr('y', (data) => y(data.value))
-      .attr('width', x.bandwidth())
-      .attr('height', (data) => y(0) - y(data.value))
-      .attr('class', 'bar-chart')
-      .attr('fill', (data) => data.color);
-
     // Line chart
     const line = d3
       .line()
-      .x((d) => x(d.month) + x.bandwidth() / 2)
-      .y((d) => y(d.value));
+      .x((d) => x(d.date))
+      .y((d) => y(d.count));
 
     svg
       .append('path')
-      .datum(data)
+      .datum(transformedData)
       .attr('fill', 'none')
-      .attr('stroke', 'red')
-      .attr('stroke-width', 1)
+      .attr('stroke', '#f58a91')
+      .attr('stroke-width', 1.5)
       .attr('d', line);
 
-    // Add text
+    // Add circles at data points
     svg
       .append('g')
-      .selectAll('text')
-      .data(data)
+      .selectAll('circle')
+      .data(transformedData)
       .enter()
-      .append('text')
-      .text((d) => d.value)
-      .attr('x', (data) => x(data.month) + x.bandwidth() / 2)
-      .attr('y', (data) => y(data.value) - 5)
-      .attr('fill', 'black')
-      .attr('font-family', 'Tahoma')
-      .attr('font-size', '12px')
-      .attr('text-anchor', 'middle');
+      .append('circle')
+      .attr('cx', (d) => x(d.date))
+      .attr('cy', (d) => y(d.count))
+      .attr('r', 3)
+      .attr('fill', '#f58a91');
   };
 
   return (
@@ -149,10 +182,17 @@ const D3 = () => {
         </div>
         <div className="F1000004576_dash">
           <div className="F1000004575_dash">
-            <div className="F1000004565_dash"></div>
+            <div className="F1000004565_dash">
+              <p className="day_dash">날짜별 게시글 등록 수</p>
+              <div className="F1000004568_0_dash">
+                <div className="Ellipse850_dash"></div>
+                <p className="listNum_dash">게시글 등록 수</p>
+              </div>
+              <div className="G1000003513_dash"></div>
+            </div>
             <div className="F1000004566_dash"></div>
           </div>
-          <div className="F1000004568_dash"></div>
+          <div className="F1000004568_?_dash"></div>
         </div>
         <div className="Calendar_dash">
           <div className="Dropdown_dash">

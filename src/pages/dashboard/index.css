@@ -350,7 +350,7 @@
   flex-grow: 0;
 }
 /* Frame 1000004568 */
-.F1000004568_dash {
+.F1000004568_0_dash {
   /* Auto layout */
   display: flex;
   flex-direction: row;
@@ -373,6 +373,7 @@
 
   /* #Red/red-300 */
   background: #f58a91;
+  border-radius: 50px;
 
   /* Inside auto layout */
   flex: none;
@@ -381,8 +382,9 @@
 }
 /* 게시글 등록수 */
 .listNum_dash {
-  width: 64px;
+  width: 70px;
   height: 18px;
+  margin: 0px;
 
   /* KOR/Medium 12px */
   font-family: 'Pretendard';
@@ -532,9 +534,9 @@
   color: #000000;
 
   /* Inside auto layout */
-  flex: none;
+  /* flex: none;
   order: 0;
-  flex-grow: 0;
+  flex-grow: 0; */
 }
 /* 23.01.02 */
 .day2_dash {
@@ -878,7 +880,7 @@
   flex-grow: 0;
 }
 /* Frame 1000004568 */
-.F1000004568_dash {
+.F1000004568_2_dash {
   /* Auto layout */
   display: flex;
   flex-direction: row;
@@ -1379,7 +1381,7 @@
   flex-grow: 0;
 }
 /* Frame 1000004568 */
-.F1000004568_dash {
+.F1000004568_3_dash {
   box-sizing: border-box;
 
   /* Auto layout */
@@ -1441,7 +1443,7 @@
   flex-grow: 0;
 }
 /* Frame 1000004568 */
-.F1000004568_2_dash {
+.F1000004568_4_dash {
   /* Auto layout */
   display: flex;
   flex-direction: row;
@@ -2436,5 +2438,5 @@ tailwind-shadow-sm
   top: 33.87%;
   bottom: 31%;
 
-  /* background: #28303f; */
+  background: #28303f;
 }
