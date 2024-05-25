@@ -76,6 +76,7 @@ const Signin = () => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         className="placeholder_l"
+                        style={{ border: 'none' }}
                       />
                     </div>
                   </div>
@@ -95,6 +96,7 @@ const Signin = () => {
                         onChange={(e) => setPw(e.target.value)}
                         placeholder="8자 이상, 영문자, 숫자, 특수기호 중 2가지 조합"
                         className="placeholder1_s"
+                        style={{ border: 'none' }}
                       />
                       <div className="eye_s">
                         <FaEye className="vector_s" />
@@ -111,6 +113,7 @@ const Signin = () => {
                         onChange={(e) => setRePw(e.target.value)}
                         placeholder="비밀번호를 다시 입력해주세요"
                         className="placeholder2_s"
+                        style={{ border: 'none' }}
                       />
                       <div className="eye2_s">
                         <FaEye className="vector2_s" />
@@ -132,6 +135,7 @@ const Signin = () => {
                         value={nickname}
                         onChange={(e) => setName(e.target.value)}
                         className="placeholder3_l"
+                        style={{ border: 'none' }}
                       />
                     </div>
                   </div>

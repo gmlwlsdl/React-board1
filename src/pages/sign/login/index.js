@@ -71,6 +71,7 @@ const Login = () => {
                               onChange={(e) => setEmail(e.target.value)}
                               placeholder="이메일 주소"
                               className="placeholder_l"
+                              style={{ border: 'none' }}
                             />
                           </div>
                         </div>
@@ -84,6 +85,7 @@ const Login = () => {
                               onChange={(e) => setPw(e.target.value)}
                               placeholder="비밀번호 입력"
                               className="placeholder2_l"
+                              style={{ border: 'none' }}
                             />
                             <div className="eye_l">
                               <FaEye className="vector_1" />
@@ -103,9 +105,9 @@ const Login = () => {
                     <div className="Line3_l"></div>
                     <p className="findPW_l">비밀번호 찾기</p>
                     <div className="Line4_l"></div>
-                    <p className="Signin_l" onClick={moveSignin}>
+                    <button className="Signin_l" onClick={moveSignin}>
                       회원가입
-                    </p>
+                    </button>
                   </div>
                 </div>
               </div>

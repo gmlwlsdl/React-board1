@@ -26,11 +26,11 @@ const SigninDone = () => {
             <p className="msg2_done">축하드려요!</p>
           </div>
           <div className="F1000004353_done">
-            <div className="F1000004325_done">
+            <button className="F1000004325_done">
               <div className="Content1_done" onClick={gotoLogin}>
                 <p className="btnText_done">로그인</p>
               </div>
-            </div>
+            </button>
           </div>
         </div>
       </div>

@@ -14,6 +14,7 @@ import SigninDone from './pages/sign/signIn/done';
 import WritePost from './pages/create/index';
 import WriteQPost from './pages/create/index2';
 import D3 from './pages/dashboard';
+import { WiDayThunderstorm } from 'react-icons/wi';
 
 function App() {
   return (

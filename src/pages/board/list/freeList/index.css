@@ -15,7 +15,7 @@
   padding: 0px;
 
   position: absolute;
-  width: 1920px;
+  width: 1902px;
   height: 100%;
   /* left: 0px;
     top: 0px; */
@@ -150,6 +150,7 @@
   /* 1 */
   background: #ee3918;
   border-radius: 4px;
+  border: none;
 
   /* Inside auto layout */
   flex: none;
@@ -160,12 +161,12 @@
 .ButtonText0_f {
   width: 63px;
   height: 21px;
-  margin: 10px;
+  margin: 0px;
 
   /* KOR/regular_14px */
   font-family: 'Pretendard';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 400px;
   font-size: 14px;
   line-height: 150%;
   /* identical to box height, or 21px */
@@ -196,6 +197,7 @@
   /* #Grey/grey-100 */
   background: #eeeeee;
   border-radius: 4px;
+  border: none;
 
   /* Inside auto layout */
   flex: none;
@@ -206,7 +208,7 @@
 .ButtonText1_f {
   width: 63px;
   height: 21px;
-  margin: 10px;
+  margin: 0px;
 
   /* KOR/regular_14px */
   font-family: 'Pretendard';
@@ -242,6 +244,7 @@
   /* #Grey/grey-100 */
   background: #eeeeee;
   border-radius: 4px;
+  border: none;
 
   /* Inside auto layout */
   flex: none;
@@ -253,7 +256,7 @@
 .ButtonText2_f {
   width: 63px;
   height: 21px;
-  margin: 10px;
+  margin: 0px;
 
   /* KOR/regular_14px */
   font-family: 'Pretendard';
@@ -868,7 +871,6 @@
   bottom: 20.83%; */
 
   /* Grayscale / Black */
-  border: 0px solid #000000;
 }
 
 /* Frame 40 */
@@ -1045,6 +1047,7 @@
 .ButtonText3_f {
   width: 47px;
   height: 24px;
+  margin: 0px;
 
   font-family: 'Pretendard';
   font-style: normal;

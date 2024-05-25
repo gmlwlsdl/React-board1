@@ -414,6 +414,7 @@
 
   width: 249px;
   height: 21px;
+  margin-right: 43px;
 
   /* Inside auto layout */
   flex: none;
@@ -492,7 +493,7 @@
 }
 /* 회원가입 */
 .Signin_l {
-  width: 48px;
+  width: 65px;
   height: 21px;
 
   font-family: 'Pretendard';
@@ -506,8 +507,15 @@
   /* #Black/black */
   color: #000000;
 
+  border: none;
+  background-color: white;
+
   /* Inside auto layout */
   flex: none;
   order: 4;
   flex-grow: 0;
+}
+
+input:focus {
+  outline: none;
 }

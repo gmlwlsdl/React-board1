@@ -52,21 +52,15 @@ const BoardList = () => {
             </div>
             <div className="F1000004355_f">
               <div className="F1000004353_f">
-                <div className="F10000043242_f">
-                  <p className="ButtonText0_f" onClick={handleBoard}>
-                    자유 게시판
-                  </p>
-                </div>
-                <div className="F10000043532_f">
-                  <p className="ButtonText1_f" onClick={handleQuest}>
-                    질문 게시판
-                  </p>
-                </div>
-                <div className="F1000004354_f">
-                  <p className="ButtonText2_f" onClick={handleQuest}>
-                    질문 게시판
-                  </p>
-                </div>
+                <button className="F10000043242_f" onClick={handleBoard}>
+                  <p className="ButtonText0_f">자유 게시판</p>
+                </button>
+                <button className="F10000043532_f" onClick={handleQuest}>
+                  <p className="ButtonText1_f">질문 게시판</p>
+                </button>
+                <button className="F1000004354_f" onClick={handleQuest}>
+                  <p className="ButtonText2_f">질문 게시판</p>
+                </button>
               </div>
               <div className="F1000004351_f">
                 <div className="F1000004340_f">
@@ -106,11 +100,11 @@ const BoardList = () => {
                       <FaChevronLeft className="Vector2_f" />
                     </div>
                   </div>
-                  <div className="F1000004325_f">
-                    <div className="Content2_f" onClick={write}>
+                  <button className="F1000004325_f" onClick={write}>
+                    <div className="Content2_f">
                       <p className="ButtonText3_f">글쓰기</p>
                     </div>
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>

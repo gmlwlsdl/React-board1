@@ -781,6 +781,7 @@
 
   width: 142px;
   height: 48px;
+  border-radius: 5px;
 
   /* #Black/black */
   background: #000000;
@@ -825,4 +826,8 @@
   flex: none;
   order: 0;
   flex-grow: 0;
+}
+
+input:focus {
+  outline: none;
 }

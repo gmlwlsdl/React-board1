@@ -52,21 +52,21 @@ const QuestList = () => {
             </div>
             <div className="F1000004355_q">
               <div className="F1000004353_q">
-                <div className="F10000043242_q">
+                <button className="F10000043242_q">
                   <p className="ButtonText0_q" onClick={handleBoard}>
                     자유 게시판
                   </p>
-                </div>
-                <div className="F10000043532_q">
+                </button>
+                <button className="F10000043532_q">
                   <p className="ButtonText1_q" onClick={handleQuest}>
                     질문 게시판
                   </p>
-                </div>
-                <div className="F1000004354_q">
+                </button>
+                <button className="F1000004354_q">
                   <p className="ButtonText2_q" onClick={handleQuest}>
                     질문 게시판
                   </p>
-                </div>
+                </button>
               </div>
               <div className="F1000004351_q">
                 <div className="F1000004340_q">
@@ -92,26 +92,26 @@ const QuestList = () => {
                     <TableRow key={index} post={post} />
                   ))}
                 </div>
-                <div className="F1000004349_f">
-                  <div className="Frame41_f">
-                    <div className="Chevron_f">
-                      <FaChevronLeft className="Vector_f" />
+                <div className="F1000004349_q">
+                  <div className="Frame41_q">
+                    <div className="Chevron_q">
+                      <FaChevronLeft className="Vector_q" />
                     </div>
-                    <div className="Frame40_f">
-                      <p className="num1_f">1</p>
-                      <p className="num2_f">2</p>
-                      <p className="numdot_f">...</p>
-                      <p className="num5_f">5</p>
+                    <div className="Frame40_q">
+                      <p className="num1_q">1</p>
+                      <p className="num2_q">2</p>
+                      <p className="numdot_q">...</p>
+                      <p className="num5_q">5</p>
                     </div>
-                    <div className="Chevron2_f">
-                      <FaChevronLeft className="Vector2_f" />
-                    </div>
-                  </div>
-                  <div className="F1000004325_f">
-                    <div className="Content2_f" onClick={write}>
-                      <p className="ButtonText3_f">글쓰기</p>
+                    <div className="Chevron2_q">
+                      <FaChevronLeft className="Vector2_q" />
                     </div>
                   </div>
+                  <button className="F1000004325_q">
+                    <div className="Content2_q" onClick={write}>
+                      <p className="ButtonText3_q">글쓰기</p>
+                    </div>
+                  </button>
                 </div>
               </div>
             </div>
