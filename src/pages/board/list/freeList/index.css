@@ -587,6 +587,24 @@
   order: 0;
   flex-grow: 0;
 }
+
+.color_f {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+
+  width: 1144px;
+  height: 51px;
+
+  background-color: #e1e1e1;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
 /* 10 */
 .no_f {
   width: 17px;

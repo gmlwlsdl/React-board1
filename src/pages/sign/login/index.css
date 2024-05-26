@@ -64,7 +64,7 @@
 
   position: absolute;
   width: 384px;
-  height: 311px;
+  height: 350px;
   left: 768px;
   top: 200px;
 }
@@ -97,10 +97,10 @@
   align-items: center;
   text-align: center;
   padding: 0px;
-  gap: 32px;
+  gap: 45px;
 
   width: 384px;
-  height: 239px;
+  height: 240px;
 
   /* Inside auto layout */
   flex: none;
@@ -132,10 +132,10 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 0px;
-  gap: 8px;
+  gap: 28px;
 
   width: 384px;
-  height: 118px;
+  height: 150px;
 
   /* Inside auto layout */
   flex: none;
@@ -147,10 +147,10 @@
 .input_l {
   /* Auto layout */
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
   padding: 0px;
-  gap: 16px;
+  gap: 0px;
 
   width: 384px;
   height: 55px;
@@ -234,10 +234,10 @@
 .input2_l {
   /* Auto layout */
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
   padding: 0px;
-  gap: 16px;
+  gap: 0px;
 
   width: 384px;
   height: 55px;
@@ -321,6 +321,8 @@
 .eye_l {
   width: 24px;
   height: 24px;
+  border: none;
+  background-color: white;
 
   /* Inside auto layout */
   flex: none;
@@ -363,6 +365,30 @@
   align-self: stretch;
   flex-grow: 0;
 }
+
+.color {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 24px;
+  gap: 10px;
+
+  width: 384px;
+  height: 52px;
+
+  /* #Black/black */
+  background: #414040;
+  border-radius: 4px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
 /* Content */
 .content_l {
   /* Auto layout */
@@ -518,4 +544,64 @@
 
 input:focus {
   outline: none;
+}
+
+input:active {
+  border: 1px solid #000000;
+}
+
+.Aeets1_s {
+  width: 384px;
+  height: 26px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+/* Vector */
+.Vector3_s {
+  position: 0px;
+  left: 8.33%;
+  right: 8.33%;
+  top: 6.94%;
+  bottom: 9.72%;
+
+  /* #Red/red-600 */
+}
+
+.Frame467_s {
+  width: 16px;
+  height: 22px;
+
+  padding: 1px 5px 0px 0px;
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.errorMessage {
+  width: auto;
+  height: auto;
+
+  font-family: Pretendard;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: -0.30000001192092896px;
+  text-align: left;
+
+  margin: 0px;
+  color: #eb4852;
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
 }

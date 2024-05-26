@@ -256,7 +256,7 @@ const BoardDetail = () => {
                     <div className="chevron">
                       <FaChevronLeft
                         className="Vector"
-                        onClick={() => navigate('/')}
+                        onClick={() => navigate(-1)}
                       />
                     </div>
                     <p className="Posttitle">{post.title}</p>

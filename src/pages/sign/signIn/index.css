@@ -89,7 +89,7 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 0px;
-  gap: 32px;
+  gap: 37px;
 
   width: 384px;
   height: 495px;
@@ -158,10 +158,10 @@
 .input_s {
   /* Auto layout */
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
   padding: 0px;
-  gap: 16px;
+  gap: 0px;
 
   width: 384px;
   height: 55px;
@@ -235,10 +235,10 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 0px;
-  gap: 8px;
+  gap: 21px;
 
   width: 384px;
-  height: 150px;
+  height: 180px;
 
   /* Inside auto layout */
   flex: none;
@@ -287,10 +287,10 @@
 .input1_s {
   /* Auto layout */
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
   padding: 0px;
-  gap: 16px;
+  gap: 0px;
 
   width: 384px;
   height: 55px;
@@ -375,6 +375,9 @@
   width: 24px;
   height: 24px;
 
+  border: none;
+  background-color: white;
+
   /* Inside auto layout */
   flex: none;
   order: 1;
@@ -395,10 +398,10 @@
 .input2_s {
   /* Auto layout */
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
   padding: 0px;
-  gap: 16px;
+  gap: 0px;
 
   width: 384px;
   height: 55px;
@@ -482,6 +485,8 @@
 .eye2_s {
   width: 24px;
   height: 24px;
+  border: none;
+  background-color: white;
 
   /* Inside auto layout */
   flex: none;
@@ -830,4 +835,82 @@
 
 input:focus {
   outline: none;
+}
+
+.checkbox-input {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  margin: 0px;
+
+  appearance: none;
+
+  border: 1px solid #e1e1e1;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.checkbox-input:checked {
+  border-color: transparent;
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z'/%3e%3c/svg%3e");
+  background-size: 100% 100%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-color: #000000;
+}
+
+.Aeets1_s {
+  width: 384px;
+  height: 26px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+/* Vector */
+.Vector3_s {
+  position: 0px;
+  left: 8.33%;
+  right: 8.33%;
+  top: 6.94%;
+  bottom: 9.72%;
+
+  /* #Red/red-600 */
+}
+
+.Frame467_s {
+  width: 16px;
+  height: 22px;
+
+  padding: 1px 5px 0px 0px;
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.errorMessage {
+  width: auto;
+  height: auto;
+
+  font-family: Pretendard;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: -0.30000001192092896px;
+  text-align: left;
+
+  margin: 0px;
+  color: #eb4852;
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
 }

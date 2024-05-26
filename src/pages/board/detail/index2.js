@@ -253,7 +253,7 @@ const BoardQuestDetail = () => {
                     <div className="chevron">
                       <FaChevronLeft
                         className="Vector"
-                        onClick={() => navigate('/quest')}
+                        onClick={() => navigate(-1)}
                       />
                     </div>
                     <p className="Posttitle">{post.title}</p>
