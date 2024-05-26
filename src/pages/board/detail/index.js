@@ -320,11 +320,11 @@ const BoardDetail = () => {
                   value={replyContent}
                   onChange={(e) => setReplyContent(e.target.value)}
                 />
-                <div className="F1000004325">
+                <button className="F1000004325">
                   <div className="contents2_d" onClick={writeReply}>
                     <p className="replyBtn_d">댓글작성</p>
                   </div>
-                </div>
+                </button>
               </div>
               <br />
               {replies.map((reply, index) => (

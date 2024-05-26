@@ -498,6 +498,7 @@
 .writeBtn_w {
   width: 82px;
   height: 24px;
+  margin: 0px;
 
   font-family: 'Pretendard';
   font-style: normal;

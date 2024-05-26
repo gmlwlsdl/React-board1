@@ -1,6 +1,6 @@
 .parent {
   position: relative;
-  width: 1920px;
+  width: 1903px;
   height: 1000px;
 
   background: #ffffff;
@@ -14,7 +14,7 @@
   padding: 0px;
 
   position: absolute;
-  width: 1920px;
+  width: 1903px;
   height: 1958px;
   left: 0px;
   top: 0px;
@@ -28,7 +28,7 @@
   padding: 100px 388px;
   gap: 10px;
 
-  width: 1244px;
+  width: 1127px;
   height: 1340px;
 
   /* #White/white */
@@ -470,7 +470,7 @@
   box-sizing: border-box;
 
   width: 977px;
-  height: 79px;
+  height: 55px;
 
   /* #White/white */
   background: #ffffff;

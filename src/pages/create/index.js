@@ -99,11 +99,11 @@ const WritePost = () => {
                   </div>
                 </div>
               </div>
-              <div className="F1000004326_w">
+              <button className="F1000004326_w">
                 <div className="Content2_w" onClick={uploadPost}>
                   <p className="writeBtn_w">게시글 작성</p>
                 </div>
-              </div>
+              </button>
             </div>
           </div>
         </div>
