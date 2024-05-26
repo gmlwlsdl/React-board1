@@ -59,20 +59,20 @@ function Nav() {
         <div className="F1000003051_n">
           <p className="Testsite_n">Testsite</p>
           <div className="F1000003053_n">
-            <div className="GNB_Button_n">
+            <button className="GNB_Button_n">
               <div className="Content_n">
                 <p className="ButtonText_n" onClick={handleBoard}>
                   게시판
                 </p>
               </div>
-            </div>
-            <div className="GNB_Button2_n">
+            </button>
+            <button className="GNB_Button2_n">
               <div className="Content2_n">
                 <p className="ButtonText2_n" onClick={handleDash}>
                   대시보드
                 </p>
               </div>
-            </div>
+            </button>
           </div>
         </div>
       </div>

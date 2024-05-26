@@ -83,6 +83,8 @@
   text-align: center;
 
   border-radius: 8px;
+  border: none;
+  background-color: white;
 
   /* Inside auto layout */
   flex: none;
@@ -114,6 +116,7 @@
   flex-direction: row;
   align-items: flex-start; */
   padding: 0px;
+  margin: 0px;
 
   font-family: 'Pretendard';
   font-style: normal;
@@ -144,6 +147,8 @@
   text-align: center;
 
   border-radius: 8px;
+  border: none;
+  background-color: white;
 
   /* Inside auto layout */
   flex: none;
@@ -158,7 +163,6 @@
   align-items: flex-start; */
   text-align: center;
   padding: 0px;
-  margin: auto;
   gap: 8px;
 
   width: 80px;
@@ -172,7 +176,7 @@
 /* ButtonText */
 .ButtonText2_n {
   padding: 0px;
-  margin: 18px auto;
+  margin: 0px;
 
   font-family: 'Pretendard';
   font-style: normal;
