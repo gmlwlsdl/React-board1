@@ -438,9 +438,9 @@
   padding: 0px;
   gap: 16px;
 
-  width: 249px;
+  width: 277px;
   height: 21px;
-  margin-right: 43px;
+  margin-right: 50px;
 
   /* Inside auto layout */
   flex: none;
@@ -449,7 +449,7 @@
 }
 /* 아이디 */
 .findID_l {
-  width: 63px;
+  width: 75px;
   height: 21px;
 
   font-family: 'Pretendard';
@@ -459,6 +459,8 @@
   line-height: 150%;
   /* identical to box height, or 21px */
   letter-spacing: -0.3px;
+  border: none;
+  background-color: white;
 
   /* #Grey/grey-500 */
   color: #808080;
@@ -484,7 +486,7 @@
 }
 /* 비밀번호 찾기 */
 .findPW_l {
-  width: 74px;
+  width: 90px;
   height: 21px;
 
   font-family: 'Pretendard';
@@ -495,6 +497,8 @@
   /* identical to box height, or 21px */
   letter-spacing: -0.3px;
 
+  border: none;
+  background-color: white;
   /* #Grey/grey-500 */
   color: #808080;
 

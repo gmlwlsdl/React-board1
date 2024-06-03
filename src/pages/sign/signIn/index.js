@@ -5,7 +5,6 @@ import { FaCircleExclamation } from 'react-icons/fa6';
 import Checkbox from './Checkbox';
 import '../../../css/globalCss.css';
 import './index.css';
-import { color } from 'd3';
 
 const Signin = () => {
   const [email, setEmail] = useState('');
@@ -75,23 +74,43 @@ const Signin = () => {
       return;
     } else {
       try {
-        const res = await fetch('/.netlify/functions/Signin', {
+        const resName = await fetch('/.netlify/functions/checkNickname', {
           method: 'POST',
           body: JSON.stringify({
-            userEmail: email,
-            userPW: pw,
             nickname: nickname,
           }),
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-type': 'application/json' },
         });
 
-        const data = await res.json();
-        alert(data.message);
+        const dataName = await resName.json();
+        alert(dataName.message);
 
-        if (res.status === 200) {
-          navigate('/Done');
-        } else {
-          alert(data.error);
+        if (resName.status === 200) {
+          // 닉네임 유효성 검사 성공하면 회원가입 진행
+          const res = await fetch('/.netlify/functions/Signin', {
+            method: 'POST',
+            body: JSON.stringify({
+              userEmail: email,
+              userPW: pw,
+              nickname: nickname,
+            }),
+            headers: { 'Content-Type': 'application/json' },
+          });
+
+          const data = await res.json();
+          alert(data.message);
+
+          if (res.status === 200) {
+            navigate('/Done');
+          } else {
+            alert(data.error);
+            setEmail('');
+            setPw('');
+            setRePw('');
+            setName('');
+            return;
+          }
+        } else if (resName.status === 401) {
           setEmail('');
           setPw('');
           setRePw('');

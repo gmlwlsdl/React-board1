@@ -96,6 +96,14 @@ const Login = () => {
     navigate('/Signin');
   };
 
+  const findID = () => {
+    navigate('/findID');
+  };
+
+  const findPW = () => {
+    navigate('/findPW');
+  };
+
   return (
     <div>
       <div className="parent_l">
@@ -184,9 +192,13 @@ const Login = () => {
                     </button>
                   </div>
                   <div className="Frame195_l">
-                    <p className="findID_l">아이디 찾기</p>
+                    <button className="findID_l" onClick={findID}>
+                      아이디 찾기
+                    </button>
                     <div className="Line3_l"></div>
-                    <p className="findPW_l">비밀번호 찾기</p>
+                    <button className="findPW_l" onClick={findPW}>
+                      비밀번호 찾기
+                    </button>
                     <div className="Line4_l"></div>
                     <button className="Signin_l" onClick={moveSignin}>
                       회원가입
