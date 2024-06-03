@@ -1,0 +1,614 @@
+/* 로그인 */
+.parent_fID {
+  position: relative;
+  width: 1920px;
+  height: 1129px;
+
+  /* #White/white */
+  background: #ffffff;
+}
+
+/* Frame 1000004037 */
+.F1000004037_fID {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+
+  position: absolute;
+  width: 1920px;
+  height: 1129px;
+  left: 0px;
+  top: 0px;
+}
+
+/* Frame 1000004036 */
+.F1000004036_fID {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 200px 768px;
+  gap: 10px;
+
+  width: 384px;
+  height: 311px;
+
+  /* #White/white */
+  background: #ffffff;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+/* Group 1000003250 */
+.F1000003250_fID {
+  width: 384px;
+  height: 311px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+/* Frame 1000003769 */
+.F1000003769_fID {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 24px;
+
+  position: absolute;
+  width: 384px;
+  height: 350px;
+  left: 768px;
+  top: 200px;
+}
+/* 로그인 */
+.login_fID {
+  width: 150px;
+  height: 48px;
+
+  /* KOR/Bold_32px */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 150%;
+  /* identical to box height, or 48px */
+  letter-spacing: -0.3px;
+
+  color: #040404;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+/* Frame 37314 */
+.Frame37314_fID {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0px;
+  gap: 45px;
+
+  width: 384px;
+  height: 240px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+/* Frame 1000003648 */
+.F1000003648_fID {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+
+  width: 384px;
+  height: 186px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+/* Frame 1000003641 */
+.F1000003641_fID {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 28px;
+
+  width: 384px;
+  height: 150px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+/* Input */
+.input_fID {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 25px;
+
+  width: 384px;
+  height: 55px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+/* Auto layout text field */
+.autoField_fID {
+  box-sizing: border-box;
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 24px;
+  gap: 10px;
+
+  width: 384px;
+  height: 55px;
+
+  /* #White/white */
+  background: #ffffff;
+  /* #Grey/grey-200 */
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 1;
+}
+/* Auto layout for icon */
+.autoIcon_fID {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 16px;
+
+  width: 336px;
+  height: 27px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+/* ✍️ Placeholder */
+.placeholder_fID {
+  width: 336px;
+  height: 27px;
+
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 170%;
+  /* or 27px */
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.003em;
+
+  /* #Grey/grey-500 */
+  color: #808080;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+}
+/* Input */
+.input2_fID {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 0px;
+
+  width: 384px;
+  height: 55px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+/* Auto layout text field */
+.autoField2_fID {
+  box-sizing: border-box;
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* padding: 14px 24px; */
+  gap: 10px;
+
+  width: 384px;
+  height: 55px;
+
+  /* #White/white */
+  background: #ffffff;
+  /* #Grey/grey-200 */
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid #e1e1e1;
+  border-radius: 4px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 1;
+}
+/* Auto layout for icon */
+.autoIcon2_fID {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 16px;
+
+  width: 336px;
+  height: 27px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+/* ✍️ Placeholder */
+.placeholder2_fID {
+  width: 296px;
+  height: 27px;
+
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 170%;
+  /* or 27px */
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.003em;
+
+  /* #Grey/grey-500 */
+  color: #808080;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+}
+/* eye */
+.eye_fID {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-color: white;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+/* Vector */
+.vector_fID {
+  position: absolute;
+  left: 7.42%;
+  right: 7.42%;
+  top: 18.16%;
+  bottom: 18.16%;
+
+  /* #Grey/grey-300 */
+  background: #cfcfcf;
+}
+/* Button
+&lt;Button color=&quot;primary&quot;&gt;primary&lt;/Button&gt;
+*/
+.button_fID {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 24px;
+  gap: 10px;
+
+  width: 384px;
+  height: 52px;
+
+  /* #Black/black */
+  background: #000000;
+  border-radius: 4px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.color {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 24px;
+  gap: 10px;
+
+  width: 384px;
+  height: 52px;
+
+  /* #Black/black */
+  background: #414040;
+  border-radius: 4px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+/* Content */
+.content_fID {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+
+  width: 90px;
+  height: 27px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+/* ButtonText */
+.buttonText_fID {
+  width: 90px;
+  height: 27px;
+  margin: 0px;
+
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+  /* identical to box height, or 27px */
+  text-align: center;
+  letter-spacing: -0.3px;
+
+  /* #White/white */
+  color: #ffffff;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+/* Frame 195 */
+.Frame195_fID {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 16px;
+
+  width: 277px;
+  height: 21px;
+  margin-right: 50px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+/* 아이디 */
+.findID_fID {
+  width: 75px;
+  height: 21px;
+
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  /* identical to box height, or 21px */
+  letter-spacing: -0.3px;
+  border: none;
+  background-color: white;
+
+  /* #Grey/grey-500 */
+  color: #808080;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+/* Line 3 */
+.Line3_fID {
+  width: 17px;
+  height: 0px;
+
+  /* #Grey/grey-500 */
+  border: 1.2px solid #808080;
+  transform: rotate(90deg);
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+/* 비밀번호 찾기 */
+.findPW_fID {
+  width: 90px;
+  height: 21px;
+
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  /* identical to box height, or 21px */
+  letter-spacing: -0.3px;
+
+  border: none;
+  background-color: white;
+  /* #Grey/grey-500 */
+  color: #808080;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+/* Line 4 */
+.Line4_fID {
+  width: 17px;
+  height: 0px;
+
+  /* #Grey/grey-500 */
+  border: 1.2px solid #808080;
+  transform: rotate(90deg);
+
+  /* Inside auto layout */
+  flex: none;
+  order: 3;
+  flex-grow: 0;
+}
+/* 회원가입 */
+.Signin_fID {
+  width: 65px;
+  height: 21px;
+
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  /* identical to box height, or 21px */
+  letter-spacing: -0.3px;
+
+  /* #Black/black */
+  color: #000000;
+
+  border: none;
+  background-color: white;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 4;
+  flex-grow: 0;
+}
+
+input:focus {
+  outline: none;
+}
+
+input:active {
+  border: 1px solid #000000;
+}
+
+.Aeets1_s {
+  width: 384px;
+  height: 26px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+/* Vector */
+.Vector3_s {
+  position: 0px;
+  left: 8.33%;
+  right: 8.33%;
+  top: 6.94%;
+  bottom: 9.72%;
+
+  /* #Red/red-600 */
+}
+
+.Frame467_s {
+  width: 16px;
+  height: 22px;
+
+  padding: 1px 5px 0px 0px;
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.errorMessage {
+  width: auto;
+  height: auto;
+
+  font-family: Pretendard;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: -0.30000001192092896px;
+  text-align: left;
+
+  margin: 0px;
+  color: #eb4852;
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}

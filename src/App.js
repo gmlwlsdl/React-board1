@@ -13,6 +13,8 @@ import Signin from './pages/sign/signIn';
 import SigninDone from './pages/sign/signIn/done';
 import WritePost from './pages/create/index';
 import WriteQPost from './pages/create/index2';
+import FindID from './pages/sign/find';
+import FindPW from './pages/sign/find';
 import D3 from './pages/dashboard';
 import { WiDayThunderstorm } from 'react-icons/wi';
 
@@ -25,6 +27,8 @@ function App() {
           <Routes>
             <Route path="/" element={<BoardList />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/findID" element={<FindID />} />
+            <Route path="/findPW" element={<FindPW />} />
             <Route path="/signin" element={<Signin />} />
             <Route path="/Done" element={<SigninDone />} />
             <Route path="/board" element={<BoardList />} />
